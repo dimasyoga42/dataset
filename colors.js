@@ -44,7 +44,6 @@ async function scrape() {
     // fix: domcontentloaded lebih stabil di CI daripada networkidle2
     await page.goto(url, {
       waitUntil: "domcontentloaded",
-      timeout: 60000,
     });
 
     await delay(5000);
