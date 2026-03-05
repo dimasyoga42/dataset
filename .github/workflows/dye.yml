@@ -22,11 +22,12 @@ jobs:
       - run: npm install puppeteer
 
       - run: node run.js
+      - run: node colors.json
 
       - name: commit
         run: |
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
-          git add dye_weapon.png
+          git add .
           git commit -m "update screenshot" || echo "no change"
           git push
