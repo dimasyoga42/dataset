@@ -27,6 +27,6 @@ jobs:
         run: |
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
-          git add colorweapon_full.png
+          git add dye_weapon.png
           git commit -m "update screenshot" || echo "no change"
           git push
