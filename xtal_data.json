@@ -1,0 +1,5605 @@
+[
+  {
+    "name": "Abyssal Crystal Monster",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "MaxMP": "-200",
+      "Stability %": "4",
+      "Physical Resistance %": "6",
+      "Magic Resistance %": "6",
+      "Short Range Damage %": "4",
+      "Upgrade for": "Zeagrysta",
+      "Shield only:Ailment Resistance %": "Ailment Resistance %\n                                                            5"
+    },
+    "upgrade_route": "Zeagrysta -> Abyssal Crystal Monster",
+    "max_upgrade_route": "Zeagrysta -> Abyssal Crystal Monster"
+  },
+  {
+    "name": "Accuracy+10",
+    "type": "Normal Crysta",
+    "stats": {
+      "Accuracy": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Accuracy+12",
+    "type": "Normal Crysta",
+    "stats": {
+      "Accuracy": "12"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Accuracy+14",
+    "type": "Normal Crysta",
+    "stats": {
+      "Accuracy": "14"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Accuracy+16",
+    "type": "Normal Crysta",
+    "stats": {
+      "Accuracy": "16"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Accuracy+2",
+    "type": "Normal Crysta",
+    "stats": {
+      "Accuracy": "2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Accuracy+4",
+    "type": "Normal Crysta",
+    "stats": {
+      "Accuracy": "4"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Accuracy+8",
+    "type": "Normal Crysta",
+    "stats": {
+      "Accuracy": "8"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Adaro",
+    "type": "Additional Crysta",
+    "stats": {
+      "MaxHP": "1000",
+      "MATK %": "6",
+      "Critical Damage": "6",
+      "Heavy Armor only:Aggro %": "Aggro %\n                                                            10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Ageladanios",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "ATK %": "6",
+      "Magic Resistance %": "-15",
+      "Critical Damage": "8",
+      "Motion Speed %": "-1",
+      "Upgrade for": "Lyark Master Specialist"
+    },
+    "upgrade_route": "Metal Stinger -> Lyark Master Specialist -> Ageladanios",
+    "max_upgrade_route": "Metal Stinger -> Lyark Master Specialist -> Ageladanios -> Wiltileaf"
+  },
+  {
+    "name": "AGI+1",
+    "type": "Normal Crysta",
+    "stats": {
+      "AGI": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "AGI+2",
+    "type": "Normal Crysta",
+    "stats": {
+      "AGI": "2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "AGI+3",
+    "type": "Normal Crysta",
+    "stats": {
+      "AGI": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "AGI+4",
+    "type": "Normal Crysta",
+    "stats": {
+      "AGI": "4"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "AGI+5",
+    "type": "Normal Crysta",
+    "stats": {
+      "AGI": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "AGI+6",
+    "type": "Normal Crysta",
+    "stats": {
+      "AGI": "6"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "AGI+7",
+    "type": "Normal Crysta",
+    "stats": {
+      "AGI": "7"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Alfenix",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP %": "18",
+      "ATK %": "3",
+      "Physical Pierce %": "10",
+      "Aggro %": "-15",
+      "Upgrade for": "Handmade Cookie"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Altadar",
+    "type": "Armor Crysta",
+    "stats": {
+      "STR %": "6",
+      "VIT %": "6",
+      "Stability %": "11",
+      "Heavy Armor only:Long Range Damage %": "Long Range Damage %\n                                                            11",
+      "Light Armor only:Short Range Damage %": "Short Range Damage %\n                                                            11",
+      "Heavy Armor,Light Armor only:Stability %": "Stability %\n                                                            -5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Altoblepas",
+    "type": "Additional Crysta",
+    "stats": {
+      "DEX %": "1",
+      "Accuracy %": "-20",
+      "Critical Damage": "4"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Amalgam",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "MaxHP": "2000",
+      "Attack MP Recovery": "9",
+      "Upgrade for": "Deniala"
+    },
+    "upgrade_route": "Viscum -> Deniala -> Amalgam",
+    "max_upgrade_route": "Viscum -> Deniala -> Amalgam -> Crysmort -> Breeta"
+  },
+  {
+    "name": "Amargon",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP %": "30",
+      "MaxMP": "-300",
+      "ASPD": "800",
+      "Upgrade for": "Candela II"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Amoeba Machina",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "AGI": "6",
+      "Dodge": "5",
+      "Critical Rate": "-6",
+      "Evasion Recharge %": "4",
+      "Upgrade for": "Crimsosch"
+    },
+    "upgrade_route": "Crimsosch -> Amoeba Machina",
+    "max_upgrade_route": "Crimsosch -> Amoeba Machina"
+  },
+  {
+    "name": "Ancient Empress",
+    "type": "Additional Crysta",
+    "stats": {
+      "MATK %": "3",
+      "CSPD %": "50",
+      "Short Range Damage %": "-10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Ancient Empress II",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MATK %": "5",
+      "CSPD %": "30",
+      "Short Range Damage %": "-20",
+      "Upgrade for": "Ancient Empress"
+    },
+    "upgrade_route": "Ancient Empress -> Ancient Empress II",
+    "max_upgrade_route": "Ancient Empress -> Ancient Empress II"
+  },
+  {
+    "name": "Arachnidemon",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxHP": "-400",
+      "MaxMP": "-400",
+      "ATK %": "8",
+      "Critical Rate": "8",
+      "Shield only:Short Range Damage %": "Short Range Damage %\n                                                            4"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Aranea",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP": "400",
+      "MaxMP": "200",
+      "Aggro %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Arbogazella",
+    "type": "Weapon Crysta",
+    "stats": {
+      "MaxHP %": "-28",
+      "Accuracy %": "14",
+      "Long Range Damage %": "7"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Arcoiris",
+    "type": "Armor Crysta",
+    "stats": {
+      "Natural HP Regen %": "10",
+      "MaxHP %": "10",
+      "DEF %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Armasite",
+    "type": "Weapon Crysta",
+    "stats": {
+      "MATK %": "5",
+      "Magic Pierce %": "20",
+      "CSPD %": "-15"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "ASPD+100",
+    "type": "Normal Crysta",
+    "stats": {
+      "ASPD": "100"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "ASPD+120",
+    "type": "Normal Crysta",
+    "stats": {
+      "ASPD": "120"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "ASPD+140",
+    "type": "Normal Crysta",
+    "stats": {
+      "ASPD": "140"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "ASPD+160",
+    "type": "Normal Crysta",
+    "stats": {
+      "ASPD": "160"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "ASPD+20",
+    "type": "Normal Crysta",
+    "stats": {
+      "ASPD": "20"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "ASPD+40",
+    "type": "Normal Crysta",
+    "stats": {
+      "ASPD": "40"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "ASPD+60",
+    "type": "Normal Crysta",
+    "stats": {
+      "ASPD": "60"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "ASPD+80",
+    "type": "Normal Crysta",
+    "stats": {
+      "ASPD": "80"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Astol",
+    "type": "Normal Crysta",
+    "stats": {
+      "DEF %": "-10",
+      "Magic Resistance %": "1",
+      "Evasion Recharge %": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Aubergine Dragon Auvio",
+    "type": "Special Crysta",
+    "stats": {
+      "MaxMP": "300",
+      "ASPD": "500",
+      "Short Range Damage %": "4",
+      "Long Range Damage %": "-12",
+      "Ninjutsu Scroll only:Critical Rate": "Critical Rate\n                                                            5",
+      "Unsheathe Attack %                        Unsheathe Attack %": "Unsheathe Attack %\n                                                            5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Aubermight",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxHP %": "15",
+      "DEF": "45",
+      "Aggro %": "30"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "B.B. Goblin",
+    "type": "Normal Crysta",
+    "stats": {
+      "ATK %": "2",
+      "Critical Rate": "-1",
+      "Aggro %": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Baavgai",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP": "7000",
+      "Critical Damage": "7",
+      "Short Range Damage %": "5",
+      "Upgrade for": "Dreamy Scarlet Sakura"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Bakuzan",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "DEX %": "9",
+      "ATK %": "11",
+      "ASPD %": "7",
+      "Upgrade for": "Trickster Dragon Mimyugon"
+    },
+    "upgrade_route": "Ganglef -> Tyrant Machina -> Vulture -> Trickster Dragon Mimyugon -> Bakuzan",
+    "max_upgrade_route": "Ganglef -> Tyrant Machina -> Vulture -> Trickster Dragon Mimyugon -> Bakuzan"
+  },
+  {
+    "name": "Bangrudom",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxHP %": "-20",
+      "ATK %": "10",
+      "MATK %": "10",
+      "ASPD %": "10",
+      "CSPD %": "10",
+      "Shield only:DEX %": "DEX %\n                                                            5",
+      "Light Armor only:Magic Pierce %": "Magic Pierce %\n                                                            5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Baphomela",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "Short Range Damage %": "6",
+      "Long Range Damage %": "6",
+      "Unsheathe Attack %": "6",
+      "Upgrade for": "Twilight Dragon"
+    },
+    "upgrade_route": "Twilight Dragon -> Baphomela",
+    "max_upgrade_route": "Twilight Dragon -> Baphomela -> Prudent Blue Shadow -> Forbidden Shawle"
+  },
+  {
+    "name": "Bemoz",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxMP": "-150",
+      "ATK %": "6",
+      "MATK %": "6",
+      "Physical Pierce %": "8",
+      "Magic Pierce %": "8",
+      "Critical Rate": "17",
+      "Upgrade for": "Sibylares"
+    },
+    "upgrade_route": "Sibylares -> Bemoz",
+    "max_upgrade_route": "Sibylares -> Bemoz"
+  },
+  {
+    "name": "Bexiz",
+    "type": "Special Crysta",
+    "stats": {
+      "MaxMP": "-100",
+      "Accuracy %": "15",
+      "Critical Rate": "5",
+      "Weapon ATK %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Big Coryn",
+    "type": "Normal Crysta",
+    "stats": {
+      "Physical Resistance %": "1",
+      "Magic Resistance %": "1",
+      "Ailment Resistance %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Biskyva",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxMP": "900",
+      "Critical Rate": "7",
+      "Critical Damage %": "2",
+      "Fractional Barrier %": "19",
+      "Upgrade for": "Gordel"
+    },
+    "upgrade_route": "Ifrid -> Mom Fluck -> Gordel -> Biskyva",
+    "max_upgrade_route": "Ifrid -> Mom Fluck -> Gordel -> Biskyva"
+  },
+  {
+    "name": "Black Knight of Delusion",
+    "type": "Weapon Crysta",
+    "stats": {
+      "STR %": "3",
+      "ATK %": "4",
+      "DEF %": "-9",
+      "Critical Rate %": "2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Black Lixi",
+    "type": "Special Crysta",
+    "stats": {
+      "ASPD": "300",
+      "Ailment Resistance %": "10",
+      "Aggro %": "40",
+      "Attack MP Recovery": "20",
+      "Heavy Armor only:Fractional Barrier %": "Fractional Barrier %\n                                                            10",
+      "Light Armor only:Barrier Cooldown %": "Barrier Cooldown %\n                                                            10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Black Shadow",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "MaxMP": "-150",
+      "ATK %": "8",
+      "MATK %": "8",
+      "Attack MP Recovery": "3",
+      "Upgrade for": "Tuscog"
+    },
+    "upgrade_route": "Brutal Dragon Decel -> York -> Tuscog -> Black Shadow",
+    "max_upgrade_route": "Brutal Dragon Decel -> York -> Tuscog -> Black Shadow -> Torexesa"
+  },
+  {
+    "name": "Black Velly",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP": "3000",
+      "MaxMP": "400",
+      "MATK %": "9",
+      "Evasion Recharge %": "-20",
+      "Upgrade for": "Evil Shadow"
+    },
+    "upgrade_route": "Evil Shadow -> Black Velly",
+    "max_upgrade_route": "Evil Shadow -> Black Velly -> Glocke"
+  },
+  {
+    "name": "Blancanine the White Fang",
+    "type": "Weapon Crysta",
+    "stats": {
+      "AGI %": "4",
+      "MaxHP %": "-12",
+      "ATK %": "7",
+      "Attack MP Recovery": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Blazingur",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "MaxHP": "600",
+      "MaxMP": "300",
+      "Aggro %": "2",
+      "Upgrade for": "Aranea"
+    },
+    "upgrade_route": "Aranea -> Blazingur",
+    "max_upgrade_route": "Aranea -> Blazingur"
+  },
+  {
+    "name": "Blood Smeared Crystal",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "Critical Damage": "6",
+      "Aggro %": "10",
+      "Attack MP Recovery": "7",
+      "Upgrade for": "Evil Magic Sword"
+    },
+    "upgrade_route": "Evil Magic Sword -> Blood Smeared Crystal",
+    "max_upgrade_route": "Evil Magic Sword -> Blood Smeared Crystal"
+  },
+  {
+    "name": "Boss Colon",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP": "70",
+      "MaxMP": "30"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Boss Goblin",
+    "type": "Normal Crysta",
+    "stats": {
+      "ATK %": "1",
+      "Accuracy": "-4",
+      "Critical Rate %": "2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Boss Roga",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxHP": "1000",
+      "Weapon ATK %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Bovinio",
+    "type": "Additional Crysta",
+    "stats": {
+      "Drop Rate %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Brass Dragon Reguita",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "Natural HP Regen %": "-12",
+      "Natural MP Regen %": "-12",
+      "ATK %": "10",
+      "MATK %": "10",
+      "Upgrade for": "Repthon"
+    },
+    "upgrade_route": "Zolban -> Repthon -> Brass Dragon Reguita",
+    "max_upgrade_route": "Zolban -> Repthon -> Brass Dragon Reguita"
+  },
+  {
+    "name": "Brassozard",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "STR %": "3",
+      "ATK %": "3",
+      "Accuracy %": "-10",
+      "Critical Rate %": "-10",
+      "Critical Damage": "3",
+      "Upgrade for": "Volotur"
+    },
+    "upgrade_route": "Gigant Knight -> Volotur -> Brassozard",
+    "max_upgrade_route": "Gigant Knight -> Volotur -> Brassozard"
+  },
+  {
+    "name": "Breeta",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "MaxHP": "5000",
+      "Stability %": "2",
+      "Attack MP Recovery": "15",
+      "Upgrade for": "Crysmort"
+    },
+    "upgrade_route": "Viscum -> Deniala -> Amalgam -> Crysmort -> Breeta",
+    "max_upgrade_route": "Viscum -> Deniala -> Amalgam -> Crysmort -> Breeta"
+  },
+  {
+    "name": "Broker Goblin",
+    "type": "Special Crysta",
+    "stats": {
+      "DEX %": "3",
+      "MaxMP": "300",
+      "Long Range Damage %": "3",
+      "Shield only:Aggro %": "Aggro %\n                                                            25",
+      "Dagger only:Additional Melee %": "Additional Melee %\n                                                            50",
+      "Arrow only:Long Range Damage %": "Long Range Damage %\n                                                            5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Brutal Dragon Decel",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxMP": "-50",
+      "ATK %": "1",
+      "MATK %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Bubble Bogey",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "CSPD": "200",
+      "Magic Barrier": "200",
+      "Additional Magic %": "125",
+      "Upgrade for": "Lapin The Necromancer"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Builder Golem",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "Guard Power %": "7",
+      "Guard Recharge %": "7",
+      "Upgrade for": "Excavated Golem"
+    },
+    "upgrade_route": "Excavated Golem -> Builder Golem",
+    "max_upgrade_route": "Excavated Golem -> Builder Golem -> Meduso"
+  },
+  {
+    "name": "Bullamius",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "MaxMP": "250",
+      "ATK %": "3",
+      "MATK %": "3",
+      "Upgrade for": "Salamander"
+    },
+    "upgrade_route": "Gespenst -> Salamander -> Bullamius",
+    "max_upgrade_route": "Gespenst -> Salamander -> Bullamius"
+  },
+  {
+    "name": "Burning Dragon Igneus",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "AGI %": "3",
+      "Critical Rate": "15",
+      "Critical Damage": "8",
+      "Upgrade for": "King Piton"
+    },
+    "upgrade_route": "Warmonger -> Proto Leon -> King Piton -> Burning Dragon Igneus",
+    "max_upgrade_route": "Warmonger -> Proto Leon -> King Piton -> Burning Dragon Igneus"
+  },
+  {
+    "name": "Cake Potum",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "MaxHP %": "30",
+      "Physical Resistance %": "-15",
+      "Magic Resistance %": "-15",
+      "Upgrade for": "Platinum Potum"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Candela",
+    "type": "Additional Crysta",
+    "stats": {
+      "MaxHP %": "10",
+      "MaxMP": "-200",
+      "ASPD": "500"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Candela II",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP %": "20",
+      "MaxMP": "-250",
+      "ASPD": "600",
+      "Upgrade for": "Candela"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Canemofish",
+    "type": "Armor Crysta",
+    "stats": {
+      "Water resistance %": "10",
+      "Attack MP Recovery": "10",
+      "Barrier Cooldown %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Capo Profundo",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP %": "16",
+      "Physical Resistance %": "12",
+      "Guard Recharge %": "8",
+      "Upgrade for": "Daddy Finpen"
+    },
+    "upgrade_route": "Tortuga -> Daddy Finpen -> Capo Profundo",
+    "max_upgrade_route": "Tortuga -> Daddy Finpen -> Capo Profundo -> Dark Spinebore"
+  },
+  {
+    "name": "Captain Amiya",
+    "type": "Special Crysta",
+    "stats": {
+      "MaxHP": "1000",
+      "MaxMP": "100",
+      "Attack MP Recovery": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Carbuncle",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP": "1000",
+      "Dodge %": "-10",
+      "Reflect %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Caspy",
+    "type": "Normal Crysta",
+    "stats": {
+      "Ailment Resistance %": "-6",
+      "Guard Power %": "2",
+      "Guard Recharge %": "2",
+      "Evasion Recharge %": "2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Castilia",
+    "type": "Additional Crysta",
+    "stats": {
+      "Accuracy %": "10",
+      "ASPD": "-900",
+      "Short Range Damage %": "12",
+      "Long Range Damage %": "6",
+      "Magic Device only:Motion Speed %": "Motion Speed %\n                                                            5",
+      "Ninjutsu Scroll only:Magic Pierce %": "Magic Pierce %\n                                                            10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Cat Claw Guardkissa",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "AGI %": "4",
+      "MaxHP %": "-12",
+      "ATK %": "10",
+      "Ailment Resistance %": "2",
+      "Attack MP Recovery": "2",
+      "Upgrade for": "Blancanine the White Fang"
+    },
+    "upgrade_route": "Blancanine the White Fang -> Cat Claw Guardkissa",
+    "max_upgrade_route": "Blancanine the White Fang -> Cat Claw Guardkissa"
+  },
+  {
+    "name": "Cerabes",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxHP": "1000",
+      "Critical Damage": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Cerberus",
+    "type": "Armor Crysta",
+    "stats": {
+      "Physical Pierce %": "3",
+      "Critical Damage": "3",
+      "Unsheathe Attack %": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Charugon",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "STR": "6",
+      "Magic Resistance %": "-12",
+      "Short Range Damage %": "3",
+      "Long Range Damage %": "6",
+      "Upgrade for": "Flare Volg"
+    },
+    "upgrade_route": "Flare Volg -> Charugon",
+    "max_upgrade_route": "Flare Volg -> Charugon"
+  },
+  {
+    "name": "Chocolate Ooze",
+    "type": "Additional Crysta",
+    "stats": {
+      "MaxHP %": "-10",
+      "MaxMP": "200",
+      "CSPD": "500"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Chocolate Ooze II",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP %": "-15",
+      "MaxMP": "300",
+      "CSPD": "600",
+      "Upgrade for": "Chocolate Ooze"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Choiyaki Mentai",
+    "type": "Special Crysta",
+    "stats": {
+      "MaxMP": "300",
+      "MATK %": "-10",
+      "Fire resistance %": "1",
+      "Short Range Damage %": "2",
+      "Reduce Dmg (Floor) %": "-20"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Clawed Iron Witch",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "Attack MP Recovery": "10",
+      "Short Range Damage %": "5",
+      "Physical Barrier": "2000",
+      "Magic Barrier": "2000",
+      "Upgrade for": "Zahhak Machina"
+    },
+    "upgrade_route": "Zahhak Machina -> Clawed Iron Witch",
+    "max_upgrade_route": "Zahhak Machina -> Clawed Iron Witch -> Queen Rosemee"
+  },
+  {
+    "name": "Colon Boss",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "MATK %": "10",
+      "Accuracy": "-40",
+      "Critical Rate %": "20",
+      "Upgrade for": "Boss Goblin"
+    },
+    "upgrade_route": "Boss Goblin -> Colon Boss",
+    "max_upgrade_route": "Boss Goblin -> Colon Boss"
+  },
+  {
+    "name": "Colon Commander",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxHP": "150",
+      "MaxMP": "50"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Commander Golem",
+    "type": "Weapon Crysta",
+    "stats": {
+      "ASPD": "100",
+      "Physical Barrier": "100",
+      "Additional Melee %": "100"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Corroded Knight Captain",
+    "type": "Additional Crysta",
+    "stats": {
+      "DEF": "100",
+      "MDEF": "100",
+      "Physical Barrier": "500",
+      "Magic Barrier": "500"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Crimson One-Eyed Wolf",
+    "type": "Weapon Crysta",
+    "stats": {
+      "Physical Resistance %": "-16",
+      "Magic Resistance %": "-8",
+      "Short Range Damage %": "8",
+      "Anticipate %": "4",
+      "Dagger only:Critical Damage %": "Critical Damage %\n                                                            1",
+      "Dual Swords only:Aggro %": "Aggro %\n                                                            -20"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Crimsosch",
+    "type": "Normal Crysta",
+    "stats": {
+      "AGI": "3",
+      "Dodge": "3",
+      "Critical Rate": "-9",
+      "Evasion Recharge %": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Critical Rate +4",
+    "type": "Normal Crysta",
+    "stats": {
+      "Critical Rate": "4"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Critical Rate +5",
+    "type": "Normal Crysta",
+    "stats": {
+      "Critical Rate": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Critical Rate+1",
+    "type": "Normal Crysta",
+    "stats": {
+      "Critical Rate": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Critical Rate+2",
+    "type": "Normal Crysta",
+    "stats": {
+      "Critical Rate": "2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Critical Rate+3",
+    "type": "Normal Crysta",
+    "stats": {
+      "Critical Rate": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Crysmort",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "MaxHP": "3000",
+      "Stability %": "1",
+      "Attack MP Recovery": "11",
+      "Upgrade for": "Amalgam"
+    },
+    "upgrade_route": "Viscum -> Deniala -> Amalgam -> Crysmort",
+    "max_upgrade_route": "Viscum -> Deniala -> Amalgam -> Crysmort -> Breeta"
+  },
+  {
+    "name": "Crystal Titan",
+    "type": "Special Crysta",
+    "stats": {
+      "MaxHP": "1000",
+      "MaxHP %": "10",
+      "Fractional Barrier %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "CSPD+100",
+    "type": "Normal Crysta",
+    "stats": {
+      "CSPD": "100"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "CSPD+120",
+    "type": "Normal Crysta",
+    "stats": {
+      "CSPD": "120"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "CSPD+140",
+    "type": "Normal Crysta",
+    "stats": {
+      "CSPD": "140"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "CSPD+160",
+    "type": "Normal Crysta",
+    "stats": {
+      "CSPD": "160"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "CSPD+20",
+    "type": "Normal Crysta",
+    "stats": {
+      "CSPD": "20"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "CSPD+40",
+    "type": "Normal Crysta",
+    "stats": {
+      "CSPD": "40"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "CSPD+60",
+    "type": "Normal Crysta",
+    "stats": {
+      "CSPD": "60"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "CSPD+80",
+    "type": "Normal Crysta",
+    "stats": {
+      "CSPD": "80"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Cursed Crysta",
+    "type": "Weapon Crysta",
+    "stats": {
+      "ATK %": "5",
+      "MATK %": "5",
+      "Stability %": "5",
+      "Motion Speed %": "5",
+      "Recoil %": "20"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Daddy Finpen",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP %": "6",
+      "Physical Resistance %": "6",
+      "Guard Recharge %": "6",
+      "Upgrade for": "Tortuga"
+    },
+    "upgrade_route": "Tortuga -> Daddy Finpen",
+    "max_upgrade_route": "Tortuga -> Daddy Finpen -> Capo Profundo -> Dark Spinebore"
+  },
+  {
+    "name": "Dandolion",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxMP": "500",
+      "CSPD": "300",
+      "Attack MP Recovery": "4",
+      "Upgrade for": "Super Death Mushroom",
+      "Light Armor only:Stability %": "Stability %\n                                                            6"
+    },
+    "upgrade_route": "",
+    "max_upgrade_route": "Jade Raptor -> Super Death Mushroom"
+  },
+  {
+    "name": "Dark Captain with B",
+    "type": "Special Crysta",
+    "stats": {
+      "MaxHP": "3000",
+      "MaxMP": "-150",
+      "Fire resistance %": "10",
+      "Water resistance %": "10",
+      "Wind resistance %": "10",
+      "Earth resistance %": "15",
+      "Short Range Damage %": "3",
+      "Unsheathe Attack %": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Dark Mushroom",
+    "type": "Special Crysta",
+    "stats": {
+      "ATK %": "1",
+      "MATK %": "1",
+      "Motion Speed %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Dark Spinebore",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP %": "26",
+      "Physical Resistance %": "18",
+      "Guard Recharge %": "10",
+      "Fractional Barrier %": "5",
+      "Upgrade for": "Capo Profundo"
+    },
+    "upgrade_route": "Tortuga -> Daddy Finpen -> Capo Profundo -> Dark Spinebore",
+    "max_upgrade_route": "Tortuga -> Daddy Finpen -> Capo Profundo -> Dark Spinebore"
+  },
+  {
+    "name": "Death Colon",
+    "type": "Weapon Crysta",
+    "stats": {
+      "MaxMP": "-2000",
+      "ASPD": "1000",
+      "Short Range Damage %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Deformis",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxMP": "-200",
+      "ATK %": "11",
+      "Attack MP Recovery": "8",
+      "Anticipate %": "14",
+      "Upgrade for": "Velum"
+    },
+    "upgrade_route": "Imitator -> Mardula -> Velum -> Deformis",
+    "max_upgrade_route": "Imitator -> Mardula -> Velum -> Deformis"
+  },
+  {
+    "name": "Demon's Gate",
+    "type": "Weapon Crysta",
+    "stats": {
+      "DEX %": "2",
+      "MATK %": "3",
+      "CSPD %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Demonic Eye",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP": "1000",
+      "ASPD": "300",
+      "Tumble Unavailable": "1",
+      "Upgrade for": "Demonic Quasar"
+    },
+    "upgrade_route": "Demonic Quasar -> Demonic Eye",
+    "max_upgrade_route": "Demonic Quasar -> Demonic Eye"
+  },
+  {
+    "name": "Demonic Quasar",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxMP": "1000",
+      "CSPD": "300",
+      "Motion Speed %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Deniala",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "MaxHP": "1000",
+      "Attack MP Recovery": "6",
+      "Upgrade for": "Viscum"
+    },
+    "upgrade_route": "Viscum -> Deniala",
+    "max_upgrade_route": "Viscum -> Deniala -> Amalgam -> Crysmort -> Breeta"
+  },
+  {
+    "name": "Devil Dango",
+    "type": "Weapon Crysta",
+    "stats": {
+      "MaxMP": "-200",
+      "ATK %": "4",
+      "Physical Pierce %": "20",
+      "Ailment Resistance %": "-15",
+      "Aggro %": "-10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "DEX+1",
+    "type": "Normal Crysta",
+    "stats": {
+      "DEX": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "DEX+2",
+    "type": "Normal Crysta",
+    "stats": {
+      "DEX": "2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "DEX+3",
+    "type": "Normal Crysta",
+    "stats": {
+      "DEX": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "DEX+4",
+    "type": "Normal Crysta",
+    "stats": {
+      "DEX": "4"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "DEX+5",
+    "type": "Normal Crysta",
+    "stats": {
+      "DEX": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Dex+6",
+    "type": "Normal Crysta",
+    "stats": {
+      "DEX": "6"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "DEX+7",
+    "type": "Normal Crysta",
+    "stats": {
+      "DEX": "7"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "DEX+8",
+    "type": "Normal Crysta",
+    "stats": {
+      "DEX": "8"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Diark",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MATK %": "8",
+      "Magic Pierce %": "20",
+      "CSPD %": "-16",
+      "Upgrade for": ""
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Doctor Pom Pom",
+    "type": "Armor Crysta",
+    "stats": {
+      "Critical Rate %": "7",
+      "Ailment Resistance %": "7",
+      "Short Range Damage %": "7"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Dodge+10",
+    "type": "Normal Crysta",
+    "stats": {
+      "Dodge": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Dodge+12",
+    "type": "Normal Crysta",
+    "stats": {
+      "Dodge": "12"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Dodge+14",
+    "type": "Normal Crysta",
+    "stats": {
+      "Dodge": "14"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Dodge+16",
+    "type": "Normal Crysta",
+    "stats": {
+      "Dodge": "16"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Dodge+2",
+    "type": "Normal Crysta",
+    "stats": {
+      "Dodge": "2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Dodge+4",
+    "type": "Normal Crysta",
+    "stats": {
+      "Dodge": "4"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Dodge+6",
+    "type": "Normal Crysta",
+    "stats": {
+      "Dodge": "6"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Dodge+8",
+    "type": "Normal Crysta",
+    "stats": {
+      "Dodge": "8"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Dominaredor",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "ATK %": "8",
+      "MATK %": "8",
+      "ASPD %": "20",
+      "Upgrade for": "Lalvada",
+      "Reduce Dmg (Floor) %": "20"
+    },
+    "upgrade_route": "Ooze -> Lalvada -> Dominaredor",
+    "max_upgrade_route": "Ooze -> Lalvada -> Dominaredor"
+  },
+  {
+    "name": "Don Profundo",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "STR %": "7",
+      "ATK %": "10",
+      "DEF %": "-27",
+      "Critical Rate %": "8",
+      "Upgrade for": "Hexter"
+    },
+    "upgrade_route": "Black Knight of Delusion -> Gwaimol -> Hexter -> Don Profundo",
+    "max_upgrade_route": "Black Knight of Delusion -> Gwaimol -> Hexter -> Don Profundo"
+  },
+  {
+    "name": "Don Yeti",
+    "type": "Special Crysta",
+    "stats": {
+      "ATK": "100",
+      "ASPD": "-1000"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Doridodi",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP %": "-25",
+      "Accuracy %": "17",
+      "Long Range Damage %": "10",
+      "Upgrade for": "Arbogazella"
+    },
+    "upgrade_route": "Arbogazella -> Doridodi",
+    "max_upgrade_route": "Arbogazella -> Doridodi"
+  },
+  {
+    "name": "Dr. Leonardo",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxHP": "5000",
+      "MATK %": "2",
+      "Critical Rate %": "10",
+      "Ailment Resistance %": "5",
+      "Long Range Damage %": "6"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Dr. Leonardo II",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP": "6000",
+      "MATK %": "3",
+      "Critical Rate %": "20",
+      "Ailment Resistance %": "5",
+      "Long Range Damage %": "6",
+      "Upgrade for": "Dr. Leonardo"
+    },
+    "upgrade_route": "Dr. Leonardo -> Dr. Leonardo II",
+    "max_upgrade_route": "Dr. Leonardo -> Dr. Leonardo II"
+  },
+  {
+    "name": "Dragon Witch",
+    "type": "Special Crysta",
+    "stats": {
+      "Critical Damage %": "5",
+      "Attack MP Recovery %": "-100"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Drama Clown",
+    "type": "Weapon Crysta",
+    "stats": {
+      "Accuracy %": "10",
+      "ASPD": "200",
+      "CSPD": "200",
+      "Critical Rate": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Dreamy Scarlet Sakura",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP": "4000",
+      "Critical Damage": "4",
+      "Short Range Damage %": "2",
+      "Upgrade for": "Mimesia"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Dusk Machina",
+    "type": "Additional Crysta",
+    "stats": {
+      "MaxHP %": "20",
+      "Aggro %": "10",
+      "Long Range Damage %": "-10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Dutannen",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "Accuracy %": "30",
+      "Aggro %": "10",
+      "Anticipate %": "6",
+      "Guard Break %": "6",
+      "Upgrade for": "Shawle"
+    },
+    "upgrade_route": "Shawle -> Dutannen",
+    "max_upgrade_route": "Shawle -> Dutannen"
+  },
+  {
+    "name": "DX Fighter",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxHP": "5000",
+      "ATK %": "2",
+      "Accuracy %": "10",
+      "Short Range Damage %": "6",
+      "Fractional Barrier %": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "DX Fighter II",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP": "6000",
+      "ATK %": "3",
+      "Accuracy %": "15",
+      "Short Range Damage %": "6",
+      "Fractional Barrier %": "5",
+      "Upgrade for": "DX Fighter"
+    },
+    "upgrade_route": "DX Fighter -> DX Fighter II",
+    "max_upgrade_route": "DX Fighter -> DX Fighter II"
+  },
+  {
+    "name": "Eerie Crystal",
+    "type": "Special Crysta",
+    "stats": {
+      "Attack MP Recovery": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Eidenliebe",
+    "type": "Additional Crysta",
+    "stats": {
+      "MaxHP %": "12",
+      "Magic Pierce %": "10",
+      "Aggro %": "-15"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Eripmav",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "Critical Damage": "6",
+      "Fire resistance %": "12",
+      "Attack MP Recovery": "18",
+      "Upgrade for": "Neewollah"
+    },
+    "upgrade_route": "Pumpking -> Jeila -> Zoe -> Zarth -> Neewollah -> Eripmav",
+    "max_upgrade_route": "Pumpking -> Jeila -> Zoe -> Zarth -> Neewollah -> Eripmav"
+  },
+  {
+    "name": "Erkuch",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP %": "24",
+      "MATK %": "10",
+      "Magic Pierce %": "10",
+      "Aggro %": "-15",
+      "Upgrade for": "Garnache",
+      "Staff only:Motion Speed %": "Motion Speed %\n                                                            1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Eroded Pilz",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxHP %": "30",
+      "Physical Resistance %": "-10",
+      "Magic Resistance %": "-10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Espectro",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "ATK %": "2",
+      "MATK %": "2",
+      "Critical Damage %": "2",
+      "Attack MP Recovery": "4",
+      "Upgrade for": "Shining Gentleman"
+    },
+    "upgrade_route": "Shining Gentleman -> Espectro",
+    "max_upgrade_route": "Shining Gentleman -> Espectro"
+  },
+  {
+    "name": "Etoise",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "ASPD": "1100",
+      "CSPD %": "-70",
+      "Critical Rate %": "40",
+      "Motion Speed %": "5",
+      "Upgrade for": "Volgagon"
+    },
+    "upgrade_route": "Volgagon -> Etoise",
+    "max_upgrade_route": "Volgagon -> Etoise"
+  },
+  {
+    "name": "Evil Crystal Beast",
+    "type": "Weapon Crysta",
+    "stats": {
+      "MATK %": "4",
+      "Magic Pierce %": "3",
+      "Aggro %": "-5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Evil Lefina",
+    "type": "Additional Crysta",
+    "stats": {
+      "ATK %": "8",
+      "MATK %": "-4",
+      "Physical Pierce %": "10",
+      "Physical Resistance %": "-20",
+      "Critical Rate": "12",
+      "Heavy Armor only:Physical Resistance %": "Physical Resistance %\n                                                            24"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Evil Magic Sword",
+    "type": "Weapon Crysta",
+    "stats": {
+      "Critical Damage": "5",
+      "Aggro %": "10",
+      "Attack MP Recovery": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Evil Shadow",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxHP": "1500",
+      "MaxMP": "300",
+      "MATK %": "6",
+      "Evasion Recharge %": "-10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Excavated Golem",
+    "type": "Weapon Crysta",
+    "stats": {
+      "Guard Power %": "5",
+      "Guard Recharge %": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Exdocus",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "DEF": "150",
+      "MDEF": "150",
+      "Physical Barrier": "1500",
+      "Magic Barrier": "1500",
+      "Upgrade for": "Corroded Knight Captain"
+    },
+    "upgrade_route": "Corroded Knight Captain -> Exdocus",
+    "max_upgrade_route": "Corroded Knight Captain -> Exdocus"
+  },
+  {
+    "name": "Falburrows",
+    "type": "Additional Crysta",
+    "stats": {
+      "MaxMP": "200",
+      "Dodge %": "10",
+      "Long Range Damage %": "9",
+      "Absolute Dodge %": "5",
+      "Bowgun only:Short Range Damage %": "Short Range Damage %\n                                                            9"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Fanadon",
+    "type": "Normal Crysta",
+    "stats": {
+      "Critical Damage": "3",
+      "Reduce Dmg (Player Epicenter) %": "-3",
+      "Reduce Dmg (Foe Epicenter) %": "-3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Fantica",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP": "5000",
+      "DEF %": "10",
+      "Guard Power %": "15",
+      "Upgrade for": "Grylle"
+    },
+    "upgrade_route": "Grylle -> Fantica",
+    "max_upgrade_route": "Grylle -> Fantica"
+  },
+  {
+    "name": "Felicitoad",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP": "2000",
+      "Upgrade for": "G. Iconos",
+      "Reduce Dmg (Charge) %": "10",
+      "Reduce Dmg (Straight Line) %": "10"
+    },
+    "upgrade_route": "G. Iconos -> Felicitoad",
+    "max_upgrade_route": "G. Iconos -> Felicitoad -> Goldigem"
+  },
+  {
+    "name": "Felien",
+    "type": "Special Crysta",
+    "stats": {
+      "MaxMP": "300",
+      "Accuracy": "20",
+      "Accuracy %": "10",
+      "Absolute Accuracy %": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Ferzen the Rock Dragon",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP": "5000",
+      "Weapon ATK %": "5",
+      "Upgrade for": "Sapphire Roga"
+    },
+    "upgrade_route": "Boss Roga -> Iconos -> Ornlarf -> Sapphire Roga -> Ferzen the Rock Dragon",
+    "max_upgrade_route": "Boss Roga -> Iconos -> Ornlarf -> Sapphire Roga -> Ferzen the Rock Dragon -> Walican"
+  },
+  {
+    "name": "Filrocas",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP %": "60",
+      "Physical Resistance %": "-7",
+      "Magic Resistance %": "-7",
+      "Upgrade for": "Eroded Pilz",
+      "Knuckle only:Aggro %": "Aggro %\n                                                            15",
+      "1-Handed Sword only:Aggro %": "Aggro %\n                                                            15"
+    },
+    "upgrade_route": "Eroded Pilz -> Filrocas",
+    "max_upgrade_route": "Eroded Pilz -> Filrocas"
+  },
+  {
+    "name": "Finstern the Dark Dragon",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxMP": "300",
+      "MATK %": "7",
+      "Guard Break %": "12",
+      "Upgrade for": "Imitacia"
+    },
+    "upgrade_route": "Imitacia -> Finstern the Dark Dragon",
+    "max_upgrade_route": "Imitacia -> Finstern the Dark Dragon -> Oculasignio -> Menti"
+  },
+  {
+    "name": "Flare Volg",
+    "type": "Normal Crysta",
+    "stats": {
+      "STR": "3",
+      "Magic Resistance %": "-4",
+      "Long Range Damage %": "2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Florizard",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "Stability %": "5",
+      "Magic Pierce %": "20",
+      "Aggro %": "-15",
+      "Upgrade for": "Armasite"
+    },
+    "upgrade_route": "Armasite -> Florizard",
+    "max_upgrade_route": "Armasite -> Florizard"
+  },
+  {
+    "name": "Forbidden Shawle",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxMP": "-200",
+      "Short Range Damage %": "10",
+      "Long Range Damage %": "10",
+      "Unsheathe Attack %": "10",
+      "Upgrade for": "Prudent Blue Shadow"
+    },
+    "upgrade_route": "Twilight Dragon -> Baphomela -> Prudent Blue Shadow -> Forbidden Shawle",
+    "max_upgrade_route": "Twilight Dragon -> Baphomela -> Prudent Blue Shadow -> Forbidden Shawle"
+  },
+  {
+    "name": "Forest Wolf",
+    "type": "Normal Crysta",
+    "stats": {
+      "Dodge": "6",
+      "Evasion Recharge %": "2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Forestia",
+    "type": "Armor Crysta",
+    "stats": {
+      "MATK %": "1",
+      "Magic Resistance %": "3",
+      "Evasion Recharge %": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Frenzy Viola",
+    "type": "Special Crysta",
+    "stats": {
+      "ATK %": "1",
+      "ASPD": "250",
+      "Additional Melee %": "50"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Fubbit",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxMP": "-200",
+      "ATK %": "6",
+      "Physical Pierce %": "20",
+      "Ailment Resistance %": "-15",
+      "Aggro %": "-15",
+      "Upgrade for": "Devil Dango"
+    },
+    "upgrade_route": "Devil Dango -> Fubbit",
+    "max_upgrade_route": "Devil Dango -> Fubbit"
+  },
+  {
+    "name": "G. Iconos",
+    "type": "Additional Crysta",
+    "stats": {
+      "MaxHP": "1000",
+      "Reduce Dmg (Charge) %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Galegon",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "CSPD %": "20",
+      "Aggro %": "-30",
+      "Fractional Barrier %": "10",
+      "Upgrade for": "Thug Golem"
+    },
+    "upgrade_route": "Thug Golem -> Galegon",
+    "max_upgrade_route": "Thug Golem -> Galegon"
+  },
+  {
+    "name": "Ganglef",
+    "type": "Weapon Crysta",
+    "stats": {
+      "DEX %": "2",
+      "ATK %": "3",
+      "ASPD %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Garnache",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP %": "18",
+      "MATK %": "3",
+      "Magic Pierce %": "10",
+      "Aggro %": "-15",
+      "Upgrade for": "Eidenliebe"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Gegner",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "INT %": "6",
+      "MATK %": "10",
+      "CSPD %": "40",
+      "Upgrade for": "Yule Cat",
+      "Attack MP Recovery %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Gemma",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "Physical Pierce %": "5",
+      "Critical Damage": "6",
+      "Unsheathe Attack %": "7",
+      "Upgrade for": "Pyxtica"
+    },
+    "upgrade_route": "Cerberus -> Pyxtica -> Gemma",
+    "max_upgrade_route": "Cerberus -> Pyxtica -> Gemma -> Meteora"
+  },
+  {
+    "name": "Gerumi",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP": "200",
+      "MaxMP": "100"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Gespenst",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxMP": "150",
+      "ATK %": "-1",
+      "MATK %": "-1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Gespenst II",
+    "type": "Additional Crysta",
+    "stats": {
+      "MaxMP": "200",
+      "Accuracy": "30",
+      "CSPD": "400",
+      "Critical Rate": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Ghost Forest Dark Shaman",
+    "type": "Special Crysta",
+    "stats": {
+      "MaxMP": "-300",
+      "Magic Pierce %": "5",
+      "CSPD %": "20",
+      "Evasion Recharge %": "10",
+      "Shield only:ATK %": "ATK %\n                                                            -10",
+      "Stability %                        Stability %": "Stability %\n                                                            5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Giant Boar",
+    "type": "Additional Crysta",
+    "stats": {
+      "MaxHP": "50",
+      "MaxMP": "50",
+      "Short Range Damage %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Giant Moon Crab",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "VIT %": "4",
+      "ATK %": "6",
+      "Motion Speed %": "1",
+      "Upgrade for": "Ganglef"
+    },
+    "upgrade_route": "",
+    "max_upgrade_route": "Ganglef -> Tyrant Machina -> Vulture -> Trickster Dragon Mimyugon -> Bakuzan"
+  },
+  {
+    "name": "Giant Pelulu",
+    "type": "Additional Crysta",
+    "stats": {
+      "MaxHP %": "30",
+      "MaxMP": "-100",
+      "Critical Rate %": "50",
+      "Short Range Damage %": "10",
+      "Light Armor only:Physical Pierce %": "Physical Pierce %\n                                                            -10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Gigant Knight",
+    "type": "Normal Crysta",
+    "stats": {
+      "STR %": "1",
+      "ATK %": "1",
+      "Accuracy %": "-10",
+      "Critical Rate %": "-10",
+      "Critical Damage": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Gigantic Octopus",
+    "type": "Normal Crysta",
+    "stats": {
+      "ASPD": "150",
+      "CSPD": "200",
+      "Critical Rate": "10",
+      "Fire resistance %": "-4",
+      "Ailment Resistance %": "-2",
+      "Attack MP Recovery": "5",
+      "Reduce Dmg (Bowling) %": "-1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Gioco",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "MaxHP": "-500",
+      "MaxMP": "200",
+      "Accuracy %": "7",
+      "Critical Rate": "-9",
+      "Short Range Damage %": "12",
+      "Upgrade for": "Red Ash Dragon Rudis"
+    },
+    "upgrade_route": "Gravicep -> Red Ash Dragon Rudis -> Gioco",
+    "max_upgrade_route": "Gravicep -> Red Ash Dragon Rudis -> Gioco"
+  },
+  {
+    "name": "Glaucius",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MATK %": "6",
+      "Magic Resistance %": "6",
+      "Evasion Recharge %": "15",
+      "Upgrade for": "Forestia",
+      "Light Armor only:MATK UP (AGI %)": "MATK UP (AGI %)\n                                                            25"
+    },
+    "upgrade_route": "Forestia -> Glaucius",
+    "max_upgrade_route": "Forestia -> Glaucius"
+  },
+  {
+    "name": "Glocke",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP": "4500",
+      "MaxMP": "500",
+      "MATK %": "12",
+      "Evasion Recharge %": "-30",
+      "Upgrade for": "Black Velly"
+    },
+    "upgrade_route": "Evil Shadow -> Black Velly -> Glocke",
+    "max_upgrade_route": "Evil Shadow -> Black Velly -> Glocke"
+  },
+  {
+    "name": "Goblin Zucotto",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP %": "24",
+      "ATK %": "10",
+      "Physical Pierce %": "10",
+      "Aggro %": "-15",
+      "Upgrade for": "Alfenix",
+      "Shield only:Motion Speed %": "Motion Speed %\n                                                            1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Golden Potum",
+    "type": "Special Crysta",
+    "stats": {
+      "Drop Rate %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Golden Skeleton",
+    "type": "Additional Crysta",
+    "stats": {
+      "MaxHP %": "-10",
+      "ASPD": "300"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Goldenia",
+    "type": "Additional Crysta",
+    "stats": {
+      "MaxHP": "2000",
+      "MaxMP": "-300",
+      "Fractional Barrier %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Goldigem",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP": "3000",
+      "Upgrade for": "Felicitoad",
+      "Reduce Dmg (Player Epicenter) %": "10",
+      "Reduce Dmg (Charge) %": "10",
+      "Reduce Dmg (Straight Line) %": "10"
+    },
+    "upgrade_route": "G. Iconos -> Felicitoad -> Goldigem",
+    "max_upgrade_route": "G. Iconos -> Felicitoad -> Goldigem"
+  },
+  {
+    "name": "Goldoon",
+    "type": "Armor Crysta",
+    "stats": {
+      "ATK %": "3",
+      "MATK %": "3",
+      "Accuracy %": "3",
+      "Aggro %": "-3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Goleps",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP": "750",
+      "MaxMP": "250",
+      "Upgrade for": "Colon Commander"
+    },
+    "upgrade_route": "Colon Commander -> Goleps",
+    "max_upgrade_route": "Colon Commander -> Goleps"
+  },
+  {
+    "name": "Goovua",
+    "type": "Special Crysta",
+    "stats": {
+      "AGI %": "3",
+      "Evasion Recharge %": "6",
+      "Unsheathe Attack": "100"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Gopherga",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxHP": "3000",
+      "Physical Resistance %": "3",
+      "Magic Resistance %": "3",
+      "Aggro %": "15",
+      "Short Range Damage %": "6"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Gordel",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxMP": "800",
+      "Critical Rate": "3",
+      "Fractional Barrier %": "17",
+      "Upgrade for": "Mom Fluck"
+    },
+    "upgrade_route": "Ifrid -> Mom Fluck -> Gordel",
+    "max_upgrade_route": "Ifrid -> Mom Fluck -> Gordel -> Biskyva"
+  },
+  {
+    "name": "Gordo",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "ATK %": "7",
+      "ASPD %": "80",
+      "Long Range Damage %": "-15",
+      "Upgrade for": "Wandering Wheel"
+    },
+    "upgrade_route": "Grass Dragon Yelb -> Wandering Wheel -> Gordo",
+    "max_upgrade_route": "Grass Dragon Yelb -> Wandering Wheel -> Gordo"
+  },
+  {
+    "name": "Grand Pojo",
+    "type": "Additional Crysta",
+    "stats": {
+      "Drop Rate %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Granny",
+    "type": "Special Crysta",
+    "stats": {
+      "MATK": "100",
+      "CSPD": "-1000"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Grass Dragon Yelb",
+    "type": "Additional Crysta",
+    "stats": {
+      "ATK %": "3",
+      "ASPD %": "50",
+      "Long Range Damage %": "-10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Gravicep",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP": "-100",
+      "MaxMP": "200",
+      "Accuracy %": "3",
+      "Critical Rate": "-5",
+      "Short Range Damage %": "7"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Grecia",
+    "type": "Weapon Crysta",
+    "stats": {
+      "ATK %": "6",
+      "MATK %": "6",
+      "Physical Pierce %": "3",
+      "Magic Pierce %": "3",
+      "Guard Recharge %": "-10",
+      "Evasion Recharge %": "-10",
+      "Neutral Resistance %": "1",
+      "% stronger against Neutral": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Grim Reaper Scarecrow",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxHP %": "-30",
+      "Aggro %": "-15",
+      "Long Range Damage %": "6"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Grimuckus",
+    "type": "Special Crysta",
+    "stats": {
+      "MATK %": "1",
+      "ASPD": "250",
+      "Additional Magic %": "50"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Grylle",
+    "type": "Additional Crysta",
+    "stats": {
+      "MaxHP": "500",
+      "DEF %": "5",
+      "Guard Power %": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Guard Golem",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "ATK %": "9",
+      "MATK %": "9",
+      "ASPD": "-225",
+      "CSPD": "-225",
+      "Upgrade for": "Guignol"
+    },
+    "upgrade_route": "Nurethoth -> Guignol -> Guard Golem",
+    "max_upgrade_route": "Nurethoth -> Guignol -> Guard Golem -> Piscruva"
+  },
+  {
+    "name": "Guignol",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "ATK %": "5",
+      "MATK %": "5",
+      "ASPD": "-175",
+      "CSPD": "-175",
+      "Upgrade for": "Nurethoth"
+    },
+    "upgrade_route": "Nurethoth -> Guignol",
+    "max_upgrade_route": "Nurethoth -> Guignol -> Guard Golem -> Piscruva"
+  },
+  {
+    "name": "Gula",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxMP": "200",
+      "ATK %": "10",
+      "Critical Rate": "15",
+      "Guard Break %": "10",
+      "Upgrade for": "Junior Dragon Zyvio"
+    },
+    "upgrade_route": "Junior Dragon Zyvio -> Gula",
+    "max_upgrade_route": "Junior Dragon Zyvio -> Gula"
+  },
+  {
+    "name": "Gwaimol",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "STR %": "5",
+      "ATK %": "6",
+      "DEF %": "-15",
+      "Critical Rate %": "4",
+      "Upgrade for": "Black Knight of Delusion"
+    },
+    "upgrade_route": "Black Knight of Delusion -> Gwaimol",
+    "max_upgrade_route": "Black Knight of Delusion -> Gwaimol -> Hexter -> Don Profundo"
+  },
+  {
+    "name": "Handmade Cookie",
+    "type": "Additional Crysta",
+    "stats": {
+      "MaxHP %": "12",
+      "Physical Pierce %": "10",
+      "Aggro %": "-15"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Hero Potum",
+    "type": "Weapon Crysta",
+    "stats": {
+      "MaxHP %": "10",
+      "Accuracy %": "10",
+      "Aggro %": "10",
+      "Fractional Barrier %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Hero Potum II",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP %": "11",
+      "Accuracy %": "13",
+      "Aggro %": "14",
+      "Fractional Barrier %": "12",
+      "Upgrade for": "Hero Potum"
+    },
+    "upgrade_route": "Hero Potum -> Hero Potum II",
+    "max_upgrade_route": "Hero Potum -> Hero Potum II -> Hero Potum III"
+  },
+  {
+    "name": "Hero Potum III",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP %": "12",
+      "Accuracy %": "16",
+      "Aggro %": "18",
+      "Fractional Barrier %": "14",
+      "Upgrade for": "Hero Potum II"
+    },
+    "upgrade_route": "Hero Potum -> Hero Potum II -> Hero Potum III",
+    "max_upgrade_route": "Hero Potum -> Hero Potum II -> Hero Potum III"
+  },
+  {
+    "name": "Hero Potum IV",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP %": "13",
+      "Accuracy %": "19",
+      "Aggro %": "22",
+      "Fractional Barrier %": "16"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Hexter",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "STR %": "6",
+      "ATK %": "8",
+      "DEF %": "-21",
+      "Critical Rate %": "6",
+      "Upgrade for": "Gwaimol"
+    },
+    "upgrade_route": "Black Knight of Delusion -> Gwaimol -> Hexter",
+    "max_upgrade_route": "Black Knight of Delusion -> Gwaimol -> Hexter -> Don Profundo"
+  },
+  {
+    "name": "HP+100",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP": "100"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "HP+200",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP": "200"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "HP+300",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP": "300"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "HP+400",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP": "400"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "HP+500",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP": "500"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "HP+600",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP": "600"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "HP+700",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP": "700"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "HP+800",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP": "800"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Humida",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "MaxMP": "700",
+      "ATK %": "4",
+      "MATK %": "4",
+      "Stability %": "4",
+      "Upgrade for": "Venena II"
+    },
+    "upgrade_route": "Venena -> Venena II -> Humida",
+    "max_upgrade_route": "Venena -> Venena II -> Humida"
+  },
+  {
+    "name": "Iconos",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP": "2000",
+      "Weapon ATK %": "2",
+      "Upgrade for": "Boss Roga"
+    },
+    "upgrade_route": "Boss Roga -> Iconos",
+    "max_upgrade_route": "Boss Roga -> Iconos -> Ornlarf -> Sapphire Roga -> Ferzen the Rock Dragon -> Walican"
+  },
+  {
+    "name": "Ifrid",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxMP": "600",
+      "Fractional Barrier %": "12"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Ignitrus",
+    "type": "Special Crysta",
+    "stats": {
+      "MaxHP": "1000",
+      "MaxMP": "100",
+      "% stronger against Fire": "5",
+      "Fire resistance %": "20"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Illuminitor",
+    "type": "Normal Crysta",
+    "stats": {
+      "ASPD": "-25",
+      "Critical Rate %": "25",
+      "Additional Melee %": "25",
+      "Additional Magic %": "25"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Imitacia",
+    "type": "Weapon Crysta",
+    "stats": {
+      "MaxMP": "200",
+      "MATK %": "5",
+      "Guard Break %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Imitator",
+    "type": "Weapon Crysta",
+    "stats": {
+      "ATK %": "5",
+      "Attack MP Recovery": "2",
+      "Anticipate %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "INT +6",
+    "type": "Normal Crysta",
+    "stats": {
+      "INT": "6"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "INT+1",
+    "type": "Normal Crysta",
+    "stats": {
+      "INT": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "INT+2",
+    "type": "Normal Crysta",
+    "stats": {
+      "INT": "2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "INT+3",
+    "type": "Normal Crysta",
+    "stats": {
+      "INT": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "INT+4",
+    "type": "Normal Crysta",
+    "stats": {
+      "INT": "4"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "INT+5",
+    "type": "Normal Crysta",
+    "stats": {
+      "INT": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "INT+7",
+    "type": "Normal Crysta",
+    "stats": {
+      "INT": "7"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Inzanio",
+    "type": "Normal Crysta",
+    "stats": {
+      "Guard Recharge %": "1",
+      "Attack MP Recovery": "-1",
+      "Weapon ATK": "10",
+      "Fractional Barrier %": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Irestida",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MATK %": "8",
+      "Magic Pierce %": "6",
+      "MDEF %": "-24",
+      "Aggro %": "-9",
+      "Upgrade for": "Shampy"
+    },
+    "upgrade_route": "Evil Crystal Beast -> Shampy -> Irestida",
+    "max_upgrade_route": "Evil Crystal Beast -> Shampy -> Irestida -> Vatudo"
+  },
+  {
+    "name": "Iron Empress",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxHP %": "20",
+      "MaxMP": "-300",
+      "MATK %": "5",
+      "Magic Pierce %": "10",
+      "Physical Resistance %": "10",
+      "CSPD %": "20"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Jade Raptor",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxMP": "300",
+      "CSPD": "100",
+      "Attack MP Recovery": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Jeandoux",
+    "type": "Weapon Crysta",
+    "stats": {
+      "STR %": "3",
+      "Critical Damage": "7",
+      "Aggro %": "-10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Jeila",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "Critical Damage": "2",
+      "Fire resistance %": "4",
+      "Attack MP Recovery": "6",
+      "Upgrade for": "Pumpking"
+    },
+    "upgrade_route": "Pumpking -> Jeila",
+    "max_upgrade_route": "Pumpking -> Jeila -> Zoe -> Zarth -> Neewollah -> Eripmav"
+  },
+  {
+    "name": "Jibril",
+    "type": "Additional Crysta",
+    "stats": {
+      "Natural MP Regen": "2",
+      "Natural MP Regen %": "4",
+      "MaxMP": "100",
+      "Critical Rate": "8",
+      "Short Range Damage %": "3",
+      "Long Range Damage %": "5",
+      "Anticipate %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Jibril II",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "Natural MP Regen": "4",
+      "Natural MP Regen %": "8",
+      "MaxMP": "100",
+      "Critical Rate": "12",
+      "Short Range Damage %": "6",
+      "Long Range Damage %": "8",
+      "Anticipate %": "2",
+      "Upgrade for": "Jibril"
+    },
+    "upgrade_route": "Jibril -> Jibril II",
+    "max_upgrade_route": "Jibril -> Jibril II -> Jibril III"
+  },
+  {
+    "name": "Jibril III",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "Natural MP Regen": "6",
+      "Natural MP Regen %": "12",
+      "MaxMP": "100",
+      "Critical Rate": "16",
+      "Short Range Damage %": "9",
+      "Long Range Damage %": "11",
+      "Anticipate %": "3",
+      "Upgrade for": "Jibril II"
+    },
+    "upgrade_route": "Jibril -> Jibril II -> Jibril III",
+    "max_upgrade_route": "Jibril -> Jibril II -> Jibril III"
+  },
+  {
+    "name": "Jiva",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "DEX %": "3",
+      "MATK %": "8",
+      "Accuracy %": "-20",
+      "Critical Damage": "6"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Junior Dragon Zyvio",
+    "type": "Additional Crysta",
+    "stats": {
+      "MaxMP": "100",
+      "ATK %": "5",
+      "Critical Rate": "15",
+      "Guard Break %": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "King Piton",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "Critical Rate": "10",
+      "Critical Damage": "4",
+      "Upgrade for": "Proto Leon"
+    },
+    "upgrade_route": "Warmonger -> Proto Leon -> King Piton",
+    "max_upgrade_route": "Warmonger -> Proto Leon -> King Piton -> Burning Dragon Igneus"
+  },
+  {
+    "name": "King Potum",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP %": "10",
+      "Physical Resistance %": "-5",
+      "Magic Resistance %": "-5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Kruztor",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxHP %": "5",
+      "Physical Resistance %": "5",
+      "Magic Resistance %": "5",
+      "Dodge %": "5",
+      "Neutral Resistance %": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Kruztor II",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP %": "7",
+      "Physical Resistance %": "7",
+      "Magic Resistance %": "7",
+      "Dodge %": "7",
+      "Neutral Resistance %": "7",
+      "Upgrade for": "Kruztor"
+    },
+    "upgrade_route": "Kruztor -> Kruztor II",
+    "max_upgrade_route": "Kruztor -> Kruztor II"
+  },
+  {
+    "name": "Kuffania",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "Stability %": "4",
+      "Evasion Recharge %": "4",
+      "Short Range Damage %": "4",
+      "Long Range Damage %": "-12",
+      "Upgrade for": "Mithurna Lynx"
+    },
+    "upgrade_route": "Mithurna Lynx -> Kuffania",
+    "max_upgrade_route": "Mithurna Lynx -> Kuffania"
+  },
+  {
+    "name": "Kuzto",
+    "type": "Weapon Crysta",
+    "stats": {
+      "MATK %": "7",
+      "Critical Rate": "7",
+      "Aggro %": "-7"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Lalvada",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "ATK %": "4",
+      "MATK %": "4",
+      "DEF %": "-4",
+      "MDEF %": "-4",
+      "Upgrade for": "Ooze"
+    },
+    "upgrade_route": "Ooze -> Lalvada",
+    "max_upgrade_route": "Ooze -> Lalvada -> Dominaredor"
+  },
+  {
+    "name": "Lapin The Necromancer",
+    "type": "Weapon Crysta",
+    "stats": {
+      "CSPD": "100",
+      "Magic Barrier": "100",
+      "Additional Magic %": "100"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Lil Wonder Rat",
+    "type": "Weapon Crysta",
+    "stats": {
+      "Aggro %": "-20",
+      "Long Range Damage %": "4",
+      "Unsheathe Attack %": "4",
+      "Staff only:MATK %": "MATK %\n                                                            6"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Lilicarolla",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "MaxMP": "-100",
+      "Dodge %": "-5",
+      "Unsheathe Attack %": "11",
+      "Upgrade for": "Tappler",
+      "Katana only:Unsheathe Attack %": "Unsheathe Attack %\n                                                            3"
+    },
+    "upgrade_route": "Odelon Machina -> Tappler -> Lilicarolla",
+    "max_upgrade_route": "Odelon Machina -> Tappler -> Lilicarolla"
+  },
+  {
+    "name": "Limacina",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "Physical Resistance %": "5",
+      "Magic Resistance %": "5",
+      "Ailment Resistance %": "5",
+      "Upgrade for": "Seraph Machina"
+    },
+    "upgrade_route": "Big Coryn -> Seraph Machina -> Limacina",
+    "max_upgrade_route": "Big Coryn -> Seraph Machina -> Limacina"
+  },
+  {
+    "name": "Lord of Nezim",
+    "type": "Additional Crysta",
+    "stats": {
+      "VIT %": "2",
+      "MaxHP": "3000",
+      "Critical Rate": "10",
+      "Knuckle only:Short Range Damage %": "Short Range Damage %\n                                                            3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Lunadore",
+    "type": "Additional Crysta",
+    "stats": {
+      "Drop Rate %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Lyark Master Specialist",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "ATK %": "3",
+      "Magic Resistance %": "-15",
+      "Critical Damage": "4",
+      "Motion Speed %": "-2",
+      "Upgrade for": "Metal Stinger"
+    },
+    "upgrade_route": "Metal Stinger -> Lyark Master Specialist",
+    "max_upgrade_route": "Metal Stinger -> Lyark Master Specialist -> Ageladanios -> Wiltileaf"
+  },
+  {
+    "name": "Machine God Maple",
+    "type": "Special Crysta",
+    "stats": {
+      "MaxMP": "200",
+      "Physical Resistance %": "10",
+      "Magic Resistance %": "10",
+      "Ailment Resistance %": "5",
+      "Short Range Damage %": "10",
+      "Fractional Barrier %": "5",
+      "Heavy Armor only:Physical Resistance %": "Physical Resistance %\n                                                            5",
+      "Magic Resistance %                        Magic Resistance %": "Magic Resistance %\n                                                            5",
+      "Fractional Barrier %                        Fractional Barrier %": "Fractional Barrier %\n                                                            10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Mage Filecia",
+    "type": "Additional Crysta",
+    "stats": {
+      "INT %": "3",
+      "MATK %": "9",
+      "Stability %": "6",
+      "Magic Device only:Reduce Dmg (Bowling) %": "Reduce Dmg (Bowling) %\n                                                            20",
+      "Staff only:Guard Break %": "Guard Break %\n                                                            10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Marchitar",
+    "type": "Weapon Crysta",
+    "stats": {
+      "Stability %": "5",
+      "Dodge %": "15"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Mardula",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "ATK %": "7",
+      "Attack MP Recovery": "4",
+      "Anticipate %": "12",
+      "Upgrade for": "Imitator"
+    },
+    "upgrade_route": "Imitator -> Mardula",
+    "max_upgrade_route": "Imitator -> Mardula -> Velum -> Deformis"
+  },
+  {
+    "name": "Masked Warrior",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP %": "-3",
+      "ATK %": "1",
+      "MATK %": "1",
+      "Accuracy": "-3",
+      "Attack MP Recovery": "2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Maton Sword",
+    "type": "Armor Crysta",
+    "stats": {
+      "STR %": "3",
+      "MaxHP": "-1000",
+      "Accuracy %": "5",
+      "Long Range Damage %": "4"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Mauez",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxMP": "150",
+      "Accuracy %": "-4",
+      "Critical Rate": "2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Meduso",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "Guard Power %": "10",
+      "Guard Recharge %": "10",
+      "Upgrade for": "Builder Golem",
+      "Heavy Armor only:Motion Speed %": "Motion Speed %\n                                                            1",
+      "Light Armor only:Aggro %": "Aggro %\n                                                            20"
+    },
+    "upgrade_route": "Excavated Golem -> Builder Golem -> Meduso",
+    "max_upgrade_route": "Excavated Golem -> Builder Golem -> Meduso"
+  },
+  {
+    "name": "Mega Alpoca",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP": "300",
+      "MaxMP": "300",
+      "Short Range Damage %": "6",
+      "Upgrade for": "Giant Boar"
+    },
+    "upgrade_route": "Giant Boar -> Mega Alpoca",
+    "max_upgrade_route": "Giant Boar -> Mega Alpoca"
+  },
+  {
+    "name": "Megiston",
+    "type": "Normal Crysta",
+    "stats": {
+      "STR": "1",
+      "INT": "1",
+      "VIT": "1",
+      "AGI": "1",
+      "DEX": "1",
+      "MaxHP": "100",
+      "MaxMP": "50"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Megiston The Champion",
+    "type": "Weapon Crysta",
+    "stats": {
+      "MaxHP": "1000",
+      "Critical Rate": "15",
+      "Fire resistance %": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Megiston the Champion II",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP": "1200",
+      "Critical Rate": "16",
+      "Fire resistance %": "3",
+      "Light resistance %": "3",
+      "Upgrade for": "Megiston The Champion"
+    },
+    "upgrade_route": "Megiston The Champion -> Megiston the Champion II",
+    "max_upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII"
+  },
+  {
+    "name": "Megiston the Champion III",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP": "1400",
+      "Critical Rate": "18",
+      "Fire resistance %": "3",
+      "Wind resistance %": "3",
+      "Light resistance %": "3",
+      "Upgrade for": "Megiston the Champion II"
+    },
+    "upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III",
+    "max_upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII"
+  },
+  {
+    "name": "Megiston the Champion IV",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP": "1600",
+      "Critical Rate": "20",
+      "Fire resistance %": "6",
+      "Water resistance %": "3",
+      "Wind resistance %": "3",
+      "Light resistance %": "3",
+      "Upgrade for": "Megiston the Champion III"
+    },
+    "upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV",
+    "max_upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII"
+  },
+  {
+    "name": "Megiston the Champion V",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP": "1800",
+      "Critical Rate": "23",
+      "Fire resistance %": "6",
+      "Water resistance %": "6",
+      "Wind resistance %": "3",
+      "Earth resistance %": "3",
+      "Light resistance %": "3",
+      "Upgrade for": "Megiston the Champion IV"
+    },
+    "upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V",
+    "max_upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII"
+  },
+  {
+    "name": "Megiston the Champion VI",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP": "2000",
+      "Critical Rate": "26",
+      "Fire resistance %": "6",
+      "Water resistance %": "6",
+      "Wind resistance %": "6",
+      "Earth resistance %": "3",
+      "Light resistance %": "3",
+      "Dark resistance %": "3",
+      "Upgrade for": "Megiston the Champion V"
+    },
+    "upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI",
+    "max_upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII"
+  },
+  {
+    "name": "Megiston The Champion VII",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP": "2200",
+      "Critical Rate": "29",
+      "Fire resistance %": "6",
+      "Water resistance %": "6",
+      "Wind resistance %": "6",
+      "Earth resistance %": "6",
+      "Light resistance %": "3",
+      "Dark resistance %": "3",
+      "Neutral Resistance %": "3",
+      "Upgrade for": "Megiston the Champion VI"
+    },
+    "upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII",
+    "max_upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII"
+  },
+  {
+    "name": "Melancia",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "Stability %": "5",
+      "Accuracy %": "5",
+      "Critical Rate %": "5",
+      "Upgrade for": "Radibat"
+    },
+    "upgrade_route": "Radibat -> Melancia",
+    "max_upgrade_route": "Radibat -> Melancia"
+  },
+  {
+    "name": "Memecoleous",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "ATK %": "-4",
+      "Guard Recharge %": "5",
+      "Aggro %": "12",
+      "Upgrade for": "Stone Mercenary"
+    },
+    "upgrade_route": "Stone Mercenary -> Memecoleous",
+    "max_upgrade_route": "Stone Mercenary -> Memecoleous"
+  },
+  {
+    "name": "Menti",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxMP": "300",
+      "MATK %": "11",
+      "Guard Break %": "14",
+      "Upgrade for": "Oculasignio",
+      "Shield only:ASPD": "ASPD\n                                                            250"
+    },
+    "upgrade_route": "Imitacia -> Finstern the Dark Dragon -> Oculasignio -> Menti",
+    "max_upgrade_route": "Imitacia -> Finstern the Dark Dragon -> Oculasignio -> Menti"
+  },
+  {
+    "name": "Mercy",
+    "type": "Additional Crysta",
+    "stats": {
+      "Critical Rate": "15",
+      "Aggro %": "-15"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Metal Stinger",
+    "type": "Normal Crysta",
+    "stats": {
+      "ATK %": "2",
+      "Magic Resistance %": "-10",
+      "Critical Damage": "3",
+      "Motion Speed %": "-1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Meteora",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "Physical Pierce %": "5",
+      "Critical Damage": "7",
+      "Unsheathe Attack %": "9",
+      "Upgrade for": "Gemma"
+    },
+    "upgrade_route": "Cerberus -> Pyxtica -> Gemma -> Meteora",
+    "max_upgrade_route": "Cerberus -> Pyxtica -> Gemma -> Meteora"
+  },
+  {
+    "name": "Midsummer Passion",
+    "type": "Weapon Crysta",
+    "stats": {
+      "MaxHP %": "15",
+      "Critical Rate": "20",
+      "Fire resistance %": "25",
+      "Recoil %": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Mieli",
+    "type": "Additional Crysta",
+    "stats": {
+      "MaxHP %": "-20",
+      "Magic Pierce %": "10",
+      "ASPD": "400",
+      "CSPD": "400",
+      "Critical Rate %": "20"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Mimesia",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP": "2000",
+      "Critical Damage": "2",
+      "Upgrade for": "Cerabes"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Minotaur",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP %": "5",
+      "ASPD %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Miracle Potum",
+    "type": "Weapon Crysta",
+    "stats": {
+      "MaxHP %": "-10",
+      "Evasion Recharge %": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Mithurna Lynx",
+    "type": "Normal Crysta",
+    "stats": {
+      "Stability %": "3",
+      "Evasion Recharge %": "3",
+      "Short Range Damage %": "3",
+      "Long Range Damage %": "-9"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Mochelo",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP %": "5",
+      "CSPD %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Mom Fluck",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxMP": "700",
+      "Fractional Barrier %": "15",
+      "Upgrade for": "Ifrid"
+    },
+    "upgrade_route": "Ifrid -> Mom Fluck",
+    "max_upgrade_route": "Ifrid -> Mom Fluck -> Gordel -> Biskyva"
+  },
+  {
+    "name": "Moonlight Potum",
+    "type": "Weapon Crysta",
+    "stats": {
+      "CSPD": "-90",
+      "Attack MP Recovery": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Mozto Machina",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "DEX %": "4",
+      "MATK %": "6",
+      "CSPD %": "2",
+      "Upgrade for": "Demon's Gate"
+    },
+    "upgrade_route": "Demon's Gate -> Mozto Machina",
+    "max_upgrade_route": "Demon's Gate -> Mozto Machina -> Pisteus -> Wicked Dragon Fazzino"
+  },
+  {
+    "name": "MP+100",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxMP": "100"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "MP+150",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxMP": "150"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "MP+200",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxMP": "200"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "MP+250",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxMP": "250"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "MP+300",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxMP": "300"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "MP+350",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxMP": "350"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "MP+400",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxMP": "400"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "MP+50",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxMP": "50"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Mulgoon's Hand",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxHP": "10000",
+      "MaxMP": "-100",
+      "Accuracy %": "5",
+      "Short Range Damage %": "6",
+      "Long Range Damage %": "4"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Mysterious Crystal",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "Attack MP Recovery": "5",
+      "Upgrade for": "Eerie Crystal",
+      "Heavy Armor only:Stability %": "Stability %\n                                                            5",
+      "Light Armor only:Unsheathe Attack %": "Unsheathe Attack %\n                                                            5",
+      "Dual Swords only:Attack MP Recovery": "Attack MP Recovery\n                                                            5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Narumi Hina",
+    "type": "Additional Crysta",
+    "stats": {
+      "MATK %": "4",
+      "CSPD %": "20",
+      "Aggro %": "-10",
+      "Long Range Damage %": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Neewollah",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "Critical Damage": "5",
+      "Fire resistance %": "10",
+      "Attack MP Recovery": "15",
+      "Upgrade for": "Zarth"
+    },
+    "upgrade_route": "Pumpking -> Jeila -> Zoe -> Zarth -> Neewollah",
+    "max_upgrade_route": "Pumpking -> Jeila -> Zoe -> Zarth -> Neewollah -> Eripmav"
+  },
+  {
+    "name": "Neo Maton Sword",
+    "type": "Weapon Crysta",
+    "stats": {
+      "ATK %": "7",
+      "MATK %": "7",
+      "Aggro %": "-28",
+      "Reduce Dmg (Bullet) %": "14",
+      "Reduce Dmg (Bowling) %": "14"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Neo Wandering Wheel",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MATK %": "5",
+      "CSPD %": "75",
+      "Long Range Damage %": "-16",
+      "Upgrade for": "Wandering Wheel"
+    },
+    "upgrade_route": "",
+    "max_upgrade_route": "Grass Dragon Yelb -> Wandering Wheel -> Gordo"
+  },
+  {
+    "name": "Nightmare Potum",
+    "type": "Weapon Crysta",
+    "stats": {
+      "MaxHP %": "-5",
+      "Aggro %": "10",
+      "Fractional Barrier %": "2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Noeliel",
+    "type": "Armor Crysta",
+    "stats": {
+      "MATK %": "5",
+      "CSPD %": "3",
+      "Attack MP Recovery %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Noeliel the Ice Statue",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MATK %": "5",
+      "CSPD %": "30",
+      "Upgrade for": "Noeliel",
+      "Attack MP Recovery %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Nurethoth",
+    "type": "Normal Crysta",
+    "stats": {
+      "ATK %": "3",
+      "MATK %": "3",
+      "ASPD": "-150",
+      "CSPD": "-150"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Nuthoreth",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "ATK %": "2",
+      "MATK %": "2",
+      "ASPD": "150",
+      "CSPD": "150",
+      "Upgrade for": "Nurethoth"
+    },
+    "upgrade_route": "",
+    "max_upgrade_route": "Nurethoth -> Guignol -> Guard Golem -> Piscruva"
+  },
+  {
+    "name": "Oculasignio",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxMP": "300",
+      "MATK %": "9",
+      "Guard Break %": "13",
+      "Upgrade for": "Finstern the Dark Dragon"
+    },
+    "upgrade_route": "Imitacia -> Finstern the Dark Dragon -> Oculasignio",
+    "max_upgrade_route": "Imitacia -> Finstern the Dark Dragon -> Oculasignio -> Menti"
+  },
+  {
+    "name": "Odelon Machina",
+    "type": "Normal Crysta",
+    "stats": {
+      "Dodge %": "-5",
+      "Evasion Recharge %": "-5",
+      "Unsheathe Attack %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Olobaid",
+    "type": "Special Crysta",
+    "stats": {
+      "Physical Resistance %": "10",
+      "Magic Resistance %": "10",
+      "Dark resistance %": "20",
+      "Aggro %": "20"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Omochi",
+    "type": "Additional Crysta",
+    "stats": {
+      "Drop Rate %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Ooze",
+    "type": "Special Crysta",
+    "stats": {
+      "ATK %": "2",
+      "MATK %": "2",
+      "DEF %": "-2",
+      "MDEF %": "-2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Orictoceras",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "Critical Damage": "9",
+      "Upgrade for": "Fanadon",
+      "Reduce Dmg (Player Epicenter) %": "-3",
+      "Reduce Dmg (Foe Epicenter) %": "-3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Ornlarf",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP": "3000",
+      "Weapon ATK %": "3",
+      "Upgrade for": "Iconos"
+    },
+    "upgrade_route": "Boss Roga -> Iconos -> Ornlarf",
+    "max_upgrade_route": "Boss Roga -> Iconos -> Ornlarf -> Sapphire Roga -> Ferzen the Rock Dragon -> Walican"
+  },
+  {
+    "name": "Ox King",
+    "type": "Additional Crysta",
+    "stats": {
+      "Aggro %": "-20"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "P. Avatar",
+    "type": "Normal Crysta",
+    "stats": {
+      "Fire resistance %": "1",
+      "Water resistance %": "1",
+      "Wind resistance %": "1",
+      "Earth resistance %": "1",
+      "Light resistance %": "1",
+      "Dark resistance %": "1",
+      "EXP Gain %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Panchos Kita Makura",
+    "type": "Normal Crysta",
+    "stats": {
+      "Accuracy": "3",
+      "Critical Rate": "5",
+      "EXP Gain %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Patissia",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "Accuracy": "25",
+      "Attack MP Recovery": "15",
+      "Upgrade for": "Tapir"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Pedrio",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "ATK %": "10",
+      "MATK %": "10",
+      "Aggro %": "-40",
+      "Upgrade for": "Neo Maton Sword",
+      "Reduce Dmg (Bullet) %": "20",
+      "Reduce Dmg (Bowling) %": "20"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Perro",
+    "type": "Additional Crysta",
+    "stats": {
+      "Drop Rate %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Phantom Melody Margrave",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "STR %": "4",
+      "INT %": "4",
+      "ATK %": "12",
+      "MATK %": "12",
+      "Long Range Damage %": "-6",
+      "Tumble Unavailable": "0",
+      "Upgrade for": "Xmas Princess in Black",
+      "Shield only:Aggro %": "Aggro %\n                                                            -50"
+    },
+    "upgrade_route": "Xmas Princess in Black -> Phantom Melody Margrave",
+    "max_upgrade_route": "Xmas Princess in Black -> Phantom Melody Margrave"
+  },
+  {
+    "name": "Phantom Wisp",
+    "type": "Armor Crysta",
+    "stats": {
+      "Accuracy %": "20",
+      "Critical Rate": "10",
+      "Evasion Recharge %": "10",
+      "Absolute Dodge %": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Pillar Golem",
+    "type": "Weapon Crysta",
+    "stats": {
+      "MaxMP": "300",
+      "Physical Pierce %": "3",
+      "Short Range Damage %": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Pillorocas",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "Physical Resistance %": "5",
+      "Magic Resistance %": "5",
+      "Critical Rate": "-5",
+      "Critical Rate %": "50"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Pillow Kitagawa",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP": "2000",
+      "Critical Rate": "4",
+      "Revive Time %": "20",
+      "Unsheathe Attack %": "8",
+      "Upgrade for": "Ox King"
+    },
+    "upgrade_route": "Ox King -> Pillow Kitagawa",
+    "max_upgrade_route": "Ox King -> Pillow Kitagawa"
+  },
+  {
+    "name": "Piscruva",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "ATK %": "11",
+      "MATK %": "11",
+      "ASPD": "-300",
+      "CSPD": "-300",
+      "Upgrade for": "Guard Golem"
+    },
+    "upgrade_route": "Nurethoth -> Guignol -> Guard Golem -> Piscruva",
+    "max_upgrade_route": "Nurethoth -> Guignol -> Guard Golem -> Piscruva"
+  },
+  {
+    "name": "Pisteus",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "DEX %": "5",
+      "MATK %": "7",
+      "CSPD %": "3",
+      "Upgrade for": "Mozto Machina"
+    },
+    "upgrade_route": "Demon's Gate -> Mozto Machina -> Pisteus",
+    "max_upgrade_route": "Demon's Gate -> Mozto Machina -> Pisteus -> Wicked Dragon Fazzino"
+  },
+  {
+    "name": "Platinum Potum",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "MaxHP %": "20",
+      "Physical Resistance %": "-10",
+      "Magic Resistance %": "-10",
+      "Upgrade for": "King Potum"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Pomie Chan",
+    "type": "Weapon Crysta",
+    "stats": {
+      "AGI %": "5",
+      "ATK %": "5",
+      "Aggro %": "-5",
+      "Knuckle only:Absolute Dodge %": "Absolute Dodge %\n                                                            5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Pomie Chan II",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "AGI %": "7",
+      "ATK %": "9",
+      "Aggro %": "-15",
+      "Upgrade for": "Pomie Chan",
+      "Knuckle only:Absolute Dodge %": "Absolute Dodge %\n                                                            5"
+    },
+    "upgrade_route": "Pomie Chan -> Pomie Chan II",
+    "max_upgrade_route": "Pomie Chan -> Pomie Chan II -> Pomie Chan III"
+  },
+  {
+    "name": "Pomie Chan III",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "AGI %": "10",
+      "ATK %": "12",
+      "Aggro %": "-20",
+      "Upgrade for": "Pomie Chan II",
+      "Knuckle only:Absolute Dodge %": "Absolute Dodge %\n                                                            10"
+    },
+    "upgrade_route": "Pomie Chan -> Pomie Chan II -> Pomie Chan III",
+    "max_upgrade_route": "Pomie Chan -> Pomie Chan II -> Pomie Chan III"
+  },
+  {
+    "name": "Potumotter",
+    "type": "Special Crysta",
+    "stats": {
+      "MaxMP": "400",
+      "Aggro %": "-30",
+      "Neutral Resistance %": "20"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Primordial Moonlit",
+    "type": "Weapon Crysta",
+    "stats": {
+      "MaxHP %": "10",
+      "MaxMP": "-200",
+      "ATK %": "10",
+      "MATK %": "10",
+      "Anticipate %": "10",
+      "Guard Break %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Proto Leon",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "Critical Rate": "8",
+      "Critical Damage": "3",
+      "Upgrade for": "Warmonger"
+    },
+    "upgrade_route": "Warmonger -> Proto Leon",
+    "max_upgrade_route": "Warmonger -> Proto Leon -> King Piton -> Burning Dragon Igneus"
+  },
+  {
+    "name": "Prudent Blue Shadow",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxMP": "-150",
+      "Short Range Damage %": "8",
+      "Long Range Damage %": "8",
+      "Unsheathe Attack %": "8",
+      "Upgrade for": "Baphomela"
+    },
+    "upgrade_route": "Twilight Dragon -> Baphomela -> Prudent Blue Shadow",
+    "max_upgrade_route": "Twilight Dragon -> Baphomela -> Prudent Blue Shadow -> Forbidden Shawle"
+  },
+  {
+    "name": "Pumpking",
+    "type": "Additional Crysta",
+    "stats": {
+      "Critical Damage": "1",
+      "Fire resistance %": "2",
+      "Attack MP Recovery": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Purro",
+    "type": "Additional Crysta",
+    "stats": {
+      "Drop Rate %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Pyxtica",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "Physical Pierce %": "4",
+      "Critical Damage": "4",
+      "Unsheathe Attack %": "4",
+      "Upgrade for": "Cerberus"
+    },
+    "upgrade_route": "Cerberus -> Pyxtica",
+    "max_upgrade_route": "Cerberus -> Pyxtica -> Gemma -> Meteora"
+  },
+  {
+    "name": "Queen Rosemee",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "Magic Pierce %": "5",
+      "Critical Rate %": "5",
+      "Attack MP Recovery": "5",
+      "Long Range Damage %": "5",
+      "Upgrade for": "Clawed Iron Witch"
+    },
+    "upgrade_route": "Zahhak Machina -> Clawed Iron Witch -> Queen Rosemee",
+    "max_upgrade_route": "Zahhak Machina -> Clawed Iron Witch -> Queen Rosemee"
+  },
+  {
+    "name": "Radibat",
+    "type": "Normal Crysta",
+    "stats": {
+      "Stability %": "4",
+      "Accuracy %": "4",
+      "Critical Rate %": "4"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Raging Dragon Bovinari",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "Attack MP Recovery": "15",
+      "Short Range Damage %": "7",
+      "Physical Barrier": "3000",
+      "Magic Barrier": "3000"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Rampion",
+    "type": "Normal Crysta",
+    "stats": {
+      "Stability %": "2",
+      "Critical Rate %": "10",
+      "Short Range Damage %": "-1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Red Ash Dragon Rudis",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "MaxHP": "-300",
+      "MaxMP": "200",
+      "Accuracy %": "5",
+      "Critical Rate": "-7",
+      "Short Range Damage %": "9",
+      "Upgrade for": "Gravicep"
+    },
+    "upgrade_route": "Gravicep -> Red Ash Dragon Rudis",
+    "max_upgrade_route": "Gravicep -> Red Ash Dragon Rudis -> Gioco"
+  },
+  {
+    "name": "Remnant of Beyond",
+    "type": "Normal Crysta",
+    "stats": {
+      "Physical Pierce %": "5",
+      "ASPD": "-250",
+      "Short Range Damage %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Repthon",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "Natural HP Regen %": "-10",
+      "Natural MP Regen %": "-10",
+      "ATK %": "6",
+      "MATK %": "6",
+      "Upgrade for": "Zolban"
+    },
+    "upgrade_route": "Zolban -> Repthon",
+    "max_upgrade_route": "Zolban -> Repthon -> Brass Dragon Reguita"
+  },
+  {
+    "name": "Rhinosaur",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "MaxHP %": "10",
+      "ATK %": "5",
+      "ASPD %": "15",
+      "Upgrade for": "Minotaur"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Royal Ox King",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP %": "-20",
+      "MaxMP": "200",
+      "Accuracy": "40",
+      "Short Range Damage %": "8",
+      "Upgrade for": "Ox King"
+    },
+    "upgrade_route": "",
+    "max_upgrade_route": "Ox King -> Pillow Kitagawa"
+  },
+  {
+    "name": "Royal Ox King II",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP %": "-30",
+      "MaxMP": "200",
+      "Accuracy": "50",
+      "Short Range Damage %": "12",
+      "Upgrade for": "Royal Ox King"
+    },
+    "upgrade_route": "",
+    "max_upgrade_route": "Ox King -> Pillow Kitagawa"
+  },
+  {
+    "name": "Ruin Golem",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP": "200",
+      "MDEF %": "5",
+      "Magic Resistance %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Ruzart",
+    "type": "Special Crysta",
+    "stats": {
+      "Dodge": "10",
+      "Critical Rate": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Salamander",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "MaxMP": "200",
+      "ATK %": "1",
+      "MATK %": "1",
+      "Upgrade for": "Gespenst"
+    },
+    "upgrade_route": "Gespenst -> Salamander",
+    "max_upgrade_route": "Gespenst -> Salamander -> Bullamius"
+  },
+  {
+    "name": "Sand Bandits Leader",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "MATK %": "-5",
+      "Evasion Recharge %": "8",
+      "Aggro %": "16",
+      "Upgrade for": "Violaccoon"
+    },
+    "upgrade_route": "Violaccoon -> Sand Bandits Leader",
+    "max_upgrade_route": "Violaccoon -> Sand Bandits Leader"
+  },
+  {
+    "name": "Sapphire Roga",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP": "4000",
+      "Weapon ATK %": "4",
+      "Upgrade for": "Ornlarf"
+    },
+    "upgrade_route": "Boss Roga -> Iconos -> Ornlarf -> Sapphire Roga",
+    "max_upgrade_route": "Boss Roga -> Iconos -> Ornlarf -> Sapphire Roga -> Ferzen the Rock Dragon -> Walican"
+  },
+  {
+    "name": "Scrader",
+    "type": "Normal Crysta",
+    "stats": {
+      "Natural MP Regen %": "-10",
+      "MaxHP": "300",
+      "MATK %": "3",
+      "Physical Resistance %": "-20",
+      "Long Range Damage %": "2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Scream Shadow",
+    "type": "Special Crysta",
+    "stats": {
+      "MaxMP": "300",
+      "DEF %": "-40",
+      "CSPD": "1000",
+      "Critical Rate %": "20"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Seele Zauga",
+    "type": "Special Crysta",
+    "stats": {
+      "Physical Resistance %": "5",
+      "Magic Resistance %": "5",
+      "Critical Rate": "15",
+      "Item Cooldown": "-1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Seele Zauga II",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "Physical Resistance %": "10",
+      "Magic Resistance %": "10",
+      "Critical Rate": "20",
+      "Item Cooldown": "-1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Seltirios",
+    "type": "Additional Crysta",
+    "stats": {
+      "MaxMP": "-150",
+      "CSPD": "300"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Seraph Machina",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "Physical Resistance %": "3",
+      "Magic Resistance %": "3",
+      "Ailment Resistance %": "3",
+      "Upgrade for": "Big Coryn"
+    },
+    "upgrade_route": "Big Coryn -> Seraph Machina",
+    "max_upgrade_route": "Big Coryn -> Seraph Machina -> Limacina"
+  },
+  {
+    "name": "Shadow Devil Cavalier",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxMP": "-100",
+      "ATK %": "6",
+      "Stability %": "6",
+      "Light resistance %": "-10",
+      "Short Range Damage %": "6",
+      "Revive Time %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Shampy",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MATK %": "6",
+      "Magic Pierce %": "5",
+      "MDEF %": "-18",
+      "Aggro %": "-7",
+      "Upgrade for": "Evil Crystal Beast"
+    },
+    "upgrade_route": "Evil Crystal Beast -> Shampy",
+    "max_upgrade_route": "Evil Crystal Beast -> Shampy -> Irestida -> Vatudo"
+  },
+  {
+    "name": "Shawle",
+    "type": "Normal Crysta",
+    "stats": {
+      "Accuracy %": "20",
+      "Aggro %": "10",
+      "Anticipate %": "5",
+      "Guard Break %": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Shining Gentleman",
+    "type": "Special Crysta",
+    "stats": {
+      "ATK %": "1",
+      "MATK %": "1",
+      "Critical Damage %": "1",
+      "Attack MP Recovery": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Sibylares",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxMP": "-100",
+      "ATK %": "5",
+      "MATK %": "5",
+      "Physical Pierce %": "5",
+      "Magic Pierce %": "5",
+      "Critical Rate": "15"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Sicanokami",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "Accuracy": "50",
+      "Attack MP Recovery": "20",
+      "Short Range Damage %": "5",
+      "Upgrade for": "Patissia",
+      "Halberd only:Long Range Damage %": "Long Range Damage %\n                                                            5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Silver Roar",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP %": "-8",
+      "Attack MP Recovery": "4"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Skelerow",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "Water resistance %": "10",
+      "Dark resistance %": "10",
+      "Attack MP Recovery": "15",
+      "Barrier Cooldown %": "20",
+      "Upgrade for": "Canemofish"
+    },
+    "upgrade_route": "Canemofish -> Skelerow",
+    "max_upgrade_route": "Canemofish -> Skelerow"
+  },
+  {
+    "name": "Soldner",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP %": "-20",
+      "MaxMP": "400",
+      "CSPD": "800",
+      "Upgrade for": "Chocolate Ooze II"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Solopy",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP %": "-15",
+      "ASPD": "450",
+      "Upgrade for": "Golden Skeleton"
+    },
+    "upgrade_route": "Golden Skeleton -> Solopy",
+    "max_upgrade_route": "Golden Skeleton -> Solopy"
+  },
+  {
+    "name": "Specter of Death",
+    "type": "Special Crysta",
+    "stats": {
+      "Accuracy %": "15",
+      "Aggro %": "-20",
+      "Unsheathe Attack %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Springtime Sakura",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MATK %": "11",
+      "Critical Rate": "13",
+      "Upgrade for": "Kuzto",
+      "Aggro %": "-15"
+    },
+    "upgrade_route": "Kuzto -> Springtime Sakura",
+    "max_upgrade_route": "Kuzto -> Springtime Sakura"
+  },
+  {
+    "name": "Squirinja",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP": "10000",
+      "Critical Damage": "9",
+      "Short Range Damage %": "6",
+      "Upgrade for": "Baavgai",
+      "Ninjutsu Scroll only:Evasion Recharge %": "Evasion Recharge %\n                                                            25"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Star Wizard",
+    "type": "Special Crysta",
+    "stats": {
+      "MATK %": "9",
+      "CSPD %": "9",
+      "Anticipate %": "9",
+      "Shield only:Aggro %": "Aggro %\n                                                            9",
+      "Staff only:Aggro %": "Aggro %\n                                                            -9"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Stellar Ooze",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxMP": "300",
+      "Accuracy": "60",
+      "CSPD": "600",
+      "Critical Rate": "20",
+      "Upgrade for": "Gespenst II"
+    },
+    "upgrade_route": "Gespenst II -> Stellar Ooze",
+    "max_upgrade_route": "Gespenst II -> Stellar Ooze"
+  },
+  {
+    "name": "Stellar Ooze II",
+    "type": "Special Crysta",
+    "stats": {
+      "Natural MP Regen %": "15",
+      "MaxMP": "150",
+      "ATK %": "5",
+      "Physical Pierce %": "5",
+      "Revive Time %": "60",
+      "Unsheathe Attack %": "5",
+      "Reduce Dmg (Bowling) %": "15"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Stone Mercenary",
+    "type": "Special Crysta",
+    "stats": {
+      "ATK %": "-6",
+      "Guard Recharge %": "4",
+      "Aggro %": "8"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "STR+1",
+    "type": "Normal Crysta",
+    "stats": {
+      "STR": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "STR+2",
+    "type": "Normal Crysta",
+    "stats": {
+      "STR": "2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "STR+3",
+    "type": "Normal Crysta",
+    "stats": {
+      "STR": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "STR+4",
+    "type": "Normal Crysta",
+    "stats": {
+      "STR": "4"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "STR+5",
+    "type": "Normal Crysta",
+    "stats": {
+      "STR": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "STR+6",
+    "type": "Normal Crysta",
+    "stats": {
+      "STR": "6"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "STR+7",
+    "type": "Normal Crysta",
+    "stats": {
+      "STR": "7"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Sunlight Potum",
+    "type": "Additional Crysta",
+    "stats": {
+      "MaxHP %": "-5",
+      "MaxMP": "-75",
+      "ASPD": "300",
+      "CSPD": "300"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Super Death Mushroom",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxMP": "400",
+      "CSPD": "200",
+      "Attack MP Recovery": "3",
+      "Upgrade for": "Jade Raptor"
+    },
+    "upgrade_route": "Jade Raptor -> Super Death Mushroom",
+    "max_upgrade_route": "Jade Raptor -> Super Death Mushroom"
+  },
+  {
+    "name": "Super Night Mushroom",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP": "500",
+      "Short Range Damage %": "1",
+      "Long Range Damage %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Supreme Evil Crystal Beast",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "Physical Pierce %": "10",
+      "Short Range Damage %": "8",
+      "MP": "400",
+      "Upgrade for": "Vlam the Flame Dragon"
+    },
+    "upgrade_route": "Pillar Golem -> Ultimate Machina -> Vlam the Flame Dragon -> Supreme Evil Crystal Beast",
+    "max_upgrade_route": "Pillar Golem -> Ultimate Machina -> Vlam the Flame Dragon -> Supreme Evil Crystal Beast"
+  },
+  {
+    "name": "Supreme Evil Crystal Beast",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxMP": "400",
+      "Physical Pierce %": "10",
+      "Short Range Damage %": "8",
+      "Upgrade for": "Vlam the Flame Dragon"
+    },
+    "upgrade_route": "Pillar Golem -> Ultimate Machina -> Vlam the Flame Dragon -> Supreme Evil Crystal Beast",
+    "max_upgrade_route": "Pillar Golem -> Ultimate Machina -> Vlam the Flame Dragon -> Supreme Evil Crystal Beast"
+  },
+  {
+    "name": "Tapir",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "Attack MP Recovery": "10",
+      "Upgrade for": "Eerie Crystal"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Tappler",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "MaxMP": "-50",
+      "Dodge %": "-5",
+      "Evasion Recharge %": "-3",
+      "Unsheathe Attack %": "12",
+      "Upgrade for": "Odelon Machina"
+    },
+    "upgrade_route": "Odelon Machina -> Tappler",
+    "max_upgrade_route": "Odelon Machina -> Tappler -> Lilicarolla"
+  },
+  {
+    "name": "Tardigrademon",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxMP": "-200",
+      "CSPD": "450",
+      "Upgrade for": "Seltirios"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Teertocrit",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "ATK %": "6",
+      "MATK %": "6",
+      "Motion Speed %": "2",
+      "Upgrade for": "Dark Mushroom"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "The Great Witch of Crow",
+    "type": "Armor Crysta",
+    "stats": {
+      "Stability %": "4",
+      "Ailment Resistance %": "-14",
+      "Motion Speed %": "2",
+      "Absolute Accuracy %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Thug Golem",
+    "type": "Armor Crysta",
+    "stats": {
+      "CSPD %": "15",
+      "Aggro %": "-20",
+      "Fractional Barrier %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Titeres",
+    "type": "Special Crysta",
+    "stats": {
+      "Dodge": "20",
+      "Dodge %": "10",
+      "Attack MP Recovery": "10",
+      "Absolute Dodge %": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Top-Star Potum",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP %": "-10",
+      "MaxMP": "-150",
+      "ASPD": "900",
+      "CSPD": "900",
+      "Upgrade for": "Sunlight Potum"
+    },
+    "upgrade_route": "Sunlight Potum -> Top-Star Potum",
+    "max_upgrade_route": "Sunlight Potum -> Top-Star Potum"
+  },
+  {
+    "name": "Torexesa",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "MaxMP": "-200",
+      "ATK %": "10",
+      "MATK %": "10",
+      "Attack MP Recovery": "4",
+      "Upgrade for": "Black Shadow"
+    },
+    "upgrade_route": "Brutal Dragon Decel -> York -> Tuscog -> Black Shadow -> Torexesa",
+    "max_upgrade_route": "Brutal Dragon Decel -> York -> Tuscog -> Black Shadow -> Torexesa"
+  },
+  {
+    "name": "Tortuga",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxHP %": "1",
+      "Physical Resistance %": "3",
+      "Guard Recharge %": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Trickster Dragon Mimyugon",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "DEX %": "7",
+      "ATK %": "9",
+      "ASPD %": "5",
+      "Upgrade for": "Vulture"
+    },
+    "upgrade_route": "Ganglef -> Tyrant Machina -> Vulture -> Trickster Dragon Mimyugon",
+    "max_upgrade_route": "Ganglef -> Tyrant Machina -> Vulture -> Trickster Dragon Mimyugon -> Bakuzan"
+  },
+  {
+    "name": "Trocostida",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP %": "20",
+      "Critical Rate": "5",
+      "Aggro %": "15",
+      "Long Range Damage %": "-10",
+      "Upgrade for": "Dusk Machina"
+    },
+    "upgrade_route": "Dusk Machina -> Trocostida",
+    "max_upgrade_route": "Dusk Machina -> Trocostida"
+  },
+  {
+    "name": "Trus",
+    "type": "Special Crysta",
+    "stats": {
+      "Physical Pierce %": "10",
+      "Guard Break %": "10",
+      "Stun Unavailable": "1",
+      "2-Handed Sword only:Guard Power %": "Guard Power %\n                                                            25",
+      "Guard Recharge %                        Guard Recharge %": "Guard Recharge %\n                                                            25"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Tuscog",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "MaxMP": "-100",
+      "ATK %": "6",
+      "MATK %": "6",
+      "Attack MP Recovery": "2",
+      "Upgrade for": "York"
+    },
+    "upgrade_route": "Brutal Dragon Decel -> York -> Tuscog",
+    "max_upgrade_route": "Brutal Dragon Decel -> York -> Tuscog -> Black Shadow -> Torexesa"
+  },
+  {
+    "name": "Twilight Dragon",
+    "type": "Additional Crysta",
+    "stats": {
+      "Short Range Damage %": "4",
+      "Long Range Damage %": "4",
+      "Unsheathe Attack %": "4"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Tyrant Machina",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "DEX %": "4",
+      "ATK %": "6",
+      "ASPD %": "2",
+      "Upgrade for": "Ganglef"
+    },
+    "upgrade_route": "Ganglef -> Tyrant Machina",
+    "max_upgrade_route": "Ganglef -> Tyrant Machina -> Vulture -> Trickster Dragon Mimyugon -> Bakuzan"
+  },
+  {
+    "name": "Ultimate Machina",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxMP": "400",
+      "Physical Pierce %": "4",
+      "Short Range Damage %": "4",
+      "Upgrade for": "Pillar Golem"
+    },
+    "upgrade_route": "Pillar Golem -> Ultimate Machina",
+    "max_upgrade_route": "Pillar Golem -> Ultimate Machina -> Vlam the Flame Dragon -> Supreme Evil Crystal Beast"
+  },
+  {
+    "name": "Ultra Potum",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "Evasion Recharge %": "15",
+      "Long Range Damage %": "10",
+      "Additional Melee %": "20",
+      "Upgrade for": "Miracle Potum"
+    },
+    "upgrade_route": "Miracle Potum -> Ultra Potum",
+    "max_upgrade_route": "Miracle Potum -> Ultra Potum"
+  },
+  {
+    "name": "Underwater Ruins Monster",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP": "1000",
+      "MATK %": "8",
+      "Critical Damage": "8",
+      "Upgrade for": "Adaro",
+      "Heavy Armor only:Aggro %": "Aggro %\n                                                            20"
+    },
+    "upgrade_route": "Adaro -> Underwater Ruins Monster",
+    "max_upgrade_route": "Adaro -> Underwater Ruins Monster"
+  },
+  {
+    "name": "Usakichi",
+    "type": "Armor Crysta",
+    "stats": {
+      "MaxMP": "100",
+      "ATK %": "1",
+      "Neutral Resistance %": "-1",
+      "Unsheathe Attack %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Usami",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxMP": "300",
+      "ATK %": "3",
+      "Neutral Resistance %": "-10",
+      "Unsheathe Attack %": "3",
+      "Upgrade for": "Usakichi"
+    },
+    "upgrade_route": "Usakichi -> Usami",
+    "max_upgrade_route": "Usakichi -> Usami -> Usamochi"
+  },
+  {
+    "name": "Usamochi",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxMP": "300",
+      "ATK %": "6",
+      "Neutral Resistance %": "-10",
+      "Unsheathe Attack %": "6",
+      "Upgrade for": "Usami"
+    },
+    "upgrade_route": "Usakichi -> Usami -> Usamochi",
+    "max_upgrade_route": "Usakichi -> Usami -> Usamochi"
+  },
+  {
+    "name": "Usasama the Necromancer",
+    "type": "Weapon Crysta",
+    "stats": {
+      "MaxHP %": "-25",
+      "MATK %": "6",
+      "CSPD %": "12",
+      "Motion Speed %": "3",
+      "Attack MP Recovery %": "-50"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Usasama the Necromancer II",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP %": "-15",
+      "MATK %": "7",
+      "CSPD %": "14",
+      "Motion Speed %": "3",
+      "Upgrade for": "Usasama the Necromancer",
+      "Attack MP Recovery %": "-30"
+    },
+    "upgrade_route": "Usasama the Necromancer -> Usasama the Necromancer II",
+    "max_upgrade_route": "Usasama the Necromancer -> Usasama the Necromancer II"
+  },
+  {
+    "name": "Vatudo",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MATK %": "10",
+      "Magic Pierce %": "7",
+      "MDEF %": "-30",
+      "Aggro %": "-11",
+      "Upgrade for": "Irestida"
+    },
+    "upgrade_route": "Evil Crystal Beast -> Shampy -> Irestida -> Vatudo",
+    "max_upgrade_route": "Evil Crystal Beast -> Shampy -> Irestida -> Vatudo"
+  },
+  {
+    "name": "Velcaroy",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "MaxMP": "300",
+      "Long Range Damage %": "5",
+      "Additional Melee %": "75",
+      "Upgrade for": "Broker Goblin",
+      "Shield only:Aggro %": "Aggro %\n                                                            35"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Velum",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxMP": "-100",
+      "ATK %": "9",
+      "Attack MP Recovery": "6",
+      "Anticipate %": "13",
+      "Upgrade for": "Mardula"
+    },
+    "upgrade_route": "Imitator -> Mardula -> Velum",
+    "max_upgrade_route": "Imitator -> Mardula -> Velum -> Deformis"
+  },
+  {
+    "name": "Venena",
+    "type": "Special Crysta",
+    "stats": {
+      "MaxMP": "500",
+      "ATK %": "1",
+      "MATK %": "1",
+      "Stability %": "2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Venena II",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "MaxMP": "600",
+      "ATK %": "2",
+      "MATK %": "2",
+      "Stability %": "3",
+      "Upgrade for": "Venena"
+    },
+    "upgrade_route": "Venena -> Venena II",
+    "max_upgrade_route": "Venena -> Venena II -> Humida"
+  },
+  {
+    "name": "Vevela",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "Ailment Resistance %": "-15",
+      "Guard Power %": "5",
+      "Guard Recharge %": "5",
+      "Evasion Recharge %": "5",
+      "Motion Speed %": "3",
+      "Upgrade for": "Caspy"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Violaccoon",
+    "type": "Special Crysta",
+    "stats": {
+      "MATK %": "-6",
+      "Evasion Recharge %": "4",
+      "Aggro %": "8"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Viscum",
+    "type": "Special Crysta",
+    "stats": {
+      "MaxHP": "100",
+      "Attack MP Recovery": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "VIT+2",
+    "type": "Normal Crysta",
+    "stats": {
+      "VIT": "2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "VIT+3",
+    "type": "Normal Crysta",
+    "stats": {
+      "VIT": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "VIT+4",
+    "type": "Normal Crysta",
+    "stats": {
+      "VIT": "4"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "VIT+5",
+    "type": "Normal Crysta",
+    "stats": {
+      "VIT": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "VIT+6",
+    "type": "Normal Crysta",
+    "stats": {
+      "VIT": "6"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "VIT+7",
+    "type": "Normal Crysta",
+    "stats": {
+      "VIT": "7"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "VIT+8",
+    "type": "Normal Crysta",
+    "stats": {},
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Vlam the Flame Dragon",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxMP": "400",
+      "Physical Pierce %": "7",
+      "Short Range Damage %": "6",
+      "Upgrade for": "Ultimate Machina"
+    },
+    "upgrade_route": "Pillar Golem -> Ultimate Machina -> Vlam the Flame Dragon",
+    "max_upgrade_route": "Pillar Golem -> Ultimate Machina -> Vlam the Flame Dragon -> Supreme Evil Crystal Beast"
+  },
+  {
+    "name": "Vodre",
+    "type": "Special Crysta",
+    "stats": {
+      "Physical Resistance %": "5",
+      "Magic Resistance %": "5",
+      "Critical Damage": "-150",
+      "Anticipate %": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Volgagon",
+    "type": "Special Crysta",
+    "stats": {
+      "ASPD": "1000",
+      "CSPD %": "-80",
+      "Critical Rate %": "20"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Volotur",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "STR %": "2",
+      "ATK %": "2",
+      "Accuracy %": "-10",
+      "Critical Rate %": "-10",
+      "Critical Damage": "2",
+      "Upgrade for": "Gigant Knight"
+    },
+    "upgrade_route": "Gigant Knight -> Volotur",
+    "max_upgrade_route": "Gigant Knight -> Volotur -> Brassozard"
+  },
+  {
+    "name": "Vulture",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "DEX %": "5",
+      "ATK %": "7",
+      "ASPD %": "3",
+      "Upgrade for": "Tyrant Machina"
+    },
+    "upgrade_route": "Ganglef -> Tyrant Machina -> Vulture",
+    "max_upgrade_route": "Ganglef -> Tyrant Machina -> Vulture -> Trickster Dragon Mimyugon -> Bakuzan"
+  },
+  {
+    "name": "Walican",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP": "6000",
+      "Weapon ATK %": "6",
+      "Upgrade for": "Ferzen the Rock Dragon"
+    },
+    "upgrade_route": "Boss Roga -> Iconos -> Ornlarf -> Sapphire Roga -> Ferzen the Rock Dragon -> Walican",
+    "max_upgrade_route": "Boss Roga -> Iconos -> Ornlarf -> Sapphire Roga -> Ferzen the Rock Dragon -> Walican"
+  },
+  {
+    "name": "Wandering Wheel",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "ATK %": "5",
+      "ASPD %": "75",
+      "Long Range Damage %": "-14",
+      "Upgrade for": "Grass Dragon Yelb"
+    },
+    "upgrade_route": "Grass Dragon Yelb -> Wandering Wheel",
+    "max_upgrade_route": "Grass Dragon Yelb -> Wandering Wheel -> Gordo"
+  },
+  {
+    "name": "War Dragon Turba",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "MaxMP": "-200",
+      "Accuracy %": "17",
+      "Critical Rate": "11",
+      "Weapon ATK %": "14",
+      "Upgrade for": "Zelbuse"
+    },
+    "upgrade_route": "Bexiz -> Zelbuse -> War Dragon Turba",
+    "max_upgrade_route": "Bexiz -> Zelbuse -> War Dragon Turba"
+  },
+  {
+    "name": "Warmonger",
+    "type": "Additional Crysta",
+    "stats": {
+      "Critical Rate": "6",
+      "Critical Damage": "2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Wicked Dragon Fazzino",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "DEX %": "7",
+      "MATK %": "9",
+      "CSPD %": "5",
+      "Upgrade for": "Pisteus"
+    },
+    "upgrade_route": "Demon's Gate -> Mozto Machina -> Pisteus -> Wicked Dragon Fazzino",
+    "max_upgrade_route": "Demon's Gate -> Mozto Machina -> Pisteus -> Wicked Dragon Fazzino"
+  },
+  {
+    "name": "Wild Beast Lixi",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "MaxHP %": "15",
+      "MaxMP": "-100",
+      "ATK %": "10",
+      "ASPD %": "20",
+      "Upgrade for": "Rhinosaur"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Wiltileaf",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "ATK %": "9",
+      "Magic Resistance %": "-15",
+      "Critical Damage": "12",
+      "Motion Speed %": "0",
+      "Upgrade for": "Ageladanios"
+    },
+    "upgrade_route": "Metal Stinger -> Lyark Master Specialist -> Ageladanios -> Wiltileaf",
+    "max_upgrade_route": "Metal Stinger -> Lyark Master Specialist -> Ageladanios -> Wiltileaf"
+  },
+  {
+    "name": "Wolkissa",
+    "type": "Special Crysta",
+    "stats": {
+      "VIT %": "5",
+      "Ailment Resistance %": "5",
+      "Attack MP Recovery": "5",
+      "Shield only:Aggro %": "Aggro %\n                                                            15"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Xmas Princess in Black",
+    "type": "Weapon Crysta",
+    "stats": {
+      "STR %": "3",
+      "INT %": "3",
+      "ATK %": "9",
+      "MATK %": "9",
+      "Long Range Damage %": "-6",
+      "Tumble Unavailable": "1",
+      "Shield only:Aggro %": "Aggro %\n                                                            -50"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Yashiro Azuki",
+    "type": "Normal Crysta",
+    "stats": {
+      "MaxHP": "200",
+      "MaxMP": "100",
+      "EXP Gain %": "1"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Yashiro Azuki's Dad",
+    "type": "Additional Crysta",
+    "stats": {
+      "ATK %": "4",
+      "ASPD %": "20",
+      "Aggro %": "-10",
+      "Short Range Damage %": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Yashiro Azuki's Mom",
+    "type": "Additional Crysta",
+    "stats": {
+      "Physical Resistance %": "5",
+      "Magic Resistance %": "5",
+      "Critical Rate": "10",
+      "Reduce Dmg (Bullet) %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Yashiro Azuki's Mom II",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MATK %": "5",
+      "CSPD %": "20",
+      "Aggro %": "-10",
+      "Long Range Damage %": "3",
+      "Upgrade for": "Narumi Hina"
+    },
+    "upgrade_route": "Narumi Hina -> Yashiro Azuki's Mom II",
+    "max_upgrade_route": "Narumi Hina -> Yashiro Azuki's Mom II"
+  },
+  {
+    "name": "York",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "MaxMP": "-75",
+      "ATK %": "4",
+      "MATK %": "4",
+      "Attack MP Recovery": "1",
+      "Upgrade for": "Brutal Dragon Decel"
+    },
+    "upgrade_route": "Brutal Dragon Decel -> York",
+    "max_upgrade_route": "Brutal Dragon Decel -> York -> Tuscog -> Black Shadow -> Torexesa"
+  },
+  {
+    "name": "Yule Cat",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "INT %": "3",
+      "MATK %": "7",
+      "CSPD %": "35",
+      "Upgrade for": "Noeliel the Ice Statue",
+      "Attack MP Recovery %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Yuveria",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxMP": "300",
+      "Physical Resistance %": "3",
+      "Magic Resistance %": "3",
+      "Aggro %": "-15",
+      "Short Range Damage %": "6",
+      "Upgrade for": "Gopherga"
+    },
+    "upgrade_route": "Gopherga -> Yuveria",
+    "max_upgrade_route": "Gopherga -> Yuveria"
+  },
+  {
+    "name": "Zahhak Machina",
+    "type": "Weapon Crysta",
+    "stats": {
+      "Attack MP Recovery": "5",
+      "Physical Barrier": "1000",
+      "Magic Barrier": "1000"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Zapo",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP": "-400",
+      "MaxMP": "-400",
+      "ATK %": "10",
+      "Critical Rate": "10",
+      "Upgrade for": "Arachnidemon",
+      "Shield only:STR %": "STR %\n                                                            1",
+      "Short Range Damage %                        Short Range Damage %": "Short Range Damage %\n                                                            5"
+    },
+    "upgrade_route": "Arachnidemon -> Zapo",
+    "max_upgrade_route": "Arachnidemon -> Zapo"
+  },
+  {
+    "name": "Zarth",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "Critical Damage": "4",
+      "Fire resistance %": "8",
+      "Attack MP Recovery": "12",
+      "Upgrade for": "Zoe"
+    },
+    "upgrade_route": "Pumpking -> Jeila -> Zoe -> Zarth",
+    "max_upgrade_route": "Pumpking -> Jeila -> Zoe -> Zarth -> Neewollah -> Eripmav"
+  },
+  {
+    "name": "Zeagrysta",
+    "type": "Special Crysta",
+    "stats": {
+      "MaxMP": "-100",
+      "Stability %": "2",
+      "Physical Resistance %": "3",
+      "Magic Resistance %": "3",
+      "Short Range Damage %": "2",
+      "Shield only:Ailment Resistance %": "Ailment Resistance %\n                                                            5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Zega",
+    "type": "Weapon Crysta",
+    "stats": {
+      "MaxHP": "400",
+      "Magic Resistance %": "2",
+      "Water resistance %": "1",
+      "Attack MP Recovery": "3"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Zega II",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP": "500",
+      "Magic Resistance %": "3",
+      "Water resistance %": "2",
+      "Attack MP Recovery": "4",
+      "Upgrade for": "Zega"
+    },
+    "upgrade_route": "Zega -> Zega II",
+    "max_upgrade_route": "Zega -> Zega II"
+  },
+  {
+    "name": "Zega III",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP": "600",
+      "Magic Resistance %": "4",
+      "Water resistance %": "3",
+      "Attack MP Recovery": "5"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Zega IV",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP": "700",
+      "Magic Resistance %": "5",
+      "Water resistance %": "4",
+      "Attack MP Recovery": "6",
+      "Upgrade for": "Zega III"
+    },
+    "upgrade_route": "Zega III -> Zega IV",
+    "max_upgrade_route": "Zega III -> Zega IV -> Zega V -> Zega VI"
+  },
+  {
+    "name": "Zega V",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP": "800",
+      "Magic Resistance %": "6",
+      "Water resistance %": "5",
+      "Attack MP Recovery": "7",
+      "Upgrade for": "Zega IV"
+    },
+    "upgrade_route": "Zega III -> Zega IV -> Zega V",
+    "max_upgrade_route": "Zega III -> Zega IV -> Zega V -> Zega VI"
+  },
+  {
+    "name": "Zega VI",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP": "900",
+      "Magic Resistance %": "7",
+      "Water resistance %": "6",
+      "Attack MP Recovery": "8",
+      "Upgrade for": "Zega V"
+    },
+    "upgrade_route": "Zega III -> Zega IV -> Zega V -> Zega VI",
+    "max_upgrade_route": "Zega III -> Zega IV -> Zega V -> Zega VI"
+  },
+  {
+    "name": "Zega VII",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP": "1000",
+      "Magic Resistance %": "8",
+      "Water resistance %": "7",
+      "Attack MP Recovery": "9",
+      "Upgrade for": "Zega VI"
+    },
+    "upgrade_route": "",
+    "max_upgrade_route": "Zega III -> Zega IV -> Zega V -> Zega VI"
+  },
+  {
+    "name": "Zelbuse",
+    "type": "Enhancer Crysta (Purple)",
+    "stats": {
+      "MaxMP": "-150",
+      "Accuracy %": "16",
+      "Critical Rate": "8",
+      "Weapon ATK %": "12",
+      "Upgrade for": "Bexiz"
+    },
+    "upgrade_route": "Bexiz -> Zelbuse",
+    "max_upgrade_route": "Bexiz -> Zelbuse -> War Dragon Turba"
+  },
+  {
+    "name": "Zodiac's Blessing",
+    "type": "Special Crysta",
+    "stats": {
+      "ATK": "10",
+      "MATK": "10",
+      "DEF": "100",
+      "MDEF": "100",
+      "Accuracy": "10",
+      "ASPD": "100",
+      "CSPD": "100",
+      "Critical Rate": "10",
+      "EXP Gain %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Zoe",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "Critical Damage": "3",
+      "Fire resistance %": "6",
+      "Attack MP Recovery": "9",
+      "Upgrade for": "Jeila"
+    },
+    "upgrade_route": "Pumpking -> Jeila -> Zoe",
+    "max_upgrade_route": "Pumpking -> Jeila -> Zoe -> Zarth -> Neewollah -> Eripmav"
+  },
+  {
+    "name": "Zolban",
+    "type": "Weapon Crysta",
+    "stats": {
+      "Natural HP Regen %": "-10",
+      "Natural MP Regen %": "-10",
+      "ATK %": "4",
+      "MATK %": "4"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "†Dark Lord†",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "ATK %": "5",
+      "ASPD %": "20",
+      "Aggro %": "-10",
+      "Short Range Damage %": "3",
+      "Upgrade for": "Yashiro Azuki's Dad"
+    },
+    "upgrade_route": "Yashiro Azuki's Dad -> †Dark Lord†",
+    "max_upgrade_route": "Yashiro Azuki's Dad -> †Dark Lord†"
+  }
+]
