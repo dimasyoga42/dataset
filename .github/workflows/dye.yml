@@ -11,28 +11,17 @@ contents: write
 jobs:
 run:
 runs-on: ubuntu-latest
-
 steps:
-  - uses: actions/checkout@v4
+  - name: Checkout repo
+    uses: actions/checkout@v4
 
-  - uses: actions/setup-node@v4
+  - name: Setup Node
+    uses: actions/setup-node@v4
     with:
       node-version: 20
 
   - name: Install dependencies
     run: npm install axios cheerio puppeteer
-
-  - name: Install Chromium dependencies
-    run: |
-      sudo apt-get update
-      sudo apt-get install -y \
-        libx11-xcb1 \
-        libxcomposite1 \
-        libxdamage1 \
-        libxrandr2 \
-        libgbm1 \
-        libgtk-3-0 \
-        libasound2t64
 
   - name: Run scripts
     run: |
@@ -41,8 +30,8 @@ steps:
 
   - name: Commit changes
     run: |
-      git config --global user.name github-actions
-      git config --global user.email github-actions@github.com
+      git config --global user.name "github-actions"
+      git config --global user.email "github-actions@github.com"
       git pull
       git add .
       git commit -m "update screenshot" || echo "no change"
