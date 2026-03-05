@@ -42,9 +42,6 @@ jobs:
       - name: Run screenshot
         run: node run.js
 
-      - name: Run colors
-        run: node colors.js
-
       - name: Commit and push
         run: |
           git config --global user.name "github-actions[bot]"
