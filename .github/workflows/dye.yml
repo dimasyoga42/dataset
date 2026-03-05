@@ -1,5 +1,4 @@
 name: Dye Weapon Screenshot
-
 on:
   schedule:
     - cron: "0 * * * *"
@@ -11,7 +10,6 @@ permissions:
 jobs:
   run:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -22,24 +20,18 @@ jobs:
           node-version: 20
 
       - name: Install Dependencies
-        run: |
-          npm install
+        run: npm install
 
-      - name: Install Chromium
-        run: |
-          npx puppeteer browsers install chrome
+      # HAPUS step "Install Chromium" — puppeteer sudah bundled Chromium sendiri
+      # Tidak perlu: npx puppeteer browsers install chrome
 
       - name: Run Screenshot Script
-        run: |
-          node run.js
+        run: node run.js
 
       - name: Commit Screenshot
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-
           git add .
-
           git commit -m "update dye screenshot" || echo "no changes"
-
-          git push
+          git push || echo "nothing to push"
