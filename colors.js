@@ -1,122 +1,118 @@
-import puppeteer from "puppeteer";
+import axios from "axios";
+import * as cheerio from "cheerio";
 import fs from "fs";
 
-const delay = (ms) => new Promise((r) => setTimeout(r, ms));
-
-async function autoScroll(page) {
-  await page.evaluate(async () => {
-    await new Promise((resolve) => {
-      let totalHeight = 0;
-      const distance = 400;
-      const timer = setInterval(() => {
-        const scrollHeight = document.body.scrollHeight;
-        window.scrollBy(0, distance);
-        totalHeight += distance;
-        if (totalHeight >= scrollHeight) {
-          clearInterval(timer);
-          resolve();
-        }
-      }, 200);
-    });
-  });
-}
-
-async function scrape() {
-  const url = "https://tanaka0.work/AIO/en/DyePredictor/ColorWeapon";
-
-  const browser = await puppeteer.launch({
-    headless: true, // fix: "new" deprecated
-    args: [
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--disable-dev-shm-usage",
-      "--disable-gpu",
-      "--single-process",
-    ],
-  });
+async function scrapeAndSaveXtal() {
+  const baseUrl = "https://coryn.club/item.php?special=xtal&p=";
+  const allXtal = [];
+  const fileName = "xtal_data.json";
 
   try {
-    const page = await browser.newPage();
-    await page.setViewport({ width: 1920, height: 1080 });
+    console.log("Memulai ekstraksi data daring...");
 
-    console.log("opening page...");
+    // Melakukan iterasi halaman untuk memastikan kelengkapan data
+    for (let p = 0; p <= 5; p++) {
+      const { data } = await axios.get(`${baseUrl}${p}`);
+      const $ = cheerio.load(data);
+      const cards = $(".card-container > div");
 
-    // fix: domcontentloaded lebih stabil di CI daripada networkidle2
-    await page.goto(url, {
-      waitUntil: "domcontentloaded",
-    });
+      if (cards.length === 0) break;
 
-    await delay(5000);
+      cards.each((i, el) => {
+        const titleElement = $(el).find(".card-title");
+        if (titleElement.length === 0) return;
 
-    // Tunggu sampai tabel muncul
-    try {
-      await page.waitForSelector("table.color-wep-table", { timeout: 30000 });
-    } catch {
-      throw new Error("Timeout: tabel tidak ditemukan dalam 30 detik");
-    }
+        const fullName = titleElement.text().trim();
+        const typeMatch = fullName.match(/\[(.*?)\]/);
+        const name = fullName.replace(/\[.*?\]/, "").trim();
+        const type = typeMatch ? typeMatch[1] : "";
 
-    await autoScroll(page);
-    await delay(1500);
+        const stats = {};
+        $(el)
+          .find(".item-basestat > div")
+          .each((idx, statEl) => {
+            if (idx === 0) return;
+            const statName = $(statEl).find("div:first-child").text().trim();
+            const statVal = $(statEl).find("div:last-child").text().trim();
+            if (statName) stats[statName] = statVal;
+          });
 
-    const data = await page.evaluate(() => {
-      const result = [];
+        const upgradeInto = [];
+        $(el)
+          .find("li")
+          .each((idx, liEl) => {
+            if ($(liEl).text().includes("Used For")) {
+              $(liEl)
+                .find("ul.styled-list li a")
+                .each((j, a) => {
+                  upgradeInto.push($(a).text().trim());
+                });
+            }
+          });
 
-      // fix: target tabel spesifik pakai class, bukan semua <table>
-      const tables = document.querySelectorAll("table.color-wep-table");
+        const upgradeFor = stats["Upgrade for"] || null;
 
-      tables.forEach((table) => {
-        // Ambil judul bulan dari <h4> sebelum tabel (sibling)
-        const h4 = table.previousElementSibling;
-        const month = h4 ? h4.innerText.trim() : "unknown";
-
-        const rows = table.querySelectorAll("tbody tr");
-
-        rows.forEach((row) => {
-          const cols = row.querySelectorAll("td");
-          if (cols.length < 2) return;
-
-          // fix: parse boss name lebih bersih (hapus whitespace berlebih)
-          const bossRaw = cols[0].innerText.trim();
-          const boss = bossRaw.replace(/\s+/g, " ");
-
-          // fix: ambil hex color dari <font style="color: ...">
-          const fontEl = cols[1].querySelector("font");
-          const colorHex = fontEl
-            ? (fontEl.getAttribute("style") || "")
-                .replace("color:", "")
-                .replace(";", "")
-                .trim()
-            : null;
-
-          // fix: ambil kode warna teks (misal: A55, B12)
-          const colorCode = cols[1].innerText.trim().replace("■", "").trim();
-
-          if (boss && colorCode) {
-            result.push({
-              month,
-              boss,
-              colorCode,
-              colorHex,
-            });
-          }
+        allXtal.push({
+          name,
+          type,
+          stats,
+          upgradeFor,
+          upgradeInto,
         });
       });
-
-      return result;
-    });
-
-    if (data.length === 0) {
-      throw new Error("Tidak ada data yang berhasil di-scrape");
+      console.log(`Halaman ${p} berhasil diproses.`);
     }
 
-    fs.writeFileSync("boss_colors.json", JSON.stringify(data, null, 2));
-    console.log(`saved boss_colors.json — ${data.length} entries`);
-  } catch (err) {
-    console.error("ERROR:", err.message);
-    process.exit(1); // fix: exit code 1 agar CI tahu gagal
-  } finally {
-    await browser.close();
+    // Memetakan rute upgrade dan memfilter tampilan sesuai permintaan
+    const finalData = allXtal.map((xtal) => {
+      const isRoot = !xtal.upgradeFor;
+      const path = buildUpgradePath(xtal.name, allXtal);
+
+      return {
+        name: xtal.name,
+        type: xtal.type,
+        stats: xtal.stats,
+        // Rute hanya muncul jika bukan root
+        upgrade_route: !isRoot ? path : null,
+      };
+    });
+
+    // Menyimpan hasil ke file JSON
+    fs.writeFileSync(fileName, JSON.stringify(finalData, null, 2), "utf-8");
+    console.log(`\nBerhasil! Data telah disimpan ke dalam berkas: ${fileName}`);
+  } catch (error) {
+    console.error("Terjadi kesalahan:", error.message);
   }
 }
 
-scrape();
+/**
+ * Logika penelusuran rute upgrade linear
+ */
+function buildUpgradePath(currentName, fullList) {
+  let rootName = currentName;
+  let temp = fullList.find((x) => x.name === rootName);
+
+  // Mencari akar (root) terdalam
+  while (temp && temp.upgradeFor) {
+    rootName = temp.upgradeFor;
+    temp = fullList.find((x) => x.name === rootName);
+  }
+
+  const path = [];
+  let curr = fullList.find((x) => x.name === rootName);
+
+  // Menyusun silsilah dari dasar ke atas
+  while (curr) {
+    path.push(curr.name);
+    if (curr.upgradeInto && curr.upgradeInto.length > 0) {
+      const nextName = curr.upgradeInto[0];
+      curr = fullList.find((x) => x.name === nextName);
+    } else {
+      curr = null;
+    }
+  }
+
+  return path.length > 1 ? path : null;
+}
+
+scrapeAndSaveXtal();

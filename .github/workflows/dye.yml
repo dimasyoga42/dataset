@@ -19,9 +19,10 @@ jobs:
         with:
           node-version: 20
 
-      - run: npm install puppeteer
+      - run: npm install puppeteer cheerio axios
 
       - run: node run.js
+      - run: node colors.js
 
       - name: commit
         run: |
