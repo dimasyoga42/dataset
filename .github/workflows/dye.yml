@@ -19,7 +19,9 @@ jobs:
         with:
           node-version: 20
 
-      - run: npm install puppeteer cheerio axios
+      - run: npm install cheerio axios
+      - run: npm uninstall puppeteer-core
+      - run: npm install puppeteer
 
       - run: node run.js
       - run: node colors.js
