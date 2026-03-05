@@ -1,6 +1,7 @@
 import axios from "axios";
 import * as cheerio from "cheerio";
 import fs from "fs";
+
 /**
  * Fungsi untuk membersihkan nama kristal dari teks residu DOM
  */
@@ -21,7 +22,6 @@ async function scrapeToramXtal() {
   try {
     console.log("Memulai ekstraksi data daring...");
 
-    // Loop halaman hingga tidak ada data lagi
     while (hasMoreData) {
       console.log(`Mengambil data dari halaman ${page}...`);
       const { data } = await axios.get(`${baseUrl}${page}`);
@@ -53,12 +53,10 @@ async function scrapeToramXtal() {
             if (statName) stats[statName] = statVal;
           });
 
-        // Normalisasi nilai "Upgrade for" agar bersih
         if (stats["Upgrade for"]) {
           stats["Upgrade for"] = cleanName(stats["Upgrade for"]);
         }
 
-        // Ambil daftar upgrade selanjutnya untuk pemetaan rute nanti
         const upgradeInto = [];
         $(el)
           .find("li")
@@ -82,26 +80,36 @@ async function scrapeToramXtal() {
       });
 
       page++;
-      // Delay singkat agar tidak membebani server (optional)
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 300));
     }
 
     console.log(`Total data mentah berhasil diambil: ${allXtalRaw.length}`);
 
-    // Tahap Membangun Rute Upgrade
     const finalData = allXtalRaw.map((xtal) => {
       const isRoot = !xtal.upgradeFor;
-      const route = buildUpgradeRoute(xtal.name, allXtalRaw);
+
+      // Mengambil rute lengkap (Root -> ... -> Tertinggi)
+      const fullPath = buildFullUpgradeRoute(xtal.name, allXtalRaw);
+
+      // Membuat Rute 1: Root sampai posisi Xtal saat ini
+      let currentRoute = null;
+      if (!isRoot && fullPath) {
+        const currentIndex = fullPath.indexOf(xtal.name);
+        currentRoute = fullPath.slice(0, currentIndex + 1).join(" -> ");
+      }
+
+      // Membuat Rute 2: Root sampai posisi Tertinggi
+      const maxRoute = !isRoot && fullPath ? fullPath.join(" -> ") : null;
 
       return {
         name: xtal.name,
         type: xtal.type,
         stats: xtal.stats,
-        upgrade_route: !isRoot ? route : null,
+        upgrade_route: currentRoute,
+        max_upgrade_route: maxRoute,
       };
     });
 
-    // Simpan ke file JSON
     fs.writeFileSync(
       "xtal_data.json",
       JSON.stringify(finalData, null, 2),
@@ -114,19 +122,19 @@ async function scrapeToramXtal() {
 }
 
 /**
- * Membangun rute upgrade lengkap dari root ke puncak
+ * Mencari silsilah utuh dari Root hingga evolusi tertinggi
  */
-function buildUpgradeRoute(currentName, fullList) {
+function buildFullUpgradeRoute(currentName, fullList) {
   let rootName = currentName;
   let temp = fullList.find((x) => x.name === rootName);
 
-  // 1. Cari Root (Akar paling dasar)
+  // 1. Cari Root
   while (temp && temp.upgradeFor) {
     rootName = temp.upgradeFor;
     temp = fullList.find((x) => x.name === rootName);
   }
 
-  // 2. Susun jalur dari Root ke bawah (Maju)
+  // 2. Susun jalur dari Root ke Puncak
   const route = [];
   let curr = fullList.find((x) => x.name === rootName);
   const visited = new Set();
@@ -136,7 +144,6 @@ function buildUpgradeRoute(currentName, fullList) {
     visited.add(curr.name);
 
     if (curr.upgradeInto && curr.upgradeInto.length > 0) {
-      // Mengambil jalur upgrade pertama (asumsi linear)
       const nextName = curr.upgradeInto[0];
       curr = fullList.find((x) => x.name === nextName);
     } else {
