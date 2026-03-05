@@ -22,7 +22,7 @@ jobs:
       - run: npm install puppeteer
 
       - run: node run.js
-      - run: node colors.json
+      - run: node colors.js
 
       - name: commit
         run: |
