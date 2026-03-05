@@ -8,13 +8,10 @@ async function autoScroll(page) {
     await new Promise((resolve) => {
       let totalHeight = 0;
       const distance = 400;
-
       const timer = setInterval(() => {
         const scrollHeight = document.body.scrollHeight;
-
         window.scrollBy(0, distance);
         totalHeight += distance;
-
         if (totalHeight >= scrollHeight) {
           clearInterval(timer);
           resolve();
@@ -28,61 +25,80 @@ async function scrape() {
   const url = "https://tanaka0.work/AIO/en/DyePredictor/ColorWeapon";
 
   const browser = await puppeteer.launch({
-    headless: "new",
+    headless: true, // fix: "new" deprecated
     args: [
       "--no-sandbox",
       "--disable-setuid-sandbox",
       "--disable-dev-shm-usage",
       "--disable-gpu",
+      "--single-process",
     ],
   });
 
   try {
     const page = await browser.newPage();
+    await page.setViewport({ width: 1920, height: 1080 });
 
-    await page.setViewport({
-      width: 1920,
-      height: 1080,
-    });
+    console.log("opening page...");
 
+    // fix: domcontentloaded lebih stabil di CI daripada networkidle2
     await page.goto(url, {
-      waitUntil: "networkidle2",
+      waitUntil: "domcontentloaded",
       timeout: 60000,
     });
 
-    await delay(4000);
+    await delay(5000);
+
+    // Tunggu sampai tabel muncul
+    try {
+      await page.waitForSelector("table.color-wep-table", { timeout: 30000 });
+    } catch {
+      throw new Error("Timeout: tabel tidak ditemukan dalam 30 detik");
+    }
 
     await autoScroll(page);
+    await delay(1500);
 
     const data = await page.evaluate(() => {
       const result = [];
 
-      const tables = document.querySelectorAll("table");
+      // fix: target tabel spesifik pakai class, bukan semua <table>
+      const tables = document.querySelectorAll("table.color-wep-table");
 
       tables.forEach((table) => {
-        const rows = table.querySelectorAll("tr");
+        // Ambil judul bulan dari <h4> sebelum tabel (sibling)
+        const h4 = table.previousElementSibling;
+        const month = h4 ? h4.innerText.trim() : "unknown";
+
+        const rows = table.querySelectorAll("tbody tr");
 
         rows.forEach((row) => {
           const cols = row.querySelectorAll("td");
+          if (cols.length < 2) return;
 
-          if (cols.length >= 2) {
-            const boss = cols[0].innerText.trim();
+          // fix: parse boss name lebih bersih (hapus whitespace berlebih)
+          const bossRaw = cols[0].innerText.trim();
+          const boss = bossRaw.replace(/\s+/g, " ");
 
-            const colors = [];
+          // fix: ambil hex color dari <font style="color: ...">
+          const fontEl = cols[1].querySelector("font");
+          const colorHex = fontEl
+            ? (fontEl.getAttribute("style") || "")
+                .replace("color:", "")
+                .replace(";", "")
+                .trim()
+            : null;
 
-            cols.forEach((c, i) => {
-              if (i > 0) {
-                const text = c.innerText.trim();
-                if (text) colors.push(text);
-              }
+          // fix: ambil kode warna teks (misal: A55, B12)
+          const colorCode = cols[1].innerText.trim().replace("■", "").trim();
+
+          if (boss && colorCode) {
+            result.push({
+              month,
+              boss,
+              colorCode,
+              colorHex,
             });
-
-            if (boss && colors.length > 0) {
-              result.push({
-                boss,
-                colors,
-              });
-            }
           }
         });
       });
@@ -90,11 +106,15 @@ async function scrape() {
       return result;
     });
 
-    fs.writeFileSync("boss_colors.json", JSON.stringify(data, null, 2));
+    if (data.length === 0) {
+      throw new Error("Tidak ada data yang berhasil di-scrape");
+    }
 
-    console.log("saved boss_colors.json");
+    fs.writeFileSync("boss_colors.json", JSON.stringify(data, null, 2));
+    console.log(`saved boss_colors.json — ${data.length} entries`);
   } catch (err) {
-    console.error(err);
+    console.error("ERROR:", err.message);
+    process.exit(1); // fix: exit code 1 agar CI tahu gagal
   } finally {
     await browser.close();
   }
