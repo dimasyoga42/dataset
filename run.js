@@ -1,10 +1,9 @@
 import puppeteer from "puppeteer";
 import fs from "fs";
 
-const url = "https://tanaka0.work/AIO/en/DyePredictor/ColorWeapon";
-const output = "colorweapon_full.png";
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const autoScroll = async (page) => {
+async function autoScroll(page) {
   await page.evaluate(async () => {
     await new Promise((resolve) => {
       let totalHeight = 0;
@@ -20,12 +19,15 @@ const autoScroll = async (page) => {
           clearInterval(timer);
           resolve();
         }
-      }, 300);
+      }, 200);
     });
   });
-};
+}
 
-const run = async () => {
+async function screenshot() {
+  const url = "https://tanaka0.work/AIO/en/DyePredictor/ColorWeapon";
+  const output = "dye_weapon.png";
+
   const browser = await puppeteer.launch({
     headless: "new",
     args: [
@@ -36,38 +38,81 @@ const run = async () => {
     ],
   });
 
-  const page = await browser.newPage();
+  try {
+    const page = await browser.newPage();
 
-  await page.setViewport({
-    width: 1920,
-    height: 1080,
-  });
+    await page.setUserAgent(
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36",
+    );
 
-  console.log("opening page...");
+    await page.setViewport({
+      width: 1920,
+      height: 1080,
+    });
 
-  await page.goto(url, {
-    waitUntil: "networkidle2",
-    timeout: 60000,
-  });
+    console.log("opening page...");
 
-  await page.waitForSelector("table");
+    await page.goto(url, {
+      waitUntil: "networkidle2",
+      timeout: 60000,
+    });
 
-  console.log("scrolling page...");
+    await delay(5000);
 
-  await autoScroll(page);
+    const tables = await page.$$("table");
 
-  await new Promise((r) => setTimeout(r, 2000));
+    if (tables.length === 0) {
+      throw new Error("table not found");
+    }
 
-  console.log("taking screenshot...");
+    console.log("table found:", tables.length);
 
-  await page.screenshot({
-    path: output,
-    fullPage: true,
-  });
+    // scroll seluruh halaman
+    await autoScroll(page);
 
-  await browser.close();
+    await delay(2000);
 
-  console.log("done:", output);
-};
+    // ambil posisi tabel pertama dan terakhir
+    const box = await page.evaluate(() => {
+      const tables = document.querySelectorAll("table");
 
-run();
+      const first = tables[0].getBoundingClientRect();
+      const last = tables[tables.length - 1].getBoundingClientRect();
+
+      return {
+        x: Math.min(first.x, last.x),
+        y: first.top + window.scrollY,
+        width: Math.max(first.width, last.width),
+        height: last.bottom + window.scrollY - (first.top + window.scrollY),
+      };
+    });
+
+    console.log("capture size:", box);
+
+    await page.setViewport({
+      width: Math.ceil(box.width) + 200,
+      height: Math.ceil(box.height) + 200,
+    });
+
+    await delay(1500);
+
+    await page.screenshot({
+      path: output,
+      type: "png",
+      clip: {
+        x: Math.max(0, box.x - 20),
+        y: Math.max(0, box.y - 20),
+        width: Math.ceil(box.width) + 40,
+        height: Math.ceil(box.height) + 40,
+      },
+    });
+
+    console.log("screenshot saved:", output);
+  } catch (err) {
+    console.error(err);
+  } finally {
+    await browser.close();
+  }
+}
+
+screenshot();
