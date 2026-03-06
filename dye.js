@@ -23,22 +23,20 @@ const palette = {
 81:"#0b2a63",82:"#050563",83:"#3c006b",84:"#6b005c",85:"#5c002f"
 };
 
-async function scrape() {
+async function scrape(){
 
 const url = "https://tanaka0.work/AIO/en/DyePredictor/ColorWeapon";
 
 const browser = await puppeteer.launch({
-headless: "new",
-args: [
+headless:"new",
+args:[
 "--no-sandbox",
 "--disable-setuid-sandbox",
-"--disable-dev-shm-usage",
-"--disable-gpu",
-"--disable-features=site-per-process"
+"--disable-dev-shm-usage"
 ]
 });
 
-try {
+try{
 
 const page = await browser.newPage();
 
@@ -57,47 +55,29 @@ timeout:60000
 
 await delay(3000);
 
-const tables = await page.$$("table");
+/* cek jumlah tabel */
 
-if(tables.length === 0){
-throw new Error("table not found");
+const tableCount = await page.$$eval("table", t => t.length);
+
+console.log("total tables:", tableCount);
+
+if(tableCount === 0){
+throw new Error("no table found");
 }
 
-console.log("table found:", tables.length);
-
-await page.evaluate(async () => {
-
-await new Promise((resolve) => {
-
-let totalHeight = 0;
-const distance = 300;
-
-const timer = setInterval(() => {
-
-window.scrollBy(0, distance);
-totalHeight += distance;
-
-if(totalHeight >= document.body.scrollHeight){
-clearInterval(timer);
-window.scrollTo(0,0);
-resolve();
-}
-
-},100);
-
-});
-
-});
-
-await delay(1000);
+/* ambil semua data tabel */
 
 const rawData = await page.evaluate(() => {
 
-const rows = [];
+const result = [];
 
-document.querySelectorAll("table").forEach(table => {
+const tables = document.querySelectorAll("table");
 
-table.querySelectorAll("tr").forEach(tr => {
+tables.forEach((table, tableIndex) => {
+
+const rows = table.querySelectorAll("tr");
+
+rows.forEach((tr,rowIndex) => {
 
 const tds = tr.querySelectorAll("td");
 
@@ -107,7 +87,14 @@ const boss = tds[0].innerText.trim();
 const dye = tds[1].innerText.trim();
 
 if(boss && dye && dye !== "Unknown"){
-rows.push({boss,dye});
+
+result.push({
+boss,
+dye,
+table: tableIndex,
+row: rowIndex
+});
+
 }
 
 }
@@ -116,9 +103,13 @@ rows.push({boss,dye});
 
 });
 
-return rows;
+return result;
 
 });
+
+console.log("total rows:", rawData.length);
+
+/* convert dye ke color id */
 
 const result = rawData.map(e => {
 
@@ -140,14 +131,14 @@ fs.writeFileSync(
 JSON.stringify(result,null,2)
 );
 
+console.log("saved dye_data.json");
 console.log("total boss:", result.length);
-console.log("saved: dye_data.json");
 
-} catch(err) {
+}catch(err){
 
 console.error(err);
 
-} finally {
+}finally{
 
 await browser.close();
 
