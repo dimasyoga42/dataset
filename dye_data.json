@@ -1,514 +1,758 @@
 [
   {
     "boss": "Boss colon (Lv. 30 )",
-    "color": "■ A55"
+    "dye": "■ A55",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Excavated golem (Lv. 34 )",
-    "color": "■ B55"
+    "dye": "■ B55",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Gespenst (Lv. 40 )",
-    "color": "■ B12"
+    "dye": "■ B12",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Eerie crystal (Lv. 44 )",
-    "color": "■ C17"
+    "dye": "■ C17",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Forest wolf (Lv. 50 )",
-    "color": "■ B11"
+    "dye": "■ B11",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Minotaur (Lv. 52 )",
-    "color": "■ A27"
+    "dye": "■ A27",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Boss goblin (Lv. 60 )",
-    "color": "■ A34"
+    "dye": "■ A34",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Brutal dragon decel (Lv. 60 )",
-    "color": "■ B63"
+    "dye": "■ B63",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Mochelo (Lv. 63 )",
-    "color": "■ A48"
+    "dye": "■ A48",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Flare volg (Lv. 70 )",
-    "color": "■ C53"
+    "dye": "■ C53",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Ruin golem (Lv. 65 )",
-    "color": "■ A34"
+    "dye": "■ A34",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Forestia (Lv. 69 )",
-    "color": "■ C20"
+    "dye": "■ C20",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Astol (Lv. 70 )",
-    "color": "■ B65"
+    "dye": "■ B65",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Ooze (Lv. 72 )",
-    "color": "■ A61"
+    "dye": "■ A61",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Warmongger (Lv. 80 )",
-    "color": "■ B56"
+    "dye": "■ B56",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Mauez (Lv. 75 )",
-    "color": "■ B46"
+    "dye": "■ B46",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Ganglef (Lv. 78 )",
-    "color": "■ B36"
+    "dye": "■ B36",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Demon's gate (Lv. 80 )",
-    "color": "■ B3"
+    "dye": "■ B3",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Boss roga (Lv. 82 )",
-    "color": "■ C54"
+    "dye": "■ C54",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "B.B.goblin (Lv. 90 )",
-    "color": "■ B26"
+    "dye": "■ B26",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Ancient empress (Lv. 84 )",
-    "color": "■ A72"
+    "dye": "■ A72",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Masked warrior (Lv. 87 )",
-    "color": "■ C67"
+    "dye": "■ C67",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Pillar golem (Lv. 90 )",
-    "color": "■ A1"
+    "dye": "■ A1",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Glass dragon yelb (Lv. 93 )",
-    "color": "■ A52"
+    "dye": "■ A52",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Nurethoth (Lv. 96 )",
-    "color": "■ B19"
+    "dye": "■ B19",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Jade bird (Lv. 99 )",
-    "color": "■ B9"
+    "dye": "■ B9",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Goovua (Lv. 102 )",
-    "color": "■ C78"
+    "dye": "■ C78",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Scrader (Lv. 105 )",
-    "color": "■ C7"
+    "dye": "■ C7",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Black Knight of delusion (Lv. 108 )",
-    "color": "■ A2"
+    "dye": "■ A2",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Evil crystal beaat (Lv. 111 )",
-    "color": "■ C48"
+    "dye": "■ C48",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Inzanio of dark knight (Lv. 114 )",
-    "color": "■ A56"
+    "dye": "■ A56",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Twilight dragon (Lv. 120 )",
-    "color": "■ C61"
-  },
-  {
-    "boss": "Cerberus (Lv. 117 )",
-    "color": "■ Unknown"
+    "dye": "■ C61",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Zolban (Lv. 118 )",
-    "color": "■ C51"
+    "dye": "■ C51",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Aranea (Lv. 120 )",
-    "color": "■ A36"
+    "dye": "■ A36",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Bexiz (Lv. 123 )",
-    "color": "■ A36"
+    "dye": "■ A36",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Imitator (Lv. 126 )",
-    "color": "■ A49"
+    "dye": "■ A49",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Imitacia (Lv. 129 )",
-    "color": "■ C11"
+    "dye": "■ C11",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Memecoleolus (Lv. 120 )",
-    "color": "■ A6"
+    "dye": "■ A6",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Iconos (Lv. 128 )",
-    "color": "■ A6"
+    "dye": "■ A6",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Tapir (Lv. 140 )",
-    "color": "■ C1"
+    "dye": "■ C1",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Ifrid (Lv. 132 )",
-    "color": "■ C19"
+    "dye": "■ C19",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Prot leon (Lv. 135 )",
-    "color": "■ A60"
+    "dye": "■ A60",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "York (Lv. 138 )",
-    "color": "■ A83"
+    "dye": "■ A83",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Tyrant machina (Lv. 141 )",
-    "color": "■ C45"
+    "dye": "■ C45",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Mozto machina (Lv. 144 )",
-    "color": "■ C2"
+    "dye": "■ C2",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Lalvada (Lv. 147 )",
-    "color": "■ A71"
+    "dye": "■ A71",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Zahhak machina (Lv. 150 )",
-    "color": "■ C66"
+    "dye": "■ C66",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Guignol (Lv. 153 )",
-    "color": "■ C46"
+    "dye": "■ C46",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Gwaimol (Lv. 156 )",
-    "color": "■ B4"
+    "dye": "■ B4",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Ultimate machina (Lv. 159 )",
-    "color": "■ C3"
+    "dye": "■ C3",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Ornlarf (Lv. 162 )",
-    "color": "■ C32"
+    "dye": "■ C32",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Maton sword (Lv. 163 )",
-    "color": "■ B11"
+    "dye": "■ B11",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Shampy (Lv. 165 )",
-    "color": "■ B19"
+    "dye": "■ B19",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Venena coenubia (Lv. 170 )",
-    "color": "■ A54"
+    "dye": "■ A54",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Crystal titan (Lv. 168 )",
-    "color": "■ C80"
+    "dye": "■ C80",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Mom fluck (Lv. 171 )",
-    "color": "■ B83"
+    "dye": "■ B83",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Zelbuse (Lv. 174 )",
-    "color": "■ B55"
+    "dye": "■ B55",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Mardula (Lv. 177 )",
-    "color": "■ B2"
+    "dye": "■ B2",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Selle zauga (Lv. 180 )",
-    "color": "■ B76"
+    "dye": "■ B76",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "King piton (Lv. 183 )",
-    "color": "■ B15"
+    "dye": "■ B15",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Finstern the dark dragon (Lv. 186 )",
-    "color": "■ C33"
+    "dye": "■ C33",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Tuscog (Lv. 189 )",
-    "color": "■ A18"
+    "dye": "■ A18",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Eroded pilz (Lv. 192 )",
-    "color": "■ B46"
+    "dye": "■ B46",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Pyxtica (Lv. 195 )",
-    "color": "■ B59"
+    "dye": "■ B59",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Kuzto (Lv. 198 )",
-    "color": "■ B6"
+    "dye": "■ B6",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Sapphire roga (Lv. 201 )",
-    "color": "■ A1"
+    "dye": "■ A1",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Gravicep (Lv. 204 )",
-    "color": "■ A42"
+    "dye": "■ A42",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Demonic quasar (Lv. 205 )",
-    "color": "■ C37"
+    "dye": "■ C37",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Repthon (Lv. 207 )",
-    "color": "■ A22"
+    "dye": "■ A22",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Vulture (Lv. 210 )",
-    "color": "■ A63"
+    "dye": "■ A63",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Venena metacoenubia (Lv. 215 )",
-    "color": "■ C48"
+    "dye": "■ C48",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Pisteus (Lv. 213 )",
-    "color": "■ C15"
+    "dye": "■ C15",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Arachnidemon (Lv. 216 )",
-    "color": "■ A36"
+    "dye": "■ A36",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Black shadow (Lv. 219 )",
-    "color": "■ B11"
+    "dye": "■ B11",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Hexter (Lv. 222 )",
-    "color": "■ B44"
+    "dye": "■ B44",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Irestida (Lv. 225 )",
-    "color": "■ A80"
+    "dye": "■ A80",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Reliza (Lv. 230 )",
-    "color": "■ C9"
+    "dye": "■ C9",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Gemma (Lv. 228 )",
-    "color": "■ B47"
+    "dye": "■ B47",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Ferzen the rock dragon (Lv. 231 )",
-    "color": "■ C55"
+    "dye": "■ C55",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Junior dragon zyvio (Lv. 234 )",
-    "color": "■ C73"
+    "dye": "■ C73",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "War dragon turba (Lv. 237 )",
-    "color": "■ A63"
+    "dye": "■ A63",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Vlam the frame dragon (Lv. 240 )",
-    "color": "■ C43"
+    "dye": "■ C43",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Velum (Lv. 243 )",
-    "color": "■ B61"
+    "dye": "■ B61",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Oculasignio (Lv. 246 )",
-    "color": "■ A51"
+    "dye": "■ A51",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Gordel (Lv. 249 )",
-    "color": "■ C26"
+    "dye": "■ C26",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Guard golem (Lv. 252 )",
-    "color": "■ A21"
+    "dye": "■ A21",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Barning dragon igneus (Lv. 255 )",
-    "color": "■ B52"
+    "dye": "■ B52",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Trickster dragon mimyugon (Lv. 258 )",
-    "color": "■ C47"
+    "dye": "■ C47",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Filrocas (Lv. 261 )",
-    "color": "■ C37"
+    "dye": "■ C37",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Wicked dragon fazzino (Lv. 264 )",
-    "color": "■ A45"
+    "dye": "■ A45",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Walican (Lv. 267 )",
-    "color": "■ A68"
+    "dye": "■ A68",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Brass dragon reguita (Lv. 270 )",
-    "color": "■ C30"
+    "dye": "■ C30",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Dominaredor (Lv. 273 )",
-    "color": "■ A5"
+    "dye": "■ A5",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Zapo (Lv. 276 )",
-    "color": "■ A5"
+    "dye": "■ A5",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "RedAshDragonRudis (Lv. 279 )",
-    "color": "■ B69"
+    "dye": "■ B69",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "DonProfundo (Lv. 282 )",
-    "color": "■ B16"
+    "dye": "■ B16",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Vatudo (Lv. 285 )",
-    "color": "■ C24"
+    "dye": "■ C24",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "RagingDragonBovinari (Lv. 288 )",
-    "color": "■ A19"
+    "dye": "■ A19",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Humida (Lv. 291 )",
-    "color": "■ C65"
+    "dye": "■ C65",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Torexesa (Lv. 289 )",
-    "color": "■ B70"
+    "dye": "■ B70",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Mugloon (Lv. 294 )",
-    "color": "■ B27"
+    "dye": "■ B27",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Deformis (Lv. 297 )",
-    "color": "■ C4"
+    "dye": "■ C4",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Menti (Lv. 300 )",
-    "color": "■ B81"
+    "dye": "■ B81",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Byskiva (Lv. 303 )",
-    "color": "■ B71"
+    "dye": "■ B71",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Piscruva (Lv. 306 )",
-    "color": "■ A46"
+    "dye": "■ A46",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Supreme Evil Crystal Beast (Lv. 309 )",
-    "color": "■ A13"
+    "dye": "■ A13",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Bakuzan (Lv. 312 )",
-    "color": "■ B21"
+    "dye": "■ B21",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Gula (Lv. 318 )",
-    "color": "■ A6"
+    "dye": "■ A6",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Chocolate ooze (Lv. 90 )",
-    "color": "■ A46"
+    "dye": "■ A46",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Eidenliebe (Lv. 150 )",
-    "color": "■ C40"
+    "dye": "■ C40",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Jeandoux (Lv. 180 )",
-    "color": "■ B57"
+    "dye": "■ B57",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Garnache (Lv. 200 )",
-    "color": "■ A49"
+    "dye": "■ A49",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Mieli (Lv. 220 )",
-    "color": "■ B5"
+    "dye": "■ B5",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Broker goblin (Lv. 240 )",
-    "color": "■ B22"
+    "dye": "■ B22",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "ペルルラージ (Lv. 250 )",
-    "color": "■ C24"
+    "dye": "■ C24",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Erkuch (Lv. 270 )",
-    "color": "■ B23"
+    "dye": "■ B23",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "シカノカーミ (Lv. 290 )",
-    "color": "■ C30"
+    "dye": "■ C30",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Candela (Lv. 100 )",
-    "color": "■ C41"
+    "dye": "■ C41",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Handmade cookie (Lv. 160 )",
-    "color": "■ A7"
+    "dye": "■ A7",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Mercy (Lv. 190 )",
-    "color": "■ A9"
+    "dye": "■ A9",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Alfenix (Lv. 210 )",
-    "color": "■ C29"
+    "dye": "■ C29",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Kruztor (Lv. 250 )",
-    "color": "■ B34"
+    "dye": "■ B34",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Evil lefina (Lv. 230 )",
-    "color": "■ B18"
+    "dye": "■ B18",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Mage filecia (Lv. 250 )",
-    "color": "■ A35"
+    "dye": "■ A35",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Bangrubom (Lv. 260 )",
-    "color": "■ B70"
+    "dye": "■ B70",
+    "color_id": null,
+    "hex": "#ffffff"
   },
   {
     "boss": "Goblin Zucotto (Lv. 280 )",
-    "color": "■ B31"
-  },
-  {
-    "boss": "Rondine (Lv. 315 )",
-    "color": "■ Unknown"
+    "dye": "■ B31",
+    "color_id": null,
+    "hex": "#ffffff"
   }
 ]
