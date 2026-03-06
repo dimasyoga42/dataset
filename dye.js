@@ -1,9 +1,4 @@
-import puppeteer from "puppeteer";
 import fs from "fs";
-
-const url = "https://tanaka0.work/AIO/en/DyePredictor/ColorWeapon";
-
-const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const palette = {
 1:"#ffffff",2:"#d9d9d9",3:"#bfbfbf",4:"#808080",5:"#000000",
@@ -33,116 +28,27 @@ const palette = {
 81:"#0b2a63",82:"#050563",83:"#3c006b",84:"#6b005c",85:"#5c002f"
 };
 
-async function scrape(){
+const data = JSON.parse(fs.readFileSync("dye_data.json","utf8"));
 
-const browser = await puppeteer.launch({
-headless:"new",
-args:[
-"--no-sandbox",
-"--disable-setuid-sandbox",
-"--disable-dev-shm-usage",
-"--disable-blink-features=AutomationControlled"
-]
-});
-
-try{
-
-const page = await browser.newPage();
-
-await page.setUserAgent(
-"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
-);
-
-console.log("opening page...");
-
-await page.goto(url,{
-waitUntil:"domcontentloaded",
-timeout:60000
-});
-
-let tableFound=false;
-
-for(let i=0;i<10;i++){
-
-const tables=await page.$$("table");
-
-if(tables.length>0){
-tableFound=true;
-break;
-}
-
-console.log("waiting table...");
-await delay(3000);
-
-}
-
-if(!tableFound){
-throw new Error("table not found");
-}
-
-console.log("table detected");
-
-/* ambil data */
-
-const rawData = await page.evaluate(()=>{
-
-const rows=[];
-
-document.querySelectorAll("table tr").forEach(tr=>{
-
-const tds=[...tr.querySelectorAll("td")];
-
-if(tds.length>=2){
-
-const boss = tds[0].innerText.trim();
-const dye = tds[1].innerText.trim();
-
-if(
-boss &&
-dye &&
-dye !== "Unknown" &&
-/[A-Z]\d+/.test(dye)
-){
-rows.push({boss,dye});
-}
-
-}
-
-});
-
-return rows;
-
-});
-
-/* mapping color */
-
-const result = rawData.map(e=>{
+const fixed = data.map(e => {
 
 const num = parseInt(e.dye.replace(/[A-Z]/,""));
 
-return{
-boss:e.boss,
-dye:e.dye,
-color_id:num,
-hex:palette[num] || "#ffffff"
+return {
+boss: e.boss,
+dye: e.dye,
+color_id: num,
+hex: palette[num] || "#ffffff"
 };
 
 });
 
 fs.writeFileSync(
 "dye_data.json",
-JSON.stringify(result,null,2)
+JSON.stringify(fixed,null,2)
 );
 
-console.log("total boss:",result.length);
-console.log("saved: dye_data.json");
-
-} catch(err){
-
-console.error(err);
-
-} finally{
-
+console.log("color fixed:", fixed.length);
 await browser.close();
 
 }
