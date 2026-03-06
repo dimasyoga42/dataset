@@ -32,13 +32,14 @@ const data = JSON.parse(
 fs.readFileSync("dye_data.json","utf8")
 );
 
-const result = data.map((e) => {
+const result = data.map(e => {
 
-const num = parseInt(e.dye.replace(/[A-Z]/,""));
+const match = e.dye.match(/\d+/);
+const num = match ? parseInt(match[0]) : null;
 
 return {
 boss: e.boss,
-dye: e.dye,
+dye: e.dye.replace(/[^\w\d]/g,""),
 color_id: num,
 hex: palette[num] || "#ffffff"
 };
