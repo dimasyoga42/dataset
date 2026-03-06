@@ -1,0 +1,514 @@
+[
+  {
+    "boss": "Boss colon (Lv. 30 )",
+    "color": "■ A55"
+  },
+  {
+    "boss": "Excavated golem (Lv. 34 )",
+    "color": "■ B55"
+  },
+  {
+    "boss": "Gespenst (Lv. 40 )",
+    "color": "■ B12"
+  },
+  {
+    "boss": "Eerie crystal (Lv. 44 )",
+    "color": "■ C17"
+  },
+  {
+    "boss": "Forest wolf (Lv. 50 )",
+    "color": "■ B11"
+  },
+  {
+    "boss": "Minotaur (Lv. 52 )",
+    "color": "■ A27"
+  },
+  {
+    "boss": "Boss goblin (Lv. 60 )",
+    "color": "■ A34"
+  },
+  {
+    "boss": "Brutal dragon decel (Lv. 60 )",
+    "color": "■ B63"
+  },
+  {
+    "boss": "Mochelo (Lv. 63 )",
+    "color": "■ A48"
+  },
+  {
+    "boss": "Flare volg (Lv. 70 )",
+    "color": "■ C53"
+  },
+  {
+    "boss": "Ruin golem (Lv. 65 )",
+    "color": "■ A34"
+  },
+  {
+    "boss": "Forestia (Lv. 69 )",
+    "color": "■ C20"
+  },
+  {
+    "boss": "Astol (Lv. 70 )",
+    "color": "■ B65"
+  },
+  {
+    "boss": "Ooze (Lv. 72 )",
+    "color": "■ A61"
+  },
+  {
+    "boss": "Warmongger (Lv. 80 )",
+    "color": "■ B56"
+  },
+  {
+    "boss": "Mauez (Lv. 75 )",
+    "color": "■ B46"
+  },
+  {
+    "boss": "Ganglef (Lv. 78 )",
+    "color": "■ B36"
+  },
+  {
+    "boss": "Demon's gate (Lv. 80 )",
+    "color": "■ B3"
+  },
+  {
+    "boss": "Boss roga (Lv. 82 )",
+    "color": "■ C54"
+  },
+  {
+    "boss": "B.B.goblin (Lv. 90 )",
+    "color": "■ B26"
+  },
+  {
+    "boss": "Ancient empress (Lv. 84 )",
+    "color": "■ A72"
+  },
+  {
+    "boss": "Masked warrior (Lv. 87 )",
+    "color": "■ C67"
+  },
+  {
+    "boss": "Pillar golem (Lv. 90 )",
+    "color": "■ A1"
+  },
+  {
+    "boss": "Glass dragon yelb (Lv. 93 )",
+    "color": "■ A52"
+  },
+  {
+    "boss": "Nurethoth (Lv. 96 )",
+    "color": "■ B19"
+  },
+  {
+    "boss": "Jade bird (Lv. 99 )",
+    "color": "■ B9"
+  },
+  {
+    "boss": "Goovua (Lv. 102 )",
+    "color": "■ C78"
+  },
+  {
+    "boss": "Scrader (Lv. 105 )",
+    "color": "■ C7"
+  },
+  {
+    "boss": "Black Knight of delusion (Lv. 108 )",
+    "color": "■ A2"
+  },
+  {
+    "boss": "Evil crystal beaat (Lv. 111 )",
+    "color": "■ C48"
+  },
+  {
+    "boss": "Inzanio of dark knight (Lv. 114 )",
+    "color": "■ A56"
+  },
+  {
+    "boss": "Twilight dragon (Lv. 120 )",
+    "color": "■ C61"
+  },
+  {
+    "boss": "Cerberus (Lv. 117 )",
+    "color": "■ Unknown"
+  },
+  {
+    "boss": "Zolban (Lv. 118 )",
+    "color": "■ C51"
+  },
+  {
+    "boss": "Aranea (Lv. 120 )",
+    "color": "■ A36"
+  },
+  {
+    "boss": "Bexiz (Lv. 123 )",
+    "color": "■ A36"
+  },
+  {
+    "boss": "Imitator (Lv. 126 )",
+    "color": "■ A49"
+  },
+  {
+    "boss": "Imitacia (Lv. 129 )",
+    "color": "■ C11"
+  },
+  {
+    "boss": "Memecoleolus (Lv. 120 )",
+    "color": "■ A6"
+  },
+  {
+    "boss": "Iconos (Lv. 128 )",
+    "color": "■ A6"
+  },
+  {
+    "boss": "Tapir (Lv. 140 )",
+    "color": "■ C1"
+  },
+  {
+    "boss": "Ifrid (Lv. 132 )",
+    "color": "■ C19"
+  },
+  {
+    "boss": "Prot leon (Lv. 135 )",
+    "color": "■ A60"
+  },
+  {
+    "boss": "York (Lv. 138 )",
+    "color": "■ A83"
+  },
+  {
+    "boss": "Tyrant machina (Lv. 141 )",
+    "color": "■ C45"
+  },
+  {
+    "boss": "Mozto machina (Lv. 144 )",
+    "color": "■ C2"
+  },
+  {
+    "boss": "Lalvada (Lv. 147 )",
+    "color": "■ A71"
+  },
+  {
+    "boss": "Zahhak machina (Lv. 150 )",
+    "color": "■ C66"
+  },
+  {
+    "boss": "Guignol (Lv. 153 )",
+    "color": "■ C46"
+  },
+  {
+    "boss": "Gwaimol (Lv. 156 )",
+    "color": "■ B4"
+  },
+  {
+    "boss": "Ultimate machina (Lv. 159 )",
+    "color": "■ C3"
+  },
+  {
+    "boss": "Ornlarf (Lv. 162 )",
+    "color": "■ C32"
+  },
+  {
+    "boss": "Maton sword (Lv. 163 )",
+    "color": "■ B11"
+  },
+  {
+    "boss": "Shampy (Lv. 165 )",
+    "color": "■ B19"
+  },
+  {
+    "boss": "Venena coenubia (Lv. 170 )",
+    "color": "■ A54"
+  },
+  {
+    "boss": "Crystal titan (Lv. 168 )",
+    "color": "■ C80"
+  },
+  {
+    "boss": "Mom fluck (Lv. 171 )",
+    "color": "■ B83"
+  },
+  {
+    "boss": "Zelbuse (Lv. 174 )",
+    "color": "■ B55"
+  },
+  {
+    "boss": "Mardula (Lv. 177 )",
+    "color": "■ B2"
+  },
+  {
+    "boss": "Selle zauga (Lv. 180 )",
+    "color": "■ B76"
+  },
+  {
+    "boss": "King piton (Lv. 183 )",
+    "color": "■ B15"
+  },
+  {
+    "boss": "Finstern the dark dragon (Lv. 186 )",
+    "color": "■ C33"
+  },
+  {
+    "boss": "Tuscog (Lv. 189 )",
+    "color": "■ A18"
+  },
+  {
+    "boss": "Eroded pilz (Lv. 192 )",
+    "color": "■ B46"
+  },
+  {
+    "boss": "Pyxtica (Lv. 195 )",
+    "color": "■ B59"
+  },
+  {
+    "boss": "Kuzto (Lv. 198 )",
+    "color": "■ B6"
+  },
+  {
+    "boss": "Sapphire roga (Lv. 201 )",
+    "color": "■ A1"
+  },
+  {
+    "boss": "Gravicep (Lv. 204 )",
+    "color": "■ A42"
+  },
+  {
+    "boss": "Demonic quasar (Lv. 205 )",
+    "color": "■ C37"
+  },
+  {
+    "boss": "Repthon (Lv. 207 )",
+    "color": "■ A22"
+  },
+  {
+    "boss": "Vulture (Lv. 210 )",
+    "color": "■ A63"
+  },
+  {
+    "boss": "Venena metacoenubia (Lv. 215 )",
+    "color": "■ C48"
+  },
+  {
+    "boss": "Pisteus (Lv. 213 )",
+    "color": "■ C15"
+  },
+  {
+    "boss": "Arachnidemon (Lv. 216 )",
+    "color": "■ A36"
+  },
+  {
+    "boss": "Black shadow (Lv. 219 )",
+    "color": "■ B11"
+  },
+  {
+    "boss": "Hexter (Lv. 222 )",
+    "color": "■ B44"
+  },
+  {
+    "boss": "Irestida (Lv. 225 )",
+    "color": "■ A80"
+  },
+  {
+    "boss": "Reliza (Lv. 230 )",
+    "color": "■ C9"
+  },
+  {
+    "boss": "Gemma (Lv. 228 )",
+    "color": "■ B47"
+  },
+  {
+    "boss": "Ferzen the rock dragon (Lv. 231 )",
+    "color": "■ C55"
+  },
+  {
+    "boss": "Junior dragon zyvio (Lv. 234 )",
+    "color": "■ C73"
+  },
+  {
+    "boss": "War dragon turba (Lv. 237 )",
+    "color": "■ A63"
+  },
+  {
+    "boss": "Vlam the frame dragon (Lv. 240 )",
+    "color": "■ C43"
+  },
+  {
+    "boss": "Velum (Lv. 243 )",
+    "color": "■ B61"
+  },
+  {
+    "boss": "Oculasignio (Lv. 246 )",
+    "color": "■ A51"
+  },
+  {
+    "boss": "Gordel (Lv. 249 )",
+    "color": "■ C26"
+  },
+  {
+    "boss": "Guard golem (Lv. 252 )",
+    "color": "■ A21"
+  },
+  {
+    "boss": "Barning dragon igneus (Lv. 255 )",
+    "color": "■ B52"
+  },
+  {
+    "boss": "Trickster dragon mimyugon (Lv. 258 )",
+    "color": "■ C47"
+  },
+  {
+    "boss": "Filrocas (Lv. 261 )",
+    "color": "■ C37"
+  },
+  {
+    "boss": "Wicked dragon fazzino (Lv. 264 )",
+    "color": "■ A45"
+  },
+  {
+    "boss": "Walican (Lv. 267 )",
+    "color": "■ A68"
+  },
+  {
+    "boss": "Brass dragon reguita (Lv. 270 )",
+    "color": "■ C30"
+  },
+  {
+    "boss": "Dominaredor (Lv. 273 )",
+    "color": "■ A5"
+  },
+  {
+    "boss": "Zapo (Lv. 276 )",
+    "color": "■ A5"
+  },
+  {
+    "boss": "RedAshDragonRudis (Lv. 279 )",
+    "color": "■ B69"
+  },
+  {
+    "boss": "DonProfundo (Lv. 282 )",
+    "color": "■ B16"
+  },
+  {
+    "boss": "Vatudo (Lv. 285 )",
+    "color": "■ C24"
+  },
+  {
+    "boss": "RagingDragonBovinari (Lv. 288 )",
+    "color": "■ A19"
+  },
+  {
+    "boss": "Humida (Lv. 291 )",
+    "color": "■ C65"
+  },
+  {
+    "boss": "Torexesa (Lv. 289 )",
+    "color": "■ B70"
+  },
+  {
+    "boss": "Mugloon (Lv. 294 )",
+    "color": "■ B27"
+  },
+  {
+    "boss": "Deformis (Lv. 297 )",
+    "color": "■ C4"
+  },
+  {
+    "boss": "Menti (Lv. 300 )",
+    "color": "■ B81"
+  },
+  {
+    "boss": "Byskiva (Lv. 303 )",
+    "color": "■ B71"
+  },
+  {
+    "boss": "Piscruva (Lv. 306 )",
+    "color": "■ A46"
+  },
+  {
+    "boss": "Supreme Evil Crystal Beast (Lv. 309 )",
+    "color": "■ A13"
+  },
+  {
+    "boss": "Bakuzan (Lv. 312 )",
+    "color": "■ B21"
+  },
+  {
+    "boss": "Gula (Lv. 318 )",
+    "color": "■ A6"
+  },
+  {
+    "boss": "Chocolate ooze (Lv. 90 )",
+    "color": "■ A46"
+  },
+  {
+    "boss": "Eidenliebe (Lv. 150 )",
+    "color": "■ C40"
+  },
+  {
+    "boss": "Jeandoux (Lv. 180 )",
+    "color": "■ B57"
+  },
+  {
+    "boss": "Garnache (Lv. 200 )",
+    "color": "■ A49"
+  },
+  {
+    "boss": "Mieli (Lv. 220 )",
+    "color": "■ B5"
+  },
+  {
+    "boss": "Broker goblin (Lv. 240 )",
+    "color": "■ B22"
+  },
+  {
+    "boss": "ペルルラージ (Lv. 250 )",
+    "color": "■ C24"
+  },
+  {
+    "boss": "Erkuch (Lv. 270 )",
+    "color": "■ B23"
+  },
+  {
+    "boss": "シカノカーミ (Lv. 290 )",
+    "color": "■ C30"
+  },
+  {
+    "boss": "Candela (Lv. 100 )",
+    "color": "■ C41"
+  },
+  {
+    "boss": "Handmade cookie (Lv. 160 )",
+    "color": "■ A7"
+  },
+  {
+    "boss": "Mercy (Lv. 190 )",
+    "color": "■ A9"
+  },
+  {
+    "boss": "Alfenix (Lv. 210 )",
+    "color": "■ C29"
+  },
+  {
+    "boss": "Kruztor (Lv. 250 )",
+    "color": "■ B34"
+  },
+  {
+    "boss": "Evil lefina (Lv. 230 )",
+    "color": "■ B18"
+  },
+  {
+    "boss": "Mage filecia (Lv. 250 )",
+    "color": "■ A35"
+  },
+  {
+    "boss": "Bangrubom (Lv. 260 )",
+    "color": "■ B70"
+  },
+  {
+    "boss": "Goblin Zucotto (Lv. 280 )",
+    "color": "■ B31"
+  },
+  {
+    "boss": "Rondine (Lv. 315 )",
+    "color": "■ Unknown"
+  }
+]
