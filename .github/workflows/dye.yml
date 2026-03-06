@@ -34,7 +34,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm install cheerio axios puppeteer
+        run: npm install cheerio axios puppeteer canvas
 
       - name: Install Chrome
         run: npx puppeteer browsers install chrome
@@ -43,6 +43,8 @@ jobs:
         run: node run.js
       - name: Run dye json
         run: node dye.js
+      - name: Run generate image
+        run: node canvas.js
 
       - name: Commit and push
         run: |
