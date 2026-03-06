@@ -23,22 +23,26 @@ const palette = {
 81:"#0b2a63",82:"#050563",83:"#3c006b",84:"#6b005c",85:"#5c002f"
 };
 
-async function scrape() {
+async function scrape(){
 
 const url = "https://tanaka0.work/AIO/en/DyePredictor/ColorWeapon";
 
 const browser = await puppeteer.launch({
 headless: "new",
-args:[
+args: [
 "--no-sandbox",
 "--disable-setuid-sandbox",
 "--disable-dev-shm-usage"
 ]
 });
 
-try {
+try{
 
 const page = await browser.newPage();
+
+await page.setUserAgent(
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
+);
 
 await page.setViewport({ width:1920, height:1080 });
 
@@ -55,32 +59,38 @@ const tableCount = await page.$$eval("table", t => t.length);
 
 console.log("total tables:", tableCount);
 
+if(tableCount === 0){
+throw new Error("no table found");
+}
+
 const rawData = await page.evaluate(() => {
 
 const data = [];
 
 const tables = document.querySelectorAll("table");
 
-tables.forEach((table,ti) => {
+tables.forEach((table, tableIndex) => {
 
 const rows = table.querySelectorAll("tr");
 
-rows.forEach((tr,ri) => {
+rows.forEach((row, rowIndex) => {
 
-if(ri === 0) return;
+if(rowIndex === 0) return;
 
-const cells = tr.querySelectorAll("td");
+const cells = row.querySelectorAll("td");
 
 if(cells.length < 2) return;
 
-const boss = cells[0].innerText.trim();
-const dye = cells[1].innerText.trim();
+const boss = cells[0].textContent.trim();
+const dye = cells[1].textContent.trim();
 
-if(!boss || !dye) return;
+if(!boss || !dye || dye === "Unknown") return;
 
 data.push({
 boss,
-dye
+dye,
+table: tableIndex,
+row: rowIndex
 });
 
 });
@@ -91,7 +101,7 @@ return data;
 
 });
 
-console.log("rows found:", rawData.length);
+console.log("total rows:", rawData.length);
 
 const result = rawData.map(e => {
 
@@ -105,7 +115,7 @@ return {
 boss: e.boss,
 dye: clean,
 color_id: num,
-hex: palette[num] || "#ffffff"
+hex: num ? palette[num] : null
 };
 
 });
@@ -118,11 +128,11 @@ JSON.stringify(result,null,2)
 console.log("saved dye_data.json");
 console.log("total boss:", result.length);
 
-} catch(err) {
+}catch(err){
 
 console.error(err);
 
-} finally {
+}finally{
 
 await browser.close();
 
