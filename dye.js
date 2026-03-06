@@ -3,6 +3,8 @@ import fs from "fs";
 
 const url = "https://tanaka0.work/AIO/en/DyePredictor/ColorWeapon";
 
+const delay = (ms) => new Promise((r) => setTimeout(r, ms));
+
 const palette = {
 1:"#ffffff",2:"#d9d9d9",3:"#bfbfbf",4:"#808080",5:"#000000",
 6:"#e6b8bd",7:"#e4c6c3",8:"#e7d7c7",9:"#e9e0c2",10:"#ece9c0",
@@ -31,26 +33,58 @@ const palette = {
 81:"#0b2a63",82:"#050563",83:"#3c006b",84:"#6b005c",85:"#5c002f"
 };
 
-async function scrape() {
+async function scrape(){
 
 const browser = await puppeteer.launch({
 headless:"new",
 args:[
 "--no-sandbox",
 "--disable-setuid-sandbox",
-"--disable-dev-shm-usage"
+"--disable-dev-shm-usage",
+"--disable-blink-features=AutomationControlled"
 ]
 });
 
-try {
+try{
 
 const page = await browser.newPage();
 
-await page.goto(url,{waitUntil:"networkidle2",timeout:60000});
+await page.setUserAgent(
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
+);
 
-await page.waitForSelector("table");
+console.log("opening page...");
 
-const data = await page.evaluate(()=>{
+await page.goto(url,{
+waitUntil:"domcontentloaded",
+timeout:60000
+});
+
+let tableFound=false;
+
+for(let i=0;i<10;i++){
+
+const tables=await page.$$("table");
+
+if(tables.length>0){
+tableFound=true;
+break;
+}
+
+console.log("waiting table...");
+await delay(3000);
+
+}
+
+if(!tableFound){
+throw new Error("table not found");
+}
+
+console.log("table detected");
+
+/* ambil data */
+
+const rawData = await page.evaluate(()=>{
 
 const rows=[];
 
@@ -60,10 +94,15 @@ const tds=[...tr.querySelectorAll("td")];
 
 if(tds.length>=2){
 
-const boss=tds[0].innerText.trim();
-const dye=tds[1].innerText.trim();
+const boss = tds[0].innerText.trim();
+const dye = tds[1].innerText.trim();
 
-if(boss && dye && dye!=="Unknown"){
+if(
+boss &&
+dye &&
+dye !== "Unknown" &&
+/[A-Z]\d+/.test(dye)
+){
 rows.push({boss,dye});
 }
 
@@ -75,7 +114,9 @@ return rows;
 
 });
 
-const result = data.map(e=>{
+/* mapping color */
+
+const result = rawData.map(e=>{
 
 const num = parseInt(e.dye.replace(/[A-Z]/,""));
 
@@ -88,12 +129,19 @@ hex:palette[num] || "#ffffff"
 
 });
 
-fs.writeFileSync("dye_data.json",JSON.stringify(result,null,2));
+fs.writeFileSync(
+"dye_data.json",
+JSON.stringify(result,null,2)
+);
 
 console.log("total boss:",result.length);
 console.log("saved: dye_data.json");
 
-} finally {
+} catch(err){
+
+console.error(err);
+
+} finally{
 
 await browser.close();
 
