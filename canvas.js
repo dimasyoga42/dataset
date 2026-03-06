@@ -6,50 +6,55 @@ const output = "dye_table.png";
 
 const data = JSON.parse(fs.readFileSync(input, "utf8"));
 
-const rowHeight = 40;
+const rowHeight = 42;
+const padding = 30;
 const width = 900;
-const height = rowHeight * data.length + 80;
+const height = data.length * rowHeight + 100;
 
 const canvas = createCanvas(width, height);
 const ctx = canvas.getContext("2d");
 
+/* background */
 ctx.fillStyle = "#0f172a";
 ctx.fillRect(0, 0, width, height);
 
+/* title */
 ctx.fillStyle = "#ffffff";
-ctx.font = "bold 28px Sans";
-ctx.fillText("Toram Weapon Dye List", 30, 40);
+ctx.font = "bold 30px Sans-serif";
+ctx.fillText("Toram Weapon Dye List", padding, 45);
 
-ctx.font = "20px Sans";
+/* start table */
+const startY = 80;
 
-function colorFromCode(code) {
-  let hash = 0;
-  for (let i = 0; i < code.length; i++) {
-    hash = code.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  const h = hash % 360;
-  return `hsl(${h},70%,55%)`;
-}
+ctx.font = "20px Sans-serif";
 
-data.forEach((item, i) => {
-  const y = 70 + i * rowHeight;
+data.forEach((item, index) => {
 
-  ctx.fillStyle = i % 2 ? "#1e293b" : "#111827";
-  ctx.fillRect(20, y - 25, width - 40, rowHeight);
+  const y = startY + index * rowHeight;
 
-  const color = colorFromCode(item.color);
+  /* row background */
+  ctx.fillStyle = index % 2 === 0 ? "#111827" : "#1e293b";
+  ctx.fillRect(padding - 10, y - 25, width - padding * 2 + 20, rowHeight);
+
+  /* color box gunakan HEX dari json */
+  const color = item.hex || "#ffffff";
 
   ctx.fillStyle = color;
-  ctx.fillRect(30, y - 18, 24, 24);
+  ctx.fillRect(padding, y - 17, 24, 24);
 
-  ctx.strokeStyle = "#000";
-  ctx.strokeRect(30, y - 18, 24, 24);
+  ctx.strokeStyle = "#000000";
+  ctx.strokeRect(padding, y - 17, 24, 24);
 
+  /* boss name */
   ctx.fillStyle = "#ffffff";
-  ctx.fillText(item.boss, 70, y);
+  ctx.textAlign = "left";
+  ctx.fillText(item.boss, padding + 45, y);
 
+  /* dye code */
   ctx.fillStyle = "#94a3b8";
-  ctx.fillText(item.color, width - 120, y);
+  ctx.textAlign = "right";
+  ctx.fillText(item.dye, width - padding, y);
+
 });
 
 const buffer = canvas.toBuffer("image/png");
