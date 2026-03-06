@@ -1,4 +1,7 @@
+import puppeteer from "puppeteer";
 import fs from "fs";
+
+const url = "https://tanaka0.work/AIO/en/DyePredictor/ColorWeapon";
 
 const palette = {
 1:"#ffffff",2:"#d9d9d9",3:"#bfbfbf",4:"#808080",5:"#000000",
@@ -28,27 +31,103 @@ const palette = {
 81:"#0b2a63",82:"#050563",83:"#3c006b",84:"#6b005c",85:"#5c002f"
 };
 
-const data = JSON.parse(
-fs.readFileSync("dye_data.json","utf8")
-);
+async function scrape(){
 
-const result = data.map(e => {
+const browser = await puppeteer.launch({
+headless: "new",
+args:[
+"--no-sandbox",
+"--disable-setuid-sandbox",
+"--disable-dev-shm-usage"
+]
+});
 
-const match = e.dye.match(/\d+/);
+try{
+
+const page = await browser.newPage();
+
+await page.goto(url,{
+waitUntil:"networkidle2",
+timeout:60000
+});
+
+/* cek jumlah tabel */
+
+const tableCount = await page.evaluate(()=>{
+return document.querySelectorAll("table").length;
+});
+
+console.log("jumlah tabel:", tableCount);
+
+/* ambil data dari semua tabel */
+
+const rawData = await page.evaluate(()=>{
+
+const rows = [];
+
+document.querySelectorAll("table").forEach(table=>{
+
+table.querySelectorAll("tr").forEach(tr=>{
+
+const tds = tr.querySelectorAll("td");
+
+if(tds.length >= 2){
+
+const boss = tds[0].innerText.trim();
+const dye = tds[1].innerText.trim();
+
+if(boss && dye && dye !== "Unknown"){
+rows.push({boss,dye});
+}
+
+}
+
+});
+
+});
+
+return rows;
+
+});
+
+/* bersihkan dan mapping warna */
+
+const result = rawData.map(e=>{
+
+const cleanDye = e.dye.replace(/[^\w\d]/g,"");
+
+const match = cleanDye.match(/\d+/);
 const num = match ? parseInt(match[0]) : null;
 
-return {
+return{
 boss: e.boss,
-dye: e.dye.replace(/[^\w\d]/g,""),
+dye: cleanDye,
 color_id: num,
 hex: palette[num] || "#ffffff"
 };
 
 });
 
+/* simpan json */
+
 fs.writeFileSync(
 "dye_data.json",
 JSON.stringify(result,null,2)
 );
 
-console.log("total updated:", result.length);
+console.log("total boss:", result.length);
+console.log("saved: dye_data.json");
+
+}catch(err){
+
+console.error(err);
+
+}finally{
+
+await browser.close();
+
+}
+
+}
+
+scrape();
