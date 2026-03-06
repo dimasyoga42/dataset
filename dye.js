@@ -23,12 +23,12 @@ const palette = {
 81:"#0b2a63",82:"#050563",83:"#3c006b",84:"#6b005c",85:"#5c002f"
 };
 
-async function scrape(){
+async function scrape() {
 
 const url = "https://tanaka0.work/AIO/en/DyePredictor/ColorWeapon";
 
 const browser = await puppeteer.launch({
-headless:"new",
+headless: "new",
 args:[
 "--no-sandbox",
 "--disable-setuid-sandbox",
@@ -36,13 +36,9 @@ args:[
 ]
 });
 
-try{
+try {
 
 const page = await browser.newPage();
-
-await page.setUserAgent(
-"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
-);
 
 await page.setViewport({ width:1920, height:1080 });
 
@@ -55,66 +51,54 @@ timeout:60000
 
 await delay(3000);
 
-/* cek jumlah tabel */
-
 const tableCount = await page.$$eval("table", t => t.length);
 
 console.log("total tables:", tableCount);
 
-if(tableCount === 0){
-throw new Error("no table found");
-}
-
-/* ambil semua data tabel */
-
 const rawData = await page.evaluate(() => {
 
-const result = [];
+const data = [];
 
 const tables = document.querySelectorAll("table");
 
-tables.forEach((table, tableIndex) => {
+tables.forEach((table,ti) => {
 
 const rows = table.querySelectorAll("tr");
 
-rows.forEach((tr,rowIndex) => {
+rows.forEach((tr,ri) => {
 
-const tds = tr.querySelectorAll("td");
+if(ri === 0) return;
 
-if(tds.length >= 2){
+const cells = tr.querySelectorAll("td");
 
-const boss = tds[0].innerText.trim();
-const dye = tds[1].innerText.trim();
+if(cells.length < 2) return;
 
-if(boss && dye && dye !== "Unknown"){
+const boss = cells[0].innerText.trim();
+const dye = cells[1].innerText.trim();
 
-result.push({
+if(!boss || !dye) return;
+
+data.push({
 boss,
-dye,
-table: tableIndex,
-row: rowIndex
+dye
 });
-
-}
-
-}
 
 });
 
 });
 
-return result;
+return data;
 
 });
 
-console.log("total rows:", rawData.length);
-
-/* convert dye ke color id */
+console.log("rows found:", rawData.length);
 
 const result = rawData.map(e => {
 
 const clean = e.dye.replace(/[^\w\d]/g,"");
+
 const match = clean.match(/\d+/);
+
 const num = match ? parseInt(match[0]) : null;
 
 return {
@@ -134,11 +118,11 @@ JSON.stringify(result,null,2)
 console.log("saved dye_data.json");
 console.log("total boss:", result.length);
 
-}catch(err){
+} catch(err) {
 
 console.error(err);
 
-}finally{
+} finally {
 
 await browser.close();
 
