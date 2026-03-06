@@ -41,6 +41,8 @@ jobs:
 
       - name: Run screenshot
         run: node run.js
+      - name: Run dye json
+        run: node dye.js
 
       - name: Commit and push
         run: |
