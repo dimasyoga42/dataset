@@ -28,9 +28,11 @@ const palette = {
 81:"#0b2a63",82:"#050563",83:"#3c006b",84:"#6b005c",85:"#5c002f"
 };
 
-const data = JSON.parse(fs.readFileSync("dye_data.json","utf8"));
+const data = JSON.parse(
+fs.readFileSync("dye_data.json","utf8")
+);
 
-const fixed = data.map(e => {
+const result = data.map((e) => {
 
 const num = parseInt(e.dye.replace(/[A-Z]/,""));
 
@@ -45,14 +47,7 @@ hex: palette[num] || "#ffffff"
 
 fs.writeFileSync(
 "dye_data.json",
-JSON.stringify(fixed,null,2)
+JSON.stringify(result,null,2)
 );
 
-console.log("color fixed:", fixed.length);
-await browser.close();
-
-}
-
-}
-
-scrape();
+console.log("total updated:", result.length);
