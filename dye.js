@@ -1,7 +1,7 @@
 import puppeteer from "puppeteer";
 import fs from "fs";
 
-const url = "https://tanaka0.work/AIO/en/DyePredictor/ColorWeapon";
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const palette = {
 1:"#ffffff",2:"#d9d9d9",3:"#bfbfbf",4:"#808080",5:"#000000",
@@ -31,39 +31,83 @@ const palette = {
 81:"#0b2a63",82:"#050563",83:"#3c006b",84:"#6b005c",85:"#5c002f"
 };
 
-async function scrape(){
+async function scrape() {
+
+const url = "https://tanaka0.work/AIO/en/DyePredictor/ColorWeapon";
 
 const browser = await puppeteer.launch({
 headless: "new",
 args:[
 "--no-sandbox",
 "--disable-setuid-sandbox",
-"--disable-dev-shm-usage"
+"--disable-dev-shm-usage",
+"--disable-gpu",
+"--disable-features=site-per-process"
 ]
 });
 
-try{
+try {
 
 const page = await browser.newPage();
+
+await page.setUserAgent(
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
+);
+
+await page.setViewport({ width:1920, height:1080 });
+
+console.log("opening page...");
 
 await page.goto(url,{
 waitUntil:"networkidle2",
 timeout:60000
 });
 
-/* cek jumlah tabel */
+await delay(3000);
 
-const tableCount = await page.evaluate(()=>{
-return document.querySelectorAll("table").length;
+/* cek tabel */
+
+const tables = await page.$$("table");
+
+if(tables.length === 0){
+throw new Error("table not found");
+}
+
+console.log("table found:", tables.length);
+
+/* scroll supaya semua tabel render */
+
+await page.evaluate(async () => {
+
+await new Promise((resolve)=>{
+
+let totalHeight = 0;
+const distance = 300;
+
+const timer = setInterval(()=>{
+
+window.scrollBy(0,distance);
+totalHeight += distance;
+
+if(totalHeight >= document.body.scrollHeight){
+clearInterval(timer);
+window.scrollTo(0,0);
+resolve();
+}
+
+},100);
+
 });
 
-console.log("jumlah tabel:", tableCount);
+});
 
-/* ambil data dari semua tabel */
+await delay(1000);
+
+/* ambil data */
 
 const rawData = await page.evaluate(()=>{
 
-const rows = [];
+const rows=[];
 
 document.querySelectorAll("table").forEach(table=>{
 
@@ -76,7 +120,11 @@ if(tds.length >= 2){
 const boss = tds[0].innerText.trim();
 const dye = tds[1].innerText.trim();
 
-if(boss && dye && dye !== "Unknown"){
+if(
+boss &&
+dye &&
+dye !== "Unknown"
+){
 rows.push({boss,dye});
 }
 
@@ -90,13 +138,14 @@ return rows;
 
 });
 
-/* bersihkan dan mapping warna */
+/* mapping warna */
 
 const result = rawData.map(e=>{
 
 const cleanDye = e.dye.replace(/[^\w\d]/g,"");
 
 const match = cleanDye.match(/\d+/);
+
 const num = match ? parseInt(match[0]) : null;
 
 return{
@@ -106,6 +155,31 @@ color_id: num,
 hex: palette[num] || "#ffffff"
 };
 
+});
+
+/* simpan json */
+
+fs.writeFileSync(
+"dye_data.json",
+JSON.stringify(result,null,2)
+);
+
+console.log("total boss:", result.length);
+console.log("saved: dye_data.json");
+
+} catch(err){
+
+console.error(err);
+
+} finally{
+
+await browser.close();
+
+}
+
+}
+
+scrape();
 });
 
 /* simpan json */
