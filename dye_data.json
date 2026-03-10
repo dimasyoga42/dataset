@@ -193,9 +193,9 @@
   },
   {
     "boss": "Cerberus\n                        (Lv.\n                        117\n                        )",
-    "dye": "Unknown",
-    "color_id": null,
-    "hex": null
+    "dye": "C69",
+    "color_id": 69,
+    "hex": "#a0105a"
   },
   {
     "boss": "Zolban\n                        (Lv.\n                        118\n                        )",
@@ -706,6 +706,12 @@
     "dye": "C30",
     "color_id": 30,
     "hex": "#79cbd1"
+  },
+  {
+    "boss": "ベルカーロイ\n                        (Lv.\n                        290\n                        )",
+    "dye": "B48",
+    "color_id": 48,
+    "hex": "#2f78d9"
   },
   {
     "boss": "Candela\n                        (Lv.\n                        100\n                        )",
