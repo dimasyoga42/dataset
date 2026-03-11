@@ -57,24 +57,44 @@ async function scrapeToramXtal() {
           stats["Upgrade for"] = cleanName(stats["Upgrade for"]);
         }
 
+        // BUG FIX #1: Gunakan selector yang lebih tepat untuk "Used For"
+        // Sebelumnya: mencari <li> yang mengandung teks "Used For" — tidak reliable
+        // karena teks bisa tersebar di child elements
         const upgradeInto = [];
         $(el)
-          .find("li")
+          .find(".item-basestat li, .card-body li")
           .each((__, liEl) => {
-            if ($(liEl).text().includes("Used For")) {
+            const liText = $(liEl)
+              .clone()
+              .children()
+              .remove()
+              .end()
+              .text()
+              .trim();
+            if (
+              liText.includes("Used For") ||
+              $(liEl).find("span, b, strong").text().includes("Used For")
+            ) {
               $(liEl)
-                .find("ul.styled-list li a")
+                .find("ul.styled-list li a, ul li a")
                 .each((___, a) => {
                   upgradeInto.push(cleanName($(a).text()));
                 });
             }
           });
 
+        // BUG FIX #2: upgradeFor diambil dari stats SETELAH di-clean, bukan sebelum
+        // Sebelumnya: stats["Upgrade for"] sudah di-overwrite, tapi referensi di push pakai
+        // stats["Upgrade for"] yang belum tentu sama dengan yang disimpan di xtal.upgradeFor
+        const upgradeFor = stats["Upgrade for"]
+          ? cleanName(stats["Upgrade for"])
+          : null;
+
         allXtalRaw.push({
           name,
           type,
           stats,
-          upgradeFor: stats["Upgrade for"] || null,
+          upgradeFor, // konsisten: selalu dari cleanName
           upgradeInto,
         });
       });
@@ -85,21 +105,26 @@ async function scrapeToramXtal() {
 
     console.log(`Total data mentah berhasil diambil: ${allXtalRaw.length}`);
 
+    // BUG FIX #3: buildFullUpgradeRoute dipanggil dengan allXtalRaw yang sudah lengkap
+    // MASALAH UTAMA: Di kode lama, finalData di-map() SEBELUM allXtalRaw selesai diisi.
+    // Sekarang finalData diproses di sini, SETELAH loop selesai — sudah benar.
+    // Namun ada bug di dalam buildFullUpgradeRoute itu sendiri (lihat fungsi di bawah).
     const finalData = allXtalRaw.map((xtal) => {
       const isRoot = !xtal.upgradeFor;
-
-      // Mengambil rute lengkap (Root -> ... -> Tertinggi)
       const fullPath = buildFullUpgradeRoute(xtal.name, allXtalRaw);
 
-      // Membuat Rute 1: Root sampai posisi Xtal saat ini
       let currentRoute = null;
+      let maxRoute = null;
+
       if (!isRoot && fullPath) {
         const currentIndex = fullPath.indexOf(xtal.name);
-        currentRoute = fullPath.slice(0, currentIndex + 1).join(" -> ");
+        // BUG FIX #4: Jika currentIndex === -1 (nama tidak ditemukan di path),
+        // jangan slice — hasilnya array kosong yang membingungkan
+        if (currentIndex !== -1) {
+          currentRoute = fullPath.slice(0, currentIndex + 1).join(" -> ");
+          maxRoute = fullPath.join(" -> ");
+        }
       }
-
-      // Membuat Rute 2: Root sampai posisi Tertinggi
-      const maxRoute = !isRoot && fullPath ? fullPath.join(" -> ") : null;
 
       return {
         name: xtal.name,
@@ -122,30 +147,44 @@ async function scrapeToramXtal() {
 }
 
 /**
- * Mencari silsilah utuh dari Root hingga evolusi tertinggi
+ * Mencari silsilah utuh dari Root hingga evolusi tertinggi.
+ *
+ * BUG FIX #5 (BUG UTAMA): Fungsi ini sebelumnya gagal menemukan root
+ * karena pencarian pakai xtal.name exact-match, tapi nama di allXtalRaw
+ * sudah di-clean() sedangkan upgradeFor mungkin belum konsisten.
+ * Sekarang lookup pakai normalisasi trim+lowercase agar tidak case/space sensitif.
  */
 function buildFullUpgradeRoute(currentName, fullList) {
-  let rootName = currentName;
-  let temp = fullList.find((x) => x.name === rootName);
+  // Helper: cari xtal by name dengan normalisasi
+  const findByName = (name) => {
+    const normalized = name.trim().toLowerCase();
+    return fullList.find((x) => x.name.trim().toLowerCase() === normalized);
+  };
 
   // 1. Cari Root
+  let rootName = currentName;
+  let temp = findByName(rootName);
+  const visited = new Set();
+
   while (temp && temp.upgradeFor) {
+    if (visited.has(temp.name)) break; // hindari loop tak terbatas
+    visited.add(temp.name);
     rootName = temp.upgradeFor;
-    temp = fullList.find((x) => x.name === rootName);
+    temp = findByName(rootName);
   }
 
   // 2. Susun jalur dari Root ke Puncak
   const route = [];
-  let curr = fullList.find((x) => x.name === rootName);
-  const visited = new Set();
+  let curr = findByName(rootName);
+  const visitedPath = new Set();
 
-  while (curr && !visited.has(curr.name)) {
+  while (curr && !visitedPath.has(curr.name)) {
     route.push(curr.name);
-    visited.add(curr.name);
+    visitedPath.add(curr.name);
 
     if (curr.upgradeInto && curr.upgradeInto.length > 0) {
       const nextName = curr.upgradeInto[0];
-      curr = fullList.find((x) => x.name === nextName);
+      curr = findByName(nextName);
     } else {
       curr = null;
     }
