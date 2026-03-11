@@ -3,15 +3,15 @@ on:
   schedule:
     - cron: "*/15 * * * *"
   workflow_dispatch:
-
 permissions:
   contents: write
-
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -38,20 +38,19 @@ jobs:
 
       - name: Install Chrome
         run: npx puppeteer browsers install chrome
-      - name: Commit change
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "a"
+
       - name: Run screenshot
         run: node run.js
+
       - name: Run dye json
         run: node dye.js
+
       - name: Run xtal json
         run: node colors.js
+
       - name: Run generate image
         run: node canvas.js
+
       - name: Run Skill
         run: node skill.js
 
@@ -59,10 +58,12 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Pull dulu sebelum commit, pakai ours strategy
+          # agar file hasil generate (lokal) tidak ditimpa remote
+          git pull --rebase --autostash
+
           git add .
-          git commit -m "a"
-          git pull
-          git add .
-          git diff --cached --quiet && echo "No changes, skipping commit" && exit 0
+          git diff --cached --quiet && echo "No changes, skipping." && exit 0
           git commit -m "update screenshot $(date +'%Y-%m-%d %H:%M:%S')"
           git push
