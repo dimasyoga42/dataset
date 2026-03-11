@@ -43,6 +43,8 @@ jobs:
         run: node run.js
       - name: Run dye json
         run: node dye.js
+      - name: Run xtal json
+        run: node colors.js
       - name: Run generate image
         run: node canvas.js
       - name: Run Skill
