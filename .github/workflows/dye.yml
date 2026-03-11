@@ -38,7 +38,12 @@ jobs:
 
       - name: Install Chrome
         run: npx puppeteer browsers install chrome
-
+      - name: Commit change
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "a"
       - name: Run screenshot
         run: node run.js
       - name: Run dye json
@@ -54,6 +59,8 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "a"
           git pull
           git add .
           git diff --cached --quiet && echo "No changes, skipping commit" && exit 0
