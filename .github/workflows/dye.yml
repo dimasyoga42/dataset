@@ -45,6 +45,8 @@ jobs:
         run: node dye.js
       - name: Run generate image
         run: node canvas.js
+      - name: Run Skill
+        run: node skill.js
 
       - name: Commit and push
         run: |
