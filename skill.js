@@ -3,9 +3,14 @@ import fs from "fs";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+function escapeCSV(text) {
+  if (!text) return "";
+  return `"${text.replace(/"/g, '""').replace(/\n/g, " ")}"`;
+}
+
 async function scrape() {
   const url = "https://toram-id.space/skill";
-  const output = "skills.json";
+  const output = "skills.csv";
 
   const browser = await puppeteer.launch({
     headless: "new",
@@ -18,7 +23,7 @@ async function scrape() {
     ],
   });
 
-  const result = [];
+  let csv = "skill_tree,name,image,content\n";
 
   try {
     const page = await browser.newPage();
@@ -65,10 +70,6 @@ async function scrape() {
       const skillPage = await browser.newPage();
 
       try {
-        await skillPage.setUserAgent(
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36",
-        );
-
         await skillPage.setViewport({ width: 1920, height: 1080 });
 
         await skillPage.goto(link, {
@@ -99,80 +100,63 @@ async function scrape() {
         await delay(1000);
 
         const data = await skillPage.evaluate(() => {
-          const text = (el) => (el ? el.innerText.trim() : "");
+          const skills = [];
+
+          const cards = document.querySelectorAll(".card");
 
           const title =
-            text(document.querySelector("h1")) ||
-            text(document.querySelector("h2"));
+            document.querySelector("h1")?.innerText ||
+            document.querySelector("h2")?.innerText ||
+            "";
 
-          const tables = [...document.querySelectorAll("table")].map(
-            (table) => {
-              const headers = [...table.querySelectorAll("th")].map((th) =>
-                th.innerText.trim(),
-              );
+          cards.forEach((card) => {
+            const raw =
+              card.querySelector(".card-body")?.innerText ||
+              card.innerText ||
+              "";
 
-              const rows = [...table.querySelectorAll("tr")]
-                .slice(1)
-                .map((tr) =>
-                  [...tr.querySelectorAll("td")].map((td) =>
-                    td.innerText.trim(),
-                  ),
-                );
+            const lines = raw
+              .split("\n")
+              .map((v) => v.trim())
+              .filter((v) => v !== "");
 
-              return {
-                headers,
-                rows,
-              };
-            },
-          );
+            if (lines.length === 0) return;
 
-          const sections = [...document.querySelectorAll(".card, .box")].map(
-            (card) => {
-              const name =
-                text(card.querySelector(".card-header")) ||
-                text(card.querySelector("h3"));
+            const name = lines[0];
+            const content = lines.slice(1).join(" ");
 
-              const content =
-                text(card.querySelector(".card-body")) || text(card);
+            const img = card.querySelector("img")?.src || "";
 
-              return {
-                name,
-                content,
-              };
-            },
-          );
+            skills.push({
+              tree: title,
+              name,
+              image: img,
+              content,
+            });
+          });
 
-          const images = [...document.querySelectorAll("img")].map(
-            (img) => img.src,
-          );
-
-          return {
-            title,
-            tables,
-            sections,
-            images,
-          };
+          return skills;
         });
 
-        result.push({
-          url: link,
-          ...data,
-        });
+        for (const skill of data) {
+          csv +=
+            `${escapeCSV(skill.tree)},` +
+            `${escapeCSV(skill.name)},` +
+            `${escapeCSV(skill.image)},` +
+            `${escapeCSV(skill.content)}\n`;
+        }
 
         await skillPage.close();
-
         await delay(1000);
       } catch (err) {
         console.log("skip error:", link);
-        console.log(err.message);
         await skillPage.close();
-        continue;
       }
     }
 
-    fs.writeFileSync(output, JSON.stringify(result, null, 2));
+    fs.writeFileSync(output, csv);
 
-    console.log("data saved:", output);
+    console.log("CSV saved:", output);
   } catch (err) {
     console.error(err);
   } finally {
