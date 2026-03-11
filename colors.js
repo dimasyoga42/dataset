@@ -3,135 +3,216 @@ import * as cheerio from "cheerio";
 import fs from "fs";
 
 /**
- * Fungsi untuk membersihkan nama kristal dari teks residu DOM
+ * Bersihkan nama xtal dari PHP debug noise di HTML coryn.club
+ * Contoh noise: "[phpBB Debug] PHP Notice ... Undefined variable: lang\nNama Xtal"
  */
-function cleanName(name) {
-  if (!name) return "";
-  return name
-    .replace(/\s*(Upgrade Into|Crafting|Furniture|Used For)\s*/gi, "")
-    .replace(/\s+/g, " ")
+function cleanXtalName(rawText) {
+  if (!rawText) return "";
+  return rawText
+    .split("\n")
+    .map((l) => l.trim())
+    .filter(
+      (l) =>
+        l &&
+        !l.startsWith("[phpBB") &&
+        !l.startsWith("in file") &&
+        !l.startsWith("on line") &&
+        !l.startsWith(":") &&
+        !l.startsWith("Undefined"),
+    )
+    .join(" ")
     .trim();
+}
+
+/** Normalisasi untuk perbandingan nama (case-insensitive, trim) */
+function norm(name) {
+  return name?.trim().toLowerCase() ?? "";
 }
 
 async function scrapeToramXtal() {
   const baseUrl = "https://coryn.club/item.php?special=xtal&p=";
+
+  // Header browser agar tidak kena 403
+  const headers = {
+    "User-Agent":
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.5",
+    Referer: "https://coryn.club/",
+  };
+
   let allXtalRaw = [];
   let page = 0;
   let hasMoreData = true;
 
   try {
-    console.log("Memulai ekstraksi data daring...");
+    console.log("Memulai ekstraksi data...");
 
     while (hasMoreData) {
-      console.log(`Mengambil data dari halaman ${page}...`);
-      const { data } = await axios.get(`${baseUrl}${page}`);
+      console.log(`Halaman ${page}...`);
+      const { data } = await axios.get(`${baseUrl}${page}`, { headers });
       const $ = cheerio.load(data);
       const cards = $(".card-container > div");
 
       if (cards.length === 0) {
+        console.log("Tidak ada data lagi. Berhenti.");
         hasMoreData = false;
-        console.log("Tidak ada data lagi ditemukan. Berhenti.");
         break;
       }
 
       cards.each((_, el) => {
-        const titleElement = $(el).find(".card-title");
-        if (titleElement.length === 0) return;
+        // ── Nama & Tipe ──────────────────────────────────────────────────
+        const cardTitleEl = $(el).find(".card-title").first();
+        const name = cleanXtalName(cardTitleEl.find("a").first().text());
+        if (!name) return; // skip card kosong/rusak
 
-        const fullName = titleElement.text().trim();
-        const typeMatch = fullName.match(/\[(.*?)\]/);
-        const name = cleanName(fullName.replace(/\[.*?\]/, ""));
+        const typeRaw = cardTitleEl.find(".item-card-type").text().trim();
+        const typeMatch = typeRaw.match(/\[(.*?)\]/);
         const type = typeMatch ? typeMatch[1] : "Unknown";
 
+        // ── Stats & upgradeFor ───────────────────────────────────────────
+        // "Upgrade for: X" artinya xtal INI adalah versi upgrade DARI X
+        // → X = pendahulu/root, xtal ini = lebih tinggi
         const stats = {};
+        let upgradeFor = null;
+
         $(el)
-          .find(".item-basestat > div")
+          .find(".table-grid.item-basestat > div")
           .each((idx, statEl) => {
-            if (idx === 0) return;
-            const statName = $(statEl).find("div:first-child").text().trim();
-            const statVal = $(statEl).find("div:last-child").text().trim();
-            if (statName) stats[statName] = statVal;
+            if (idx === 0) return; // skip header row
+            const key = $(statEl).find("div:first-child").text().trim();
+            const valEl = $(statEl).find("div:last-child");
+            const val =
+              valEl.find("a").length > 0
+                ? valEl.find("a").text().trim()
+                : valEl.text().trim();
+            if (key) {
+              stats[key] = val;
+              if (key === "Upgrade for") upgradeFor = val.trim() || null;
+            }
           });
 
-        if (stats["Upgrade for"]) {
-          stats["Upgrade for"] = cleanName(stats["Upgrade for"]);
-        }
-
-        // BUG FIX #1: Gunakan selector yang lebih tepat untuk "Used For"
-        // Sebelumnya: mencari <li> yang mengandung teks "Used For" — tidak reliable
-        // karena teks bisa tersebar di child elements
+        // ── upgradeInto ──────────────────────────────────────────────────
+        // "Used For > Upgrade Into: Y" artinya xtal ini bisa diupgrade MENJADI Y
+        // → Y = penerus/lebih tinggi
         const upgradeInto = [];
+
         $(el)
-          .find(".item-basestat li, .card-body li")
-          .each((__, liEl) => {
-            const liText = $(liEl)
-              .clone()
-              .children()
-              .remove()
-              .end()
-              .text()
-              .trim();
-            if (
-              liText.includes("Used For") ||
-              $(liEl).find("span, b, strong").text().includes("Used For")
-            ) {
+          .find("ul.accordion > li")
+          .each((_, liEl) => {
+            const headerText = $(liEl).find("> div:first-child").text().trim();
+            if (headerText.includes("Used For")) {
               $(liEl)
-                .find("ul.styled-list li a, ul li a")
-                .each((___, a) => {
-                  upgradeInto.push(cleanName($(a).text()));
+                .find("p.card-title")
+                .each((_, pEl) => {
+                  if ($(pEl).text().trim() === "Upgrade Into") {
+                    $(pEl)
+                      .next("ul.styled-list")
+                      .find("li a")
+                      .each((_, a) => {
+                        const n = cleanXtalName($(a).text());
+                        if (n) upgradeInto.push(n);
+                      });
+                  }
                 });
             }
           });
 
-        // BUG FIX #2: upgradeFor diambil dari stats SETELAH di-clean, bukan sebelum
-        // Sebelumnya: stats["Upgrade for"] sudah di-overwrite, tapi referensi di push pakai
-        // stats["Upgrade for"] yang belum tentu sama dengan yang disimpan di xtal.upgradeFor
-        const upgradeFor = stats["Upgrade for"]
-          ? cleanName(stats["Upgrade for"])
-          : null;
-
-        allXtalRaw.push({
-          name,
-          type,
-          stats,
-          upgradeFor, // konsisten: selalu dari cleanName
-          upgradeInto,
-        });
+        allXtalRaw.push({ name, type, stats, upgradeFor, upgradeInto });
       });
 
       page++;
-      await new Promise((resolve) => setTimeout(resolve, 300));
+      await new Promise((r) => setTimeout(r, 300));
     }
 
-    console.log(`Total data mentah berhasil diambil: ${allXtalRaw.length}`);
+    console.log(`Total xtal terkumpul: ${allXtalRaw.length}`);
 
-    // BUG FIX #3: buildFullUpgradeRoute dipanggil dengan allXtalRaw yang sudah lengkap
-    // MASALAH UTAMA: Di kode lama, finalData di-map() SEBELUM allXtalRaw selesai diisi.
-    // Sekarang finalData diproses di sini, SETELAH loop selesai — sudah benar.
-    // Namun ada bug di dalam buildFullUpgradeRoute itu sendiri (lihat fungsi di bawah).
-    const finalData = allXtalRaw.map((xtal) => {
-      const isRoot = !xtal.upgradeFor;
-      const fullPath = buildFullUpgradeRoute(xtal.name, allXtalRaw);
+    // ── Bangun upgrade_route & max_upgrade_route ─────────────────────────
+    //
+    // Relasi:
+    //   upgradeFor  = xtal ini upgrade DARI X → X adalah PENDAHULU
+    //   upgradeInto = xtal ini upgrade MENJADI Y → Y adalah PENERUS
+    //
+    //   ROOT   = tidak punya upgradeFor (tidak ada pendahulu)
+    //   PUNCAK = tidak punya upgradeInto (tidak ada penerus)
+    //
+    // upgrade_route     = "Root -> ... -> posisi xtal ini"
+    //                     null jika xtal ini adalah ROOT
+    //
+    // max_upgrade_route = "Root -> ... -> Puncak"
+    //                     null jika xtal ini sudah di PUNCAK (atau standalone)
 
-      let currentRoute = null;
-      let maxRoute = null;
+    const byName = new Map(allXtalRaw.map((x) => [norm(x.name), x]));
 
-      if (!isRoot && fullPath) {
-        const currentIndex = fullPath.indexOf(xtal.name);
-        // BUG FIX #4: Jika currentIndex === -1 (nama tidak ditemukan di path),
-        // jangan slice — hasilnya array kosong yang membingungkan
-        if (currentIndex !== -1) {
-          currentRoute = fullPath.slice(0, currentIndex + 1).join(" -> ");
-          maxRoute = fullPath.join(" -> ");
+    /**
+     * Bangun path penuh dari Root hingga Puncak
+     * untuk xtal dengan nama startName
+     */
+    function buildFullPath(startName) {
+      let cur = byName.get(norm(startName));
+      const visited = new Set();
+
+      // 1. Naik ke ROOT lewat upgradeFor
+      while (cur && cur.upgradeFor) {
+        if (visited.has(norm(cur.name))) break; // hindari loop
+        visited.add(norm(cur.name));
+        const parent = byName.get(norm(cur.upgradeFor));
+        if (!parent) break; // parent tidak ditemukan di data
+        cur = parent;
+      }
+      const root = cur;
+      if (!root) return null;
+
+      // 2. Turun dari ROOT ke PUNCAK lewat upgradeInto[0]
+      const path = [];
+      let node = root;
+      const seen = new Set();
+
+      while (node && !seen.has(norm(node.name))) {
+        path.push(node.name);
+        seen.add(norm(node.name));
+        if (node.upgradeInto && node.upgradeInto.length > 0) {
+          node = byName.get(norm(node.upgradeInto[0])) ?? null;
+        } else {
+          node = null;
         }
       }
+
+      return path; // [root, intermediate..., puncak]
+    }
+
+    const finalData = allXtalRaw.map((xtal) => {
+      const fullPath = buildFullPath(xtal.name);
+
+      // Standalone: tidak ada jalur upgrade (sendiri saja)
+      if (!fullPath || fullPath.length <= 1) {
+        return {
+          name: xtal.name,
+          type: xtal.type,
+          stats: xtal.stats,
+          upgrade_route: null,
+          max_upgrade_route: null,
+        };
+      }
+
+      const idxSelf = fullPath.map(norm).indexOf(norm(xtal.name));
+      const isRoot = idxSelf === 0;
+      const isPuncak = idxSelf === fullPath.length - 1;
+
+      // Route xtal ini: Root -> ... -> posisi ini (null kalau IS root)
+      const upgrade_route = !isRoot
+        ? fullPath.slice(0, idxSelf + 1).join(" -> ")
+        : null;
+
+      // Route max: Root -> ... -> Puncak (null kalau sudah di puncak)
+      const max_upgrade_route = !isPuncak ? fullPath.join(" -> ") : null;
 
       return {
         name: xtal.name,
         type: xtal.type,
         stats: xtal.stats,
-        upgrade_route: currentRoute,
-        max_upgrade_route: maxRoute,
+        upgrade_route,
+        max_upgrade_route,
       };
     });
 
@@ -140,57 +221,25 @@ async function scrapeToramXtal() {
       JSON.stringify(finalData, null, 2),
       "utf-8",
     );
-    console.log("Berhasil! Data telah disimpan ke dalam 'xtal_data.json'.");
-  } catch (error) {
-    console.error("Terjadi kesalahan pada proses scraping:", error.message);
+    console.log("Selesai! Data tersimpan di 'xtal_data.json'.");
+
+    // Preview contoh yang punya route
+    const contoh = finalData
+      .filter((x) => x.upgrade_route || x.max_upgrade_route)
+      .slice(0, 5);
+    console.log("\n── Preview ──");
+    contoh.forEach((x) => {
+      console.log(`\n${x.name}`);
+      console.log(
+        `  upgrade_route    : ${x.upgrade_route ?? "(sudah di root)"}`,
+      );
+      console.log(
+        `  max_upgrade_route: ${x.max_upgrade_route ?? "(sudah di puncak)"}`,
+      );
+    });
+  } catch (err) {
+    console.error("Error:", err.message);
   }
-}
-
-/**
- * Mencari silsilah utuh dari Root hingga evolusi tertinggi.
- *
- * BUG FIX #5 (BUG UTAMA): Fungsi ini sebelumnya gagal menemukan root
- * karena pencarian pakai xtal.name exact-match, tapi nama di allXtalRaw
- * sudah di-clean() sedangkan upgradeFor mungkin belum konsisten.
- * Sekarang lookup pakai normalisasi trim+lowercase agar tidak case/space sensitif.
- */
-function buildFullUpgradeRoute(currentName, fullList) {
-  // Helper: cari xtal by name dengan normalisasi
-  const findByName = (name) => {
-    const normalized = name.trim().toLowerCase();
-    return fullList.find((x) => x.name.trim().toLowerCase() === normalized);
-  };
-
-  // 1. Cari Root
-  let rootName = currentName;
-  let temp = findByName(rootName);
-  const visited = new Set();
-
-  while (temp && temp.upgradeFor) {
-    if (visited.has(temp.name)) break; // hindari loop tak terbatas
-    visited.add(temp.name);
-    rootName = temp.upgradeFor;
-    temp = findByName(rootName);
-  }
-
-  // 2. Susun jalur dari Root ke Puncak
-  const route = [];
-  let curr = findByName(rootName);
-  const visitedPath = new Set();
-
-  while (curr && !visitedPath.has(curr.name)) {
-    route.push(curr.name);
-    visitedPath.add(curr.name);
-
-    if (curr.upgradeInto && curr.upgradeInto.length > 0) {
-      const nextName = curr.upgradeInto[0];
-      curr = findByName(nextName);
-    } else {
-      curr = null;
-    }
-  }
-
-  return route.length > 1 ? route : null;
 }
 
 scrapeToramXtal();
