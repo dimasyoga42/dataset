@@ -75,7 +75,7 @@
       "Ailment Resistance %": "1"
     },
     "upgrade_route": null,
-    "max_upgrade_route": "Big Coryn -> Seraph Machina -> Limacina"
+    "max_upgrade_route": "Big Coryn -> Seraph Machina -> Limacina -> Aralago"
   },
   {
     "name": "Boss Colon",
@@ -197,7 +197,7 @@
       "CSPD %": "1"
     },
     "upgrade_route": null,
-    "max_upgrade_route": "Demon's Gate -> Mozto Machina -> Pisteus -> Wicked Dragon Fazzino"
+    "max_upgrade_route": "Demon's Gate -> Mozto Machina -> Pisteus -> Wicked Dragon Fazzino -> Rondine"
   },
   {
     "name": "DEX+1",
@@ -340,7 +340,7 @@
       "ASPD": "300"
     },
     "upgrade_route": null,
-    "max_upgrade_route": "Golden Skeleton -> Solopy"
+    "max_upgrade_route": "Golden Skeleton -> Solopy -> Shark Potum"
   },
   {
     "name": "HP+100",
@@ -905,7 +905,7 @@
       "Guard Power %": "5"
     },
     "upgrade_route": null,
-    "max_upgrade_route": "Grylle -> Fantica"
+    "max_upgrade_route": "Grylle -> Fantica -> Obsia"
   },
   {
     "name": "Critical Rate+3",
@@ -1429,7 +1429,7 @@
       "Upgrade for": "Demon's Gate"
     },
     "upgrade_route": "Demon's Gate -> Mozto Machina",
-    "max_upgrade_route": "Demon's Gate -> Mozto Machina -> Pisteus -> Wicked Dragon Fazzino"
+    "max_upgrade_route": "Demon's Gate -> Mozto Machina -> Pisteus -> Wicked Dragon Fazzino -> Rondine"
   },
   {
     "name": "Grecia",
@@ -1825,7 +1825,7 @@
       "Fire resistance %": "3"
     },
     "upgrade_route": null,
-    "max_upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII"
+    "max_upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII -> Megiston the Champion VIII"
   },
   {
     "name": "Titeres",
@@ -1862,7 +1862,7 @@
       "Upgrade for": "Big Coryn"
     },
     "upgrade_route": "Big Coryn -> Seraph Machina",
-    "max_upgrade_route": "Big Coryn -> Seraph Machina -> Limacina"
+    "max_upgrade_route": "Big Coryn -> Seraph Machina -> Limacina -> Aralago"
   },
   {
     "name": "Maton Sword",
@@ -1906,7 +1906,7 @@
       "Upgrade for": "Golden Skeleton"
     },
     "upgrade_route": "Golden Skeleton -> Solopy",
-    "max_upgrade_route": null
+    "max_upgrade_route": "Golden Skeleton -> Solopy -> Shark Potum"
   },
   {
     "name": "Shampy",
@@ -2591,7 +2591,7 @@
       "Attack MP Recovery": "1"
     },
     "upgrade_route": null,
-    "max_upgrade_route": "Blancanine the White Fang -> Cat Claw Guardkissa"
+    "max_upgrade_route": "Blancanine the White Fang -> Cat Claw Guardkissa -> Neo Mage Filecia"
   },
   {
     "name": "Zega IV",
@@ -2699,7 +2699,7 @@
       "Neutral Resistance %": "20"
     },
     "upgrade_route": null,
-    "max_upgrade_route": null
+    "max_upgrade_route": "Potumotter -> Potumotter II -> Potumotter III"
   },
   {
     "name": "Mercy",
@@ -2878,7 +2878,7 @@
       "Upgrade for": "Megiston The Champion"
     },
     "upgrade_route": "Megiston The Champion -> Megiston the Champion II",
-    "max_upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII"
+    "max_upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII -> Megiston the Champion VIII"
   },
   {
     "name": "Megiston the Champion III",
@@ -2892,7 +2892,7 @@
       "Upgrade for": "Megiston the Champion II"
     },
     "upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III",
-    "max_upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII"
+    "max_upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII -> Megiston the Champion VIII"
   },
   {
     "name": "Zega V",
@@ -3034,7 +3034,7 @@
       "Upgrade for": "Mozto Machina"
     },
     "upgrade_route": "Demon's Gate -> Mozto Machina -> Pisteus",
-    "max_upgrade_route": "Demon's Gate -> Mozto Machina -> Pisteus -> Wicked Dragon Fazzino"
+    "max_upgrade_route": "Demon's Gate -> Mozto Machina -> Pisteus -> Wicked Dragon Fazzino -> Rondine"
   },
   {
     "name": "Lil Wonder Rat",
@@ -3072,7 +3072,7 @@
       "Shield only:Short Range Damage %": "Short Range Damage %\n                                                            4"
     },
     "upgrade_route": null,
-    "max_upgrade_route": "Arachnidemon -> Zapo"
+    "max_upgrade_route": "Arachnidemon -> Zapo -> Puiet"
   },
   {
     "name": "INT +6",
@@ -3474,7 +3474,7 @@
       "Upgrade for": "Megiston the Champion III"
     },
     "upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV",
-    "max_upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII"
+    "max_upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII -> Megiston the Champion VIII"
   },
   {
     "name": "VIT+7",
@@ -3969,7 +3969,7 @@
       "Upgrade for": "Megiston the Champion IV"
     },
     "upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V",
-    "max_upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII"
+    "max_upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII -> Megiston the Champion VIII"
   },
   {
     "name": "Gigantic Octopus",
@@ -4254,7 +4254,7 @@
       "Upgrade for": "Blancanine the White Fang"
     },
     "upgrade_route": "Blancanine the White Fang -> Cat Claw Guardkissa",
-    "max_upgrade_route": null
+    "max_upgrade_route": "Blancanine the White Fang -> Cat Claw Guardkissa -> Neo Mage Filecia"
   },
   {
     "name": "Lunadore",
@@ -4340,7 +4340,7 @@
       "Upgrade for": "Pisteus"
     },
     "upgrade_route": "Demon's Gate -> Mozto Machina -> Pisteus -> Wicked Dragon Fazzino",
-    "max_upgrade_route": null
+    "max_upgrade_route": "Demon's Gate -> Mozto Machina -> Pisteus -> Wicked Dragon Fazzino -> Rondine"
   },
   {
     "name": "Broker Goblin",
@@ -4539,7 +4539,7 @@
       "Short Range Damage %                        Short Range Damage %": "Short Range Damage %\n                                                            5"
     },
     "upgrade_route": "Arachnidemon -> Zapo",
-    "max_upgrade_route": null
+    "max_upgrade_route": "Arachnidemon -> Zapo -> Puiet"
   },
   {
     "name": "Falburrows",
@@ -4569,7 +4569,7 @@
       "Upgrade for": "Megiston the Champion V"
     },
     "upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI",
-    "max_upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII"
+    "max_upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII -> Megiston the Champion VIII"
   },
   {
     "name": "Aubergine Dragon Auvio",
@@ -4631,7 +4631,7 @@
       "Upgrade for": "Grylle"
     },
     "upgrade_route": "Grylle -> Fantica",
-    "max_upgrade_route": null
+    "max_upgrade_route": "Grylle -> Fantica -> Obsia"
   },
   {
     "name": "Kuffania",
@@ -4812,7 +4812,7 @@
       "Upgrade for": "Seraph Machina"
     },
     "upgrade_route": "Big Coryn -> Seraph Machina -> Limacina",
-    "max_upgrade_route": null
+    "max_upgrade_route": "Big Coryn -> Seraph Machina -> Limacina -> Aralago"
   },
   {
     "name": "Giant Pelulu",
@@ -5062,7 +5062,7 @@
       "Upgrade for": "Megiston the Champion VI"
     },
     "upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII",
-    "max_upgrade_route": null
+    "max_upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII -> Megiston the Champion VIII"
   },
   {
     "name": "Fubbit",
@@ -5600,6 +5600,221 @@
       "Shield only:Aggro %": "Aggro %\n                                                            35"
     },
     "upgrade_route": "Broker Goblin -> Velcaroy",
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Merzehal",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP %": "25",
+      "MaxMP": "-200",
+      "MATK %": "13",
+      "Magic Pierce %": "10",
+      "Physical Resistance %": "15",
+      "CSPD %": "25"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Stormun",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "ATK %": "5",
+      "MATK %": "5",
+      "ASPD %": "5",
+      "Wind resistance %": "5",
+      "Short Range Damage %": "5",
+      "Magic Device only:INT %": "INT %\n                                                            5",
+      "Dual Swords only:MaxHP %": "MaxHP %\n                                                            -9",
+      "Motion Speed %                        Motion Speed %": "Motion Speed %\n                                                            2"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Potumotter II",
+    "type": "Special Crysta",
+    "stats": {
+      "MaxMP": "400",
+      "Aggro %": "-30",
+      "Motion Speed %": "1",
+      "Neutral Resistance %": "25",
+      "Upgrade for": "Potumotter"
+    },
+    "upgrade_route": "Potumotter -> Potumotter II",
+    "max_upgrade_route": "Potumotter -> Potumotter II -> Potumotter III"
+  },
+  {
+    "name": "Potumotter III",
+    "type": "Special Crysta",
+    "stats": {
+      "MaxMP": "500",
+      "Aggro %": "-30",
+      "Motion Speed %": "2",
+      "Neutral Resistance %": "30",
+      "Upgrade for": "Potumotter II"
+    },
+    "upgrade_route": "Potumotter -> Potumotter II -> Potumotter III",
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Tulin Max",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP %": "-30",
+      "Physical Resistance %": "10",
+      "Magic Resistance %": "10",
+      "Critical Rate": "10",
+      "Upgrade for": "Eroded Pilz"
+    },
+    "upgrade_route": "",
+    "max_upgrade_route": "Eroded Pilz -> Filrocas"
+  },
+  {
+    "name": "Obsia",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP": "7000",
+      "DEF %": "15",
+      "Physical Resistance %": "10",
+      "Guard Power %": "20",
+      "Upgrade for": "Fantica"
+    },
+    "upgrade_route": "Grylle -> Fantica -> Obsia",
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Puiet",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP": "-800",
+      "MaxMP": "-400",
+      "ATK %": "12",
+      "Critical Rate": "12",
+      "Upgrade for": "Zapo",
+      "Shield only:STR %": "STR %\n                                                            2",
+      "Short Range Damage %                        Short Range Damage %": "Short Range Damage %\n                                                            6"
+    },
+    "upgrade_route": "Arachnidemon -> Zapo -> Puiet",
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Shark Potum",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP %": "-30",
+      "ASPD": "900",
+      "Critical Damage": "6",
+      "Upgrade for": "Solopy"
+    },
+    "upgrade_route": "Golden Skeleton -> Solopy -> Shark Potum",
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Black Peach Ninja",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP": "10000",
+      "Critical Damage": "9",
+      "Long Range Damage %": "6",
+      "Upgrade for": "Baavgai",
+      "Ninjutsu Scroll only:Aggro %": "Aggro %\n                                                            -25"
+    },
+    "upgrade_route": "",
+    "max_upgrade_route": "Cerabes -> Mimesia -> Dreamy Scarlet Sakura -> Baavgai -> Squirinja"
+  },
+  {
+    "name": "Zega X",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP": "1300",
+      "Magic Resistance %": "11",
+      "Water resistance %": "10",
+      "Attack MP Recovery": "12"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Neo Mage Filecia",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "AGI %": "4",
+      "MaxHP %": "-12",
+      "ATK %": "13",
+      "Ailment Resistance %": "4",
+      "Attack MP Recovery": "4",
+      "Upgrade for": "Cat Claw Guardkissa"
+    },
+    "upgrade_route": "Blancanine the White Fang -> Cat Claw Guardkissa -> Neo Mage Filecia",
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Sakura Dango",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxMP": "-100",
+      "ATK %": "4",
+      "Physical Pierce %": "20",
+      "Ailment Resistance %": "-5",
+      "Upgrade for": "Devil Dango"
+    },
+    "upgrade_route": "",
+    "max_upgrade_route": "Devil Dango -> Fubbit"
+  },
+  {
+    "name": "Megiston the Champion VIII",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP": "2400",
+      "Critical Rate": "32",
+      "Fire resistance %": "6",
+      "Water resistance %": "6",
+      "Wind resistance %": "6",
+      "Earth resistance %": "6",
+      "Light resistance %": "6",
+      "Dark resistance %": "6",
+      "Neutral Resistance %": "3",
+      "Upgrade for": "Megiston The Champion VII"
+    },
+    "upgrade_route": "Megiston The Champion -> Megiston the Champion II -> Megiston the Champion III -> Megiston the Champion IV -> Megiston the Champion V -> Megiston the Champion VI -> Megiston The Champion VII -> Megiston the Champion VIII",
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Rondine",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "DEX %": "9",
+      "MATK %": "11",
+      "CSPD %": "7",
+      "Upgrade for": "Wicked Dragon Fazzino"
+    },
+    "upgrade_route": "Demon's Gate -> Mozto Machina -> Pisteus -> Wicked Dragon Fazzino -> Rondine",
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Zeegard",
+    "type": "Special Crysta",
+    "stats": {
+      "MaxMP": "300",
+      "Critical Rate": "15",
+      "% stronger against Water": "5",
+      "Water resistance %": "20"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Aralago",
+    "type": "Enhancer Crysta (Blue)",
+    "stats": {
+      "Physical Resistance %": "7",
+      "Magic Resistance %": "7",
+      "Ailment Resistance %": "7",
+      "Upgrade for": "Limacina"
+    },
+    "upgrade_route": "Big Coryn -> Seraph Machina -> Limacina -> Aralago",
     "max_upgrade_route": null
   }
 ]
