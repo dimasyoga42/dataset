@@ -772,5 +772,11 @@
     "dye": "Unknown",
     "color_id": null,
     "hex": null
+  },
+  {
+    "boss": "カナヨガン\n                        (Lv.\n                        300\n                        )",
+    "dye": "A43",
+    "color_id": 43,
+    "hex": "#8cff00"
   }
 ]
