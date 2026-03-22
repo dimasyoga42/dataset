@@ -38,9 +38,13 @@ jobs:
 
       - name: Install Chrome
         run: npx puppeteer browsers install chrome
+      - name: Export
+        run: export GROQ_API_KEY="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"
 
       - name: Run screenshot
         run: node run.js
+      - name: run skill
+        run: node skill_v2.js
 
       - name: Run dye json
         run: node dye.js
