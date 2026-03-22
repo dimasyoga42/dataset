@@ -4,7 +4,7 @@ import axios from "axios";
 import fs from "fs";
 import { Groq } from "groq-sdk";
 
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+const groq = new Groq({ apiKey: "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" });
 const DELAY = 600;
 const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
