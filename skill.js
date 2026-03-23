@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 class MonsterScraper {
   constructor(outputFile = 'monster_data.csv') {
     this.baseUrl =
-      'https://coryn.club/monster.php?name=&type=&order=id+DESC&show=88';
+      'https://coryn.club/monster.php?&show=88&order=id%20DESC';
     this.outputFile = outputFile;
     this.monsterData = [];
     this.headers = {
@@ -26,9 +26,9 @@ class MonsterScraper {
     ).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
   }
 
-  async fetchPage(start = 0) {
+  async fetchPage(page = 1) {
     try {
-      const url = `${this.baseUrl}&start=${start}`;
+      const url = `${this.baseUrl}&p=${page}`;
       console.log(`[${this.getTime()}] Fetch: ${url}`);
 
       const res = await axios.get(url, {
@@ -51,7 +51,7 @@ class MonsterScraper {
 
     const results = [];
 
-    cards.each((i, card) => {
+    cards.each((_, card) => {
       const data = this.extractMonsterData($, card);
       if (data) results.push(data);
     });
@@ -64,7 +64,7 @@ class MonsterScraper {
       const $card = $(card);
       const $link = $card.find('a').first();
 
-      if ($link.length === 0) return null;
+      if (!$link.length) return null;
 
       const name = $link.text().trim();
       const url = $link.attr('href') || '';
@@ -134,7 +134,7 @@ class MonsterScraper {
     let spawn = 'N/A';
     let drops = [];
 
-    const textLines = $parent
+    const lines = $parent
       .text()
       .split('\n')
       .map((v) => v.trim())
@@ -142,11 +142,11 @@ class MonsterScraper {
 
     let mode = null;
 
-    for (let i = 0; i < textLines.length; i++) {
-      const line = textLines[i];
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
 
       if (line === 'Spawn at') {
-        spawn = textLines[i + 1] || 'N/A';
+        spawn = lines[i + 1] || 'N/A';
       }
 
       if (line === 'Item Drops') {
@@ -162,10 +162,8 @@ class MonsterScraper {
         )
           break;
 
-        if (line.length > 0) {
-          const clean = line.replace(/\[.*?\]\s*/, '');
-          drops.push(clean);
-        }
+        const clean = line.replace(/\[.*?\]\s*/, '');
+        if (clean) drops.push(clean);
       }
     }
 
@@ -176,13 +174,12 @@ class MonsterScraper {
   }
 
   async scrapeAll() {
-    let start = 0;
     let page = 1;
 
     while (true) {
       console.log(`\n[${this.getTime()}] === PAGE ${page} ===`);
 
-      const html = await this.fetchPage(start);
+      const html = await this.fetchPage(page);
       if (!html) break;
 
       const data = this.parseHTML(html);
@@ -196,7 +193,6 @@ class MonsterScraper {
 
       this.monsterData.push(...data);
 
-      start += 88;
       page++;
 
       await new Promise((r) => setTimeout(r, 800));
