@@ -76,8 +76,7 @@ class MonsterScraper {
       }
 
       const stats = this.extractStats($, $parent);
-      const spawn = this.extractSpawn($, $parent);
-      const drops = this.extractDrops($, $parent);
+      const extra = this.extractSpawnAndDrops($, $parent);
 
       return {
         name,
@@ -88,8 +87,8 @@ class MonsterScraper {
         element: stats.element,
         exp: stats.exp,
         tamable: stats.tamable,
-        spawn,
-        drops,
+        spawn: extra.spawn,
+        drops: extra.drops,
         url,
       };
     } catch {
@@ -120,6 +119,7 @@ class MonsterScraper {
 
     $parent.find('div').each((_, el) => {
       const p = $(el).children('p');
+
       if (p.length === 2) {
         const key = p.eq(0).text().trim();
         const val = p.eq(1).text().trim();
@@ -130,36 +130,49 @@ class MonsterScraper {
     return stats;
   }
 
-  extractSpawn($, $parent) {
-    try {
-      const $hr = $parent.find('hr.separator').last();
-      let $next = $hr.next();
+  extractSpawnAndDrops($, $parent) {
+    let spawn = 'N/A';
+    let drops = [];
 
-      while ($next.length) {
-        if ($next.hasClass('item-prop')) {
-          const a = $next.find('a').first();
-          if (a.length) return a.text().trim();
-        }
-        $next = $next.next();
+    const textLines = $parent
+      .text()
+      .split('\n')
+      .map((v) => v.trim())
+      .filter(Boolean);
+
+    let mode = null;
+
+    for (let i = 0; i < textLines.length; i++) {
+      const line = textLines[i];
+
+      if (line === 'Spawn at') {
+        spawn = textLines[i + 1] || 'N/A';
       }
-    } catch {}
 
-    return 'N/A';
-  }
+      if (line === 'Item Drops') {
+        mode = 'drop';
+        continue;
+      }
 
-  extractDrops($, $parent) {
-    try {
-      const drops = [];
+      if (mode === 'drop') {
+        if (
+          line.startsWith('Lv') ||
+          line.startsWith('Type') ||
+          line.startsWith('Mode')
+        )
+          break;
 
-      $parent.find('.monster-drop a').each((_, el) => {
-        const name = $(el).text().trim();
-        if (name) drops.push(name);
-      });
-
-      return drops.join(' | ') || 'N/A';
-    } catch {
-      return 'N/A';
+        if (line.length > 0) {
+          const clean = line.replace(/\[.*?\]\s*/, '');
+          drops.push(clean);
+        }
+      }
     }
+
+    return {
+      spawn,
+      drops: drops.join(' | ') || 'N/A',
+    };
   }
 
   async scrapeAll() {
