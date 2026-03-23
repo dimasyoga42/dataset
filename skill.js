@@ -1,14 +1,3 @@
-/**
- * CORYN CLUB MONSTER DATA SCRAPER - JavaScript ESM Version
- * Scrape data monster dari URL dengan Node.js
- *
- * Requirements:
- *   npm install axios cheerio
- *
- * Usage:
- *   node scraper_direct.js
- */
-
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 import fs from 'fs';
@@ -20,12 +9,13 @@ const __dirname = path.dirname(__filename);
 
 class MonsterScraper {
   constructor(outputFile = 'monster_data.csv') {
-    this.url = 'https://coryn.club/monster.php?name=&type=&order=id+DESC&show=88';
+    this.baseUrl =
+      'https://coryn.club/monster.php?name=&type=&order=id+DESC&show=88';
     this.outputFile = outputFile;
     this.monsterData = [];
     this.headers = {
       'User-Agent':
-        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
     };
   }
 
@@ -36,88 +26,73 @@ class MonsterScraper {
     ).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
   }
 
-  async fetchPage() {
+  async fetchPage(start = 0) {
     try {
-      console.log(`[${this.getTime()}] Mengakses URL: ${this.url}`);
-      const response = await axios.get(this.url, {
+      const url = `${this.baseUrl}&start=${start}`;
+      console.log(`[${this.getTime()}] Fetch: ${url}`);
+
+      const res = await axios.get(url, {
         headers: this.headers,
         timeout: 15000,
       });
-      console.log(`[${this.getTime()}] ✓ Status: ${response.status}`);
-      return response.data;
-    } catch (error) {
-      console.error(`[${this.getTime()}] ✗ Error: ${error.message}`);
+
+      return res.data;
+    } catch (err) {
+      console.log(`[${this.getTime()}] Error: ${err.message}`);
       return null;
     }
   }
 
   parseHTML(html) {
-    console.log(`[${this.getTime()}] Parsing HTML...`);
     const $ = cheerio.load(html);
-
     const cards = $('.card-title-inverse');
-    console.log(`[${this.getTime()}] Ditemukan ${cards.length} monster cards`);
 
-    if (cards.length === 0) {
-      console.log(`[${this.getTime()}] ✗ Tidak ada data monster yang ditemukan`);
-      return false;
-    }
+    if (cards.length === 0) return [];
 
-    cards.each((index, card) => {
-      try {
-        const monster = this.extractMonsterData($, card);
-        if (monster) {
-          this.monsterData.push(monster);
-        }
-      } catch (error) {
-        console.log(
-          `[${this.getTime()}] ⚠ Error processing card ${index + 1}: ${
-            error.message
-          }`
-        );
-      }
+    const results = [];
+
+    cards.each((i, card) => {
+      const data = this.extractMonsterData($, card);
+      if (data) results.push(data);
     });
 
-    console.log(
-      `[${this.getTime()}] Total data extracted: ${this.monsterData.length}`
-    );
-    return this.monsterData.length > 0;
+    return results;
   }
 
   extractMonsterData($, card) {
     try {
       const $card = $(card);
-
       const $link = $card.find('a').first();
+
       if ($link.length === 0) return null;
 
       const name = $link.text().trim();
       const url = $link.attr('href') || '';
 
-      if (!name) return null;
-
       let $parent = $card.parent();
       for (let i = 0; i < 3; i++) {
-        if ($parent.length === 0) break;
+        if (!$parent.length) break;
         $parent = $parent.parent();
       }
 
       const stats = this.extractStats($, $parent);
       const spawn = this.extractSpawn($, $parent);
+      const drops = this.extractDrops($, $parent);
 
       return {
-        name: name,
-        level: stats.level || 'N/A',
-        type: stats.type || 'N/A',
-        mode: stats.mode || 'N/A',
-        hp: stats.hp || 'N/A',
-        element: stats.element || 'N/A',
-        exp: stats.exp || 'N/A',
-        tamable: stats.tamable || 'N/A',
-        spawn: spawn,
-        url: url,
+        name,
+        level: stats.level,
+        type: stats.type,
+        mode: stats.mode,
+        hp: stats.hp,
+        element: stats.element,
+        exp: stats.exp,
+        tamable: stats.tamable,
+        spawn,
+        drops,
+        url,
       };
-    } catch (error) {
+    } catch {
       return null;
     }
   }
@@ -133,7 +108,7 @@ class MonsterScraper {
       tamable: 'N/A',
     };
 
-    const labelMap = {
+    const map = {
       Lv: 'level',
       Type: 'type',
       Mode: 'mode',
@@ -143,17 +118,12 @@ class MonsterScraper {
       Tamable: 'tamable',
     };
 
-    $parent.find('div').each((index, div) => {
-      const $div = $(div);
-      const $ps = $div.children('p');
-
-      if ($ps.length === 2) {
-        const label = $ps.eq(0).text().trim();
-        const value = $ps.eq(1).text().trim();
-
-        if (labelMap[label]) {
-          stats[labelMap[label]] = value;
-        }
+    $parent.find('div').each((_, el) => {
+      const p = $(el).children('p');
+      if (p.length === 2) {
+        const key = p.eq(0).text().trim();
+        const val = p.eq(1).text().trim();
+        if (map[key]) stats[map[key]] = val;
       }
     });
 
@@ -162,155 +132,131 @@ class MonsterScraper {
 
   extractSpawn($, $parent) {
     try {
-      const $hrs = $parent.find('hr.separator');
-      if ($hrs.length === 0) return 'N/A';
+      const $hr = $parent.find('hr.separator').last();
+      let $next = $hr.next();
 
-      const $lastHr = $hrs.last();
-      let $next = $lastHr.next();
-
-      while ($next.length > 0) {
+      while ($next.length) {
         if ($next.hasClass('item-prop')) {
-          const $spawnLink = $next.find('a').first();
-          if ($spawnLink.length > 0) {
-            return $spawnLink.text().trim();
-          }
+          const a = $next.find('a').first();
+          if (a.length) return a.text().trim();
         }
         $next = $next.next();
       }
-    } catch (error) {}
+    } catch {}
 
     return 'N/A';
   }
 
-  async saveCSV() {
+  extractDrops($, $parent) {
     try {
-      console.log(`[${this.getTime()}] Menyimpan data ke CSV...`);
+      const drops = [];
 
-      const csvData = this.monsterData.map((monster) => [
-        monster.name,
-        monster.level,
-        monster.type,
-        monster.mode,
-        monster.hp,
-        monster.element,
-        monster.exp,
-        monster.tamable,
-        monster.spawn,
-        monster.url,
-      ]);
+      $parent.find('.monster-drop a').each((_, el) => {
+        const name = $(el).text().trim();
+        if (name) drops.push(name);
+      });
 
-      const csvContent = csvData
-        .map((row) =>
-          row
-            .map((cell) => {
-              if (
-                typeof cell === 'string' &&
-                (cell.includes(',') || cell.includes('"'))
-              ) {
-                return `"${cell.replace(/"/g, '""')}"`;
-              }
-              return cell;
-            })
-            .join(',')
-        )
-        .join('\n');
-
-      fs.writeFileSync(path.join(__dirname, this.outputFile), csvContent, 'utf-8');
-
-      console.log(`[${this.getTime()}] ✓ Data berhasil disimpan`);
-      console.log(
-        `[${this.getTime()}] File: ${path.resolve(this.outputFile)}`
-      );
-      console.log(`[${this.getTime()}] Baris: ${this.monsterData.length}`);
-      return true;
-    } catch (error) {
-      console.error(
-        `[${this.getTime()}] ✗ Error menyimpan file: ${error.message}`
-      );
-      return false;
+      return drops.join(' | ') || 'N/A';
+    } catch {
+      return 'N/A';
     }
   }
 
-  printStatistics() {
-    if (this.monsterData.length === 0) {
-      console.log('Tidak ada data untuk ditampilkan');
-      return;
+  async scrapeAll() {
+    let start = 0;
+    let page = 1;
+
+    while (true) {
+      console.log(`\n[${this.getTime()}] === PAGE ${page} ===`);
+
+      const html = await this.fetchPage(start);
+      if (!html) break;
+
+      const data = this.parseHTML(html);
+
+      if (data.length === 0) {
+        console.log(`[${this.getTime()}] Stop (no data)`);
+        break;
+      }
+
+      console.log(`[${this.getTime()}] +${data.length} monster`);
+
+      this.monsterData.push(...data);
+
+      start += 88;
+      page++;
+
+      await new Promise((r) => setTimeout(r, 800));
     }
 
-    console.log('\n' + '='.repeat(90));
-    console.log('STATISTIK DATA MONSTER');
-    console.log('='.repeat(90));
-    console.log(`Total baris data: ${this.monsterData.length}`);
+    console.log(`TOTAL: ${this.monsterData.length}`);
+  }
 
-    const uniqueNames = {};
-    this.monsterData.forEach((m) => {
-      uniqueNames[m.name] = (uniqueNames[m.name] || 0) + 1;
-    });
+  saveCSV() {
+    const header = [
+      'Name',
+      'Level',
+      'Type',
+      'Mode',
+      'HP',
+      'Element',
+      'EXP',
+      'Tamable',
+      'Location',
+      'Drops',
+      'URL',
+    ];
 
-    console.log(`Total monster unik: ${Object.keys(uniqueNames).length}`);
-    console.log('\nTop 15 monster:');
+    const rows = this.monsterData.map((m) => [
+      m.name,
+      m.level,
+      m.type,
+      m.mode,
+      m.hp,
+      m.element,
+      m.exp,
+      m.tamable,
+      m.spawn,
+      m.drops,
+      m.url,
+    ]);
 
-    Object.entries(uniqueNames)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 15)
-      .forEach((entry, i) => {
-        const padding = ' '.repeat(Math.max(0, 30 - entry[0].length));
-        console.log(
-          `  ${String(i + 1).padStart(2)}. ${entry[0]}${padding} (${entry[1]} varian)`
-        );
-      });
+    const csv = [header, ...rows]
+      .map((r) =>
+        r
+          .map((c) =>
+            typeof c === 'string' &&
+            (c.includes(',') || c.includes('"'))
+              ? `"${c.replace(/"/g, '""')}"`
+              : c
+          )
+          .join(',')
+      )
+      .join('\n');
 
-    const levels = this.monsterData
-      .map((m) => parseInt(m.level))
-      .filter((l) => !isNaN(l));
+    fs.writeFileSync(
+      path.join(__dirname, this.outputFile),
+      csv,
+      'utf-8'
+    );
 
-    if (levels.length > 0) {
-      console.log('\nLevel Statistics:');
-      console.log(`  Min Level    : ${Math.min(...levels)}`);
-      console.log(`  Max Level    : ${Math.max(...levels)}`);
-      console.log(
-        `  Avg Level    : ${(
-          levels.reduce((a, b) => a + b) / levels.length
-        ).toFixed(1)}`
-      );
-    }
-
-    console.log('\n' + '='.repeat(90) + '\n');
+    console.log(`Saved: ${this.outputFile}`);
   }
 
   async run() {
-    console.log('\n' + '='.repeat(90));
-    console.log('MONSTER DATA SCRAPER - DIRECT MODE');
-    console.log('='.repeat(90) + '\n');
+    const start = Date.now();
 
-    const startTime = Date.now();
+    await this.scrapeAll();
+    this.saveCSV();
 
-    const html = await this.fetchPage();
-    if (!html) return false;
-
-    if (!this.parseHTML(html)) return false;
-
-    if (!(await this.saveCSV())) return false;
-
-    this.printStatistics();
-
-    const elapsedTime = ((Date.now() - startTime) / 1000).toFixed(2);
-    console.log(`[${this.getTime()}] Total waktu: ${elapsedTime} detik`);
-    console.log(`[${this.getTime()}] ✓ Scraping selesai!\n`);
-
-    return true;
+    console.log(
+      `Done in ${((Date.now() - start) / 1000).toFixed(2)}s`
+    );
   }
 }
 
 export default MonsterScraper;
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const scraper = new MonsterScraper('monster_data.csv');
-  scraper
-    .run()
-    .then((success) => process.exit(success ? 0 : 1))
-    .catch((error) => {
-      console.error('Fatal error:', error);
-      process.exit(1);
-    });
+  new MonsterScraper().run();
 }
