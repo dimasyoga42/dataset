@@ -7,6 +7,7 @@ const scrape = async () => {
   const browser = await puppeteer.launch({
     headless: "new",
     executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
+    protocolTimeout: 0,
     args: [
       "--no-sandbox",
       "--disable-setuid-sandbox",
@@ -19,7 +20,10 @@ const scrape = async () => {
 
   const page = await browser.newPage();
 
-  // tambahan biar ga ketauan bot & lebih stabil
+  // disable timeout bawaan
+  page.setDefaultNavigationTimeout(0);
+  page.setDefaultTimeout(0);
+
   await page.setUserAgent(
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
   );
@@ -28,14 +32,15 @@ const scrape = async () => {
 
   await page.waitForSelector("#searchResultContainer");
 
-  // scroll container
+  // 🔥 scroll container (fix infinite loop)
   await page.evaluate(async () => {
     const container = document.querySelector("#searchResultContainer");
 
     let lastHeight = 0;
     let retry = 0;
+    let maxLoop = 50;
 
-    while (true) {
+    while (maxLoop-- > 0) {
       container.scrollTop = container.scrollHeight;
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -44,7 +49,7 @@ const scrape = async () => {
 
       if (newHeight === lastHeight) {
         retry++;
-        if (retry >= 3) break; // pastikan benar-benar habis
+        if (retry >= 3) break;
       } else {
         retry = 0;
       }
@@ -80,7 +85,10 @@ const saveCSV = (data) => {
   const header = "name,image\n";
 
   const rows = data
-    .map((d) => `"${d.name.replace(/"/g, '""')}","${d.image}"`)
+    .map(
+      (d) =>
+        `"${(d.name || "").replace(/"/g, '""')}","${d.image || ""}"`
+    )
     .join("\n");
 
   fs.writeFileSync("pokemon_cards.csv", header + rows);
