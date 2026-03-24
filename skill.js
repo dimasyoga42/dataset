@@ -38,7 +38,7 @@ const scrape = async () => {
 
     let lastHeight = 0;
     let retry = 0;
-    let maxLoop = 50;
+    let maxLoop = 90;
 
     while (maxLoop-- > 0) {
       container.scrollTop = container.scrollHeight;
