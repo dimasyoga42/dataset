@@ -1,271 +1,76 @@
-import axios from 'axios';
-import * as cheerio from 'cheerio';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import puppeteer from "puppeteer";
+import fs from "fs";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const URL = "https://asia.pokemon-card.com/id/deck-build/";
 
-class MonsterScraper {
-  constructor(outputFile = 'monster_data.csv') {
-    this.baseUrl =
-      'https://coryn.club/monster.php?&show=88&order=id%20DESC';
-    this.outputFile = outputFile;
-    this.monsterData = [];
-    this.headers = {
-      'User-Agent':
-        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-    };
-  }
+const scrape = async () => {
+  const browser = await puppeteer.launch({
+    headless: true,
+    defaultViewport: null,
+  });
 
-  getTime() {
-    const now = new Date();
-    return `${String(now.getHours()).padStart(2, '0')}:${String(
-      now.getMinutes()
-    ).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
-  }
+  const page = await browser.newPage();
+  await page.goto(URL, { waitUntil: "networkidle2" });
 
-  async fetchPage(page = 1) {
-    try {
-      const url = `${this.baseUrl}&p=${page}`;
-      console.log(`[${this.getTime()}] Fetch: ${url}`);
+  await page.waitForSelector("#searchResultContainer");
 
-      const res = await axios.get(url, {
-        headers: this.headers,
-        timeout: 15000,
-      });
+  // scroll container
+  await page.evaluate(async () => {
+    const container = document.querySelector("#searchResultContainer");
 
-      return res.data;
-    } catch (err) {
-      console.log(`[${this.getTime()}] Error: ${err.message}`);
-      return null;
-    }
-  }
-
-  parseHTML(html) {
-    const $ = cheerio.load(html);
-    const cards = $('.card-title-inverse');
-
-    if (cards.length === 0) return [];
-
-    const results = [];
-
-    cards.each((_, card) => {
-      const data = this.extractMonsterData($, card);
-      if (data) results.push(data);
-    });
-
-    return results;
-  }
-
-  extractMonsterData($, card) {
-    try {
-      const $card = $(card);
-      const $link = $card.find('a').first();
-
-      if (!$link.length) return null;
-
-      const name = $link.text().trim();
-      const url = $link.attr('href') || '';
-
-      let $parent = $card.parent();
-      for (let i = 0; i < 3; i++) {
-        if (!$parent.length) break;
-        $parent = $parent.parent();
-      }
-
-      const stats = this.extractStats($, $parent);
-      const extra = this.extractSpawnAndDrops($, $parent);
-
-      return {
-        name,
-        level: stats.level,
-        type: stats.type,
-        mode: stats.mode,
-        hp: stats.hp,
-        element: stats.element,
-        exp: stats.exp,
-        tamable: stats.tamable,
-        spawn: extra.spawn,
-        drops: extra.drops,
-        url,
-      };
-    } catch {
-      return null;
-    }
-  }
-
-  extractStats($, $parent) {
-    const stats = {
-      level: 'N/A',
-      type: 'N/A',
-      mode: 'N/A',
-      hp: 'N/A',
-      element: 'N/A',
-      exp: 'N/A',
-      tamable: 'N/A',
-    };
-
-    const map = {
-      Lv: 'level',
-      Type: 'type',
-      Mode: 'mode',
-      HP: 'hp',
-      Element: 'element',
-      Exp: 'exp',
-      Tamable: 'tamable',
-    };
-
-    $parent.find('div').each((_, el) => {
-      const p = $(el).children('p');
-
-      if (p.length === 2) {
-        const key = p.eq(0).text().trim();
-        const val = p.eq(1).text().trim();
-        if (map[key]) stats[map[key]] = val;
-      }
-    });
-
-    return stats;
-  }
-
-  extractSpawnAndDrops($, $parent) {
-    let spawn = 'N/A';
-    let drops = [];
-
-    const lines = $parent
-      .text()
-      .split('\n')
-      .map((v) => v.trim())
-      .filter(Boolean);
-
-    let mode = null;
-
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i];
-
-      if (line === 'Spawn at') {
-        spawn = lines[i + 1] || 'N/A';
-      }
-
-      if (line === 'Item Drops') {
-        mode = 'drop';
-        continue;
-      }
-
-      if (mode === 'drop') {
-        if (
-          line.startsWith('Lv') ||
-          line.startsWith('Type') ||
-          line.startsWith('Mode')
-        )
-          break;
-
-        const clean = line.replace(/\[.*?\]\s*/, '');
-        if (clean) drops.push(clean);
-      }
-    }
-
-    return {
-      spawn,
-      drops: drops.join(' | ') || 'N/A',
-    };
-  }
-
-  async scrapeAll() {
-    let page = 1;
+    let lastHeight = 0;
 
     while (true) {
-      console.log(`\n[${this.getTime()}] === PAGE ${page} ===`);
+      container.scrollTop = container.scrollHeight;
 
-      const html = await this.fetchPage(page);
-      if (!html) break;
+      await new Promise((resolve) => setTimeout(resolve, 1500));
 
-      const data = this.parseHTML(html);
+      const newHeight = container.scrollHeight;
 
-      if (data.length === 0) {
-        console.log(`[${this.getTime()}] Stop (no data)`);
-        break;
-      }
-
-      console.log(`[${this.getTime()}] +${data.length} monster`);
-
-      this.monsterData.push(...data);
-
-      page++;
-
-      await new Promise((r) => setTimeout(r, 800));
+      if (newHeight === lastHeight) break;
+      lastHeight = newHeight;
     }
+  });
 
-    console.log(`TOTAL: ${this.monsterData.length}`);
-  }
+  console.log("Scroll selesai");
 
-  saveCSV() {
-    const header = [
-      'Name',
-      'Level',
-      'Type',
-      'Mode',
-      'HP',
-      'Element',
-      'EXP',
-      'Tamable',
-      'Location',
-      'Drops',
-      'URL',
-    ];
+  const data = await page.evaluate(() => {
+    const cards = document.querySelectorAll(".deckCard");
 
-    const rows = this.monsterData.map((m) => [
-      m.name,
-      m.level,
-      m.type,
-      m.mode,
-      m.hp,
-      m.element,
-      m.exp,
-      m.tamable,
-      m.spawn,
-      m.drops,
-      m.url,
-    ]);
+    return Array.from(cards).map((card) => {
+      const name = card.getAttribute("data-card-name") || "";
 
-    const csv = [header, ...rows]
-      .map((r) =>
-        r
-          .map((c) =>
-            typeof c === 'string' &&
-            (c.includes(',') || c.includes('"'))
-              ? `"${c.replace(/"/g, '""')}"`
-              : c
-          )
-          .join(',')
-      )
-      .join('\n');
+      const img = card.querySelector("img");
+      const image =
+        img?.getAttribute("data-original") ||
+        img?.getAttribute("src") ||
+        "";
 
-    fs.writeFileSync(
-      path.join(__dirname, this.outputFile),
-      csv,
-      'utf-8'
-    );
+      return { name, image };
+    });
+  });
 
-    console.log(`Saved: ${this.outputFile}`);
-  }
+  await browser.close();
 
-  async run() {
-    const start = Date.now();
+  return data;
+};
 
-    await this.scrapeAll();
-    this.saveCSV();
+const saveCSV = (data) => {
+  const header = "name,image\n";
 
-    console.log(
-      `Done in ${((Date.now() - start) / 1000).toFixed(2)}s`
-    );
-  }
-}
+  const rows = data
+    .map((d) => `"${d.name}","${d.image}"`)
+    .join("\n");
 
-export default MonsterScraper;
+  fs.writeFileSync("pokemon_cards.csv", header + rows);
+};
 
-if (import.meta.url === `file://${process.argv[1]}`) {
-  new MonsterScraper().run();
-}
+(async () => {
+  const result = await scrape();
+
+  console.log("Total:", result.length);
+
+  saveCSV(result);
+
+  console.log("Selesai -> pokemon_cards.csv");
+})();
