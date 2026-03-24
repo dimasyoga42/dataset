@@ -5,9 +5,17 @@ const URL = "https://asia.pokemon-card.com/id/deck-build/";
 
 const scrape = async () => {
   const browser = await puppeteer.launch({
-    headless: true,
-    defaultViewport: null,
-  });
+  headless: "new",
+  executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
+  args: [
+    "--no-sandbox",
+    "--disable-setuid-sandbox",
+    "--disable-dev-shm-usage",
+    "--disable-gpu",
+    "--no-zygote",
+    "--single-process"
+  ],
+});
 
   const page = await browser.newPage();
   await page.goto(URL, { waitUntil: "networkidle2" });
