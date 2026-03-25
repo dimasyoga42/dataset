@@ -1,109 +1,115 @@
-import puppeteer from "puppeteer";
-import fs from "fs";
+import axios from "axios";
+import * as cheerio from "cheerio";
+import fs from "fs/promises";
+import { Parser } from "json2csv";
 
-const URL = "https://asia.pokemon-card.com/id/deck-build/";
+const BASE_URL = "https://coryn.club/";
+const MAX_PAGE = 200;
 
-const scrape = async () => {
-  const browser = await puppeteer.launch({
-    headless: "new",
-    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
-    protocolTimeout: 0,
-    args: [
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--disable-dev-shm-usage",
-      "--disable-gpu",
-      "--no-zygote",
-      "--single-process"
-    ],
+const HEADERS = {
+  "User-Agent":
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+};
+
+const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
+async function fetchPage(url) {
+  const { data } = await axios.get(url, {
+    headers: HEADERS,
+    timeout: 30000,
   });
+  return data;
+}
 
-  const page = await browser.newPage();
+async function scrapeToramDatabase() {
+  try {
+    console.log("Memulai proses scraping...");
+    const allItems = [];
 
-  // disable timeout bawaan
-  page.setDefaultNavigationTimeout(0);
-  page.setDefaultTimeout(0);
+    for (let page = 1; page <= MAX_PAGE; page++) {
+      const url = `${BASE_URL}item.php?&show=11&order=id%20DESC&p=${page}`;
+      console.log(`Mengambil Halaman ${page}...`);
 
-  await page.setUserAgent(
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
-  );
+      const html = await fetchPage(url);
+      const $ = cheerio.load(html);
 
-  await page.goto(URL, { waitUntil: "networkidle2", timeout: 0 });
+      // Selector yang lebih spesifik untuk baris yang berisi data item
+      // Di Coryn Club, baris data biasanya memiliki struktur td > b > a
+      const itemRows = $("table.table-striped tbody tr");
 
-  await page.waitForSelector("#searchResultContainer");
-
-  // 🔥 scroll container (fix infinite loop)
-  await page.evaluate(async () => {
-    const container = document.querySelector("#searchResultContainer");
-
-    let lastHeight = 0;
-    let retry = 0;
-    let maxLoop = 90;
-
-    while (maxLoop-- > 0) {
-      container.scrollTop = container.scrollHeight;
-
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-
-      const newHeight = container.scrollHeight;
-
-      if (newHeight === lastHeight) {
-        retry++;
-        if (retry >= 3) break;
-      } else {
-        retry = 0;
+      if (itemRows.length === 0) {
+        console.log("Tidak ada baris terdeteksi, berhenti.");
+        break;
       }
 
-      lastHeight = newHeight;
+      let pageCount = 0;
+
+      itemRows.each((_, el) => {
+        const row = $(el);
+
+        // Mencari elemen nama di dalam tag <b> sesuai struktur asli website
+        const nameTag = row.find("td b a");
+        const name = nameTag.text().trim();
+
+        // Validasi: Lewati jika nama kosong atau baris bukan merupakan item
+        if (!name) return;
+
+        // Mengambil link detail
+        const relativeLink = nameTag.attr("href");
+        const link = relativeLink
+          ? relativeLink.startsWith("http")
+            ? relativeLink
+            : BASE_URL + relativeLink
+          : "-";
+
+        // Mengambil seluruh teks dalam baris untuk ekstraksi statistik & durasi
+        const fullText = row.text().trim();
+
+        // Ekstraksi Tipe (biasanya di tag <small>)
+        const type = row.find("small").first().text().trim() || "-";
+
+        // Ekstraksi Durasi (Duration) menggunakan Regex
+        const durationMatch = fullText.match(/Duration:\s*(\d+\s*\w+)/i);
+        const duration = durationMatch ? durationMatch[1] : "-";
+
+        // Ekstraksi Statistik (menggunakan class item-prop jika ada)
+        const stats = row.find(".item-prop").text().trim() || "-";
+
+        allItems.push({
+          name,
+          type,
+          duration,
+          stats,
+          link,
+        });
+
+        pageCount++;
+      });
+
+      console.log(`Halaman ${page}: Berhasil mengambil ${pageCount} item.`);
+
+      // Jika dalam satu halaman tidak ada item yang valid, kemungkinan sudah habis
+      if (pageCount === 0) break;
+
+      // Jeda agar tidak terkena rate limit/blokir
+      await delay(1500);
     }
-  });
 
-  console.log("Scroll selesai");
+    if (allItems.length === 0) {
+      throw new Error("Data tidak ditemukan. Periksa koneksi atau selector.");
+    }
 
-  const data = await page.evaluate(() => {
-    const cards = document.querySelectorAll(".deckCard");
+    // Simpan ke CSV
+    const parser = new Parser();
+    const csv = parser.parse(allItems);
+    await fs.writeFile("coryn_fix.csv", csv, "utf8");
 
-    return Array.from(cards).map((card) => {
-      const name = card.getAttribute("data-card-name") || "";
-
-      const img = card.querySelector("img");
-      const image =
-        img?.getAttribute("data-original") ||
-        img?.getAttribute("src") ||
-        "";
-
-      return { name, image };
-    });
-  });
-
-  await browser.close();
-
-  return data;
-};
-
-const saveCSV = (data) => {
-  const header = "name,image\n";
-
-  const rows = data
-    .map(
-      (d) =>
-        `"${(d.name || "").replace(/"/g, '""')}","${d.image || ""}"`
-    )
-    .join("\n");
-
-  fs.writeFileSync("pokemon_cards.csv", header + rows);
-};
-
-(async () => {
-  try {
-    const result = await scrape();
-
-    console.log("Total:", result.length);
-
-    saveCSV(result);
-
-    console.log("Selesai -> pokemon_cards.csv");
+    console.log(
+      `\nSELESAI: Total ${allItems.length} item disimpan ke 'coryn_fix.csv'`,
+    );
   } catch (err) {
-    console.error("ERROR:", err.message);
+    console.error("TERJADI ERROR:", err.message);
   }
-})();
+}
+
+scrapeToramDatabase();
