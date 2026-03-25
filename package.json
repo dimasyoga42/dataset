@@ -11,6 +11,7 @@
     "canvas": "^3.2.2",
     "cheerio": "^1.2.0",
     "groq-sdk": "^1.1.1",
+    "json2csv": "^6.0.0-alpha.2",
     "puppeteer": "^22.15.0"
   }
 }
