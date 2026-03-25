@@ -34,7 +34,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm install cheerio axios puppeteer canvas groq-sdk
+        run: npm install cheerio axios puppeteer canvas groq-sdk json2csv
 
       - name: Install Chrome
         run: npx puppeteer browsers install chrome
