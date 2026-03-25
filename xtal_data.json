@@ -1,5 +1,31 @@
 [
   {
+    "name": "Zega IX",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP": "1200",
+      "Magic Resistance %": "10",
+      "Water resistance %": "9",
+      "Attack MP Recovery": "11",
+      "Upgrade for": "Zega VIII"
+    },
+    "upgrade_route": "Zega -> Zega II -> Zega III -> Zega IV -> Zega V -> Zega VI -> Zega VII -> Zega VIII -> Zega IX",
+    "max_upgrade_route": "Zega -> Zega II -> Zega III -> Zega IV -> Zega V -> Zega VI -> Zega VII -> Zega VIII -> Zega IX -> Zega X"
+  },
+  {
+    "name": "Zega VIII",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "MaxHP": "1100",
+      "Magic Resistance %": "9",
+      "Water resistance %": "8",
+      "Attack MP Recovery": "10",
+      "Upgrade for": "Zega VII"
+    },
+    "upgrade_route": "Zega -> Zega II -> Zega III -> Zega IV -> Zega V -> Zega VI -> Zega VII -> Zega VIII",
+    "max_upgrade_route": "Zega -> Zega II -> Zega III -> Zega IV -> Zega V -> Zega VI -> Zega VII -> Zega VIII -> Zega IX -> Zega X"
+  },
+  {
     "name": "Spying Eye",
     "type": "Normal Crysta",
     "stats": {
@@ -135,9 +161,10 @@
       "MaxHP": "1300",
       "Magic Resistance %": "11",
       "Water resistance %": "10",
-      "Attack MP Recovery": "12"
+      "Attack MP Recovery": "12",
+      "Upgrade for": "Zega IX"
     },
-    "upgrade_route": null,
+    "upgrade_route": "Zega -> Zega II -> Zega III -> Zega IV -> Zega V -> Zega VI -> Zega VII -> Zega VIII -> Zega IX -> Zega X",
     "max_upgrade_route": null
   },
   {
@@ -234,7 +261,7 @@
   },
   {
     "name": "Stormun",
-    "type": "Enhancer Crysta (Red)",
+    "type": "Weapon Crysta",
     "stats": {
       "ATK %": "5",
       "MATK %": "5",
@@ -395,7 +422,7 @@
   },
   {
     "name": "Shadow Devil Cavalier",
-    "type": "Enhancer Crysta (Yellow)",
+    "type": "Additional Crysta",
     "stats": {
       "MaxMP": "-100",
       "ATK %": "6",
@@ -1262,10 +1289,10 @@
       "MATK %": "8",
       "Magic Pierce %": "20",
       "CSPD %": "-16",
-      "Upgrade for": ""
+      "Upgrade for": "Armasite"
     },
-    "upgrade_route": null,
-    "max_upgrade_route": null
+    "upgrade_route": "",
+    "max_upgrade_route": "Armasite -> Florizard"
   },
   {
     "name": "Gegner",
@@ -1644,8 +1671,8 @@
       "Attack MP Recovery": "9",
       "Upgrade for": "Zega VI"
     },
-    "upgrade_route": "Zega III -> Zega IV -> Zega V -> Zega VI -> Zega VII",
-    "max_upgrade_route": null
+    "upgrade_route": "Zega -> Zega II -> Zega III -> Zega IV -> Zega V -> Zega VI -> Zega VII",
+    "max_upgrade_route": "Zega -> Zega II -> Zega III -> Zega IV -> Zega V -> Zega VI -> Zega VII -> Zega VIII -> Zega IX -> Zega X"
   },
   {
     "name": "ASPD+140",
@@ -2192,8 +2219,8 @@
       "Attack MP Recovery": "8",
       "Upgrade for": "Zega V"
     },
-    "upgrade_route": "Zega III -> Zega IV -> Zega V -> Zega VI",
-    "max_upgrade_route": "Zega III -> Zega IV -> Zega V -> Zega VI -> Zega VII"
+    "upgrade_route": "Zega -> Zega II -> Zega III -> Zega IV -> Zega V -> Zega VI",
+    "max_upgrade_route": "Zega -> Zega II -> Zega III -> Zega IV -> Zega V -> Zega VI -> Zega VII -> Zega VIII -> Zega IX -> Zega X"
   },
   {
     "name": "Dodge+14",
@@ -2979,8 +3006,8 @@
       "Attack MP Recovery": "7",
       "Upgrade for": "Zega IV"
     },
-    "upgrade_route": "Zega III -> Zega IV -> Zega V",
-    "max_upgrade_route": "Zega III -> Zega IV -> Zega V -> Zega VI -> Zega VII"
+    "upgrade_route": "Zega -> Zega II -> Zega III -> Zega IV -> Zega V",
+    "max_upgrade_route": "Zega -> Zega II -> Zega III -> Zega IV -> Zega V -> Zega VI -> Zega VII -> Zega VIII -> Zega IX -> Zega X"
   },
   {
     "name": "Megiston the Champion III",
@@ -3280,8 +3307,8 @@
       "Attack MP Recovery": "6",
       "Upgrade for": "Zega III"
     },
-    "upgrade_route": "Zega III -> Zega IV",
-    "max_upgrade_route": "Zega III -> Zega IV -> Zega V -> Zega VI -> Zega VII"
+    "upgrade_route": "Zega -> Zega II -> Zega III -> Zega IV",
+    "max_upgrade_route": "Zega -> Zega II -> Zega III -> Zega IV -> Zega V -> Zega VI -> Zega VII -> Zega VIII -> Zega IX -> Zega X"
   },
   {
     "name": "Blancanine the White Fang",
@@ -3768,10 +3795,11 @@
       "MaxHP": "600",
       "Magic Resistance %": "4",
       "Water resistance %": "3",
-      "Attack MP Recovery": "5"
+      "Attack MP Recovery": "5",
+      "Upgrade for": "Zega II"
     },
-    "upgrade_route": null,
-    "max_upgrade_route": "Zega III -> Zega IV -> Zega V -> Zega VI -> Zega VII"
+    "upgrade_route": "Zega -> Zega II -> Zega III",
+    "max_upgrade_route": "Zega -> Zega II -> Zega III -> Zega IV -> Zega V -> Zega VI -> Zega VII -> Zega VIII -> Zega IX -> Zega X"
   },
   {
     "name": "Altoblepas",
@@ -4640,7 +4668,7 @@
       "Upgrade for": "Zega"
     },
     "upgrade_route": "Zega -> Zega II",
-    "max_upgrade_route": null
+    "max_upgrade_route": "Zega -> Zega II -> Zega III -> Zega IV -> Zega V -> Zega VI -> Zega VII -> Zega VIII -> Zega IX -> Zega X"
   },
   {
     "name": "Salamander",
@@ -5074,7 +5102,7 @@
       "Attack MP Recovery": "3"
     },
     "upgrade_route": null,
-    "max_upgrade_route": "Zega -> Zega II"
+    "max_upgrade_route": "Zega -> Zega II -> Zega III -> Zega IV -> Zega V -> Zega VI -> Zega VII -> Zega VIII -> Zega IX -> Zega X"
   },
   {
     "name": "MP+150",
