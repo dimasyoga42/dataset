@@ -1,5 +1,41 @@
 [
   {
+    "name": "Mari",
+    "type": "Enhancer Crysta (Green)",
+    "stats": {
+      "MaxHP %": "70",
+      "Physical Resistance %": "-3",
+      "Magic Resistance %": "-3",
+      "1-Handed Sword only:Aggro %": "Aggro %\n                                                            20"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Doy",
+    "type": "Enhancer Crysta (Red)",
+    "stats": {
+      "STR %": "8",
+      "ATK %": "12",
+      "DEF %": "-33",
+      "Critical Rate %": "10"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
+    "name": "Grandanbit",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "DEX %": "5",
+      "MATK %": "12",
+      "Accuracy %": "-20",
+      "Critical Damage": "8"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
     "name": "Zega IX",
     "type": "Enhancer Crysta (Red)",
     "stats": {
