@@ -1,5 +1,14 @@
 [
   {
+    "name": "AGI+9",
+    "type": "Normal Crysta",
+    "stats": {
+      "AGI": "9"
+    },
+    "upgrade_route": null,
+    "max_upgrade_route": null
+  },
+  {
     "name": "Mari",
     "type": "Enhancer Crysta (Green)",
     "stats": {
