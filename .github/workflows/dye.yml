@@ -12,11 +12,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-
+          node-version: 24
       - name: Cache Puppeteer Chrome
         uses: actions/cache@v4
         with:
@@ -24,7 +22,6 @@ jobs:
           key: ${{ runner.os }}-puppeteer-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-puppeteer-
-
       - name: Cache node_modules
         uses: actions/cache@v4
         with:
@@ -32,37 +29,25 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-
       - name: Install dependencies
         run: npm install cheerio axios puppeteer canvas groq-sdk json2csv
-
       - name: Install Chrome
         run: npx puppeteer browsers install chrome
-     
       - name: Run screenshot
         run: node run.js
-     
       - name: Run dye json
         run: node dye.js
-
       - name: Run xtal json
         run: node colors.js
-
       - name: Run generate image
         run: node canvas.js
-
       - name: Run Skill
         run: node skill.js
-
       - name: Commit and push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          # Pull dulu sebelum commit, pakai ours strategy
-          # agar file hasil generate (lokal) tidak ditimpa remote
           git pull --rebase --autostash
-
           git add .
           git diff --cached --quiet && echo "No changes, skipping." && exit 0
           git commit -m "update screenshot $(date +'%Y-%m-%d %H:%M:%S')"
