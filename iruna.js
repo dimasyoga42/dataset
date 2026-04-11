@@ -1,231 +1,164 @@
-/**
- * Iruna Wiki Monster Scraper
- * ==========================
- * irunawiki.com adalah website Next.js (React) yang merender data via JavaScript.
- * Karena itu, fetch biasa TIDAK BISA mengambil data monster.
- *
- * Solusi: gunakan Puppeteer (headless Chrome) untuk merender halaman,
- * scroll hingga bawah untuk load semua monster, lalu parse datanya.
- *
- * Install dependencies:
- *     npm install puppeteer
- *
- * Cara pakai:
- *     node iruna_scraper.js
- *
- * Catatan: file ini menggunakan ESM (ES Modules).
- * Pastikan package.json punya "type": "module",
- * ATAU rename file ini menjadi iruna_scraper.mjs
- */
-
 import puppeteer from "puppeteer";
 import { writeFileSync } from "fs";
 
 const BASE_URL = "https://irunawiki.com";
 const MONSTER_LIST_URL = `${BASE_URL}/monsters`;
 
-// ──────────────────────────────────────────────
-// 1. Scroll halaman /monsters sampai bawah
-//    untuk memastikan semua monster ter-load
-// ──────────────────────────────────────────────
-
+// ─── SCROLL FIX (lebih akurat) ─────────────────────────────
 async function scrollToBottom(page) {
-  console.log("[*] Scroll ke bawah untuk load semua monster ...");
+  console.log("[*] Scrolling...");
 
-  let prevHeight = 0;
-  let attempts = 0;
-  const MAX_ATTEMPTS = 30; // batas scroll agar tidak infinite
+  let prevCount = 0;
 
-  while (attempts < MAX_ATTEMPTS) {
-    const currHeight = await page.evaluate(() => document.body.scrollHeight);
-
-    // Kalau tinggi halaman tidak bertambah lagi, berarti semua sudah ter-load
-    if (currHeight === prevHeight) break;
-
-    prevHeight = currHeight;
-    attempts++;
-
-    // Scroll ke paling bawah
+  for (let i = 0; i < 30; i++) {
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-
-    // Tunggu konten baru muncul
     await new Promise((r) => setTimeout(r, 1500));
 
-    process.stdout.write(`\r  Scroll ke-${attempts}, tinggi halaman: ${currHeight}px`);
+    const count = await page.evaluate(
+      () => document.querySelectorAll("a[href*='/monster/']").length
+    );
+
+    console.log(`  Scroll ${i + 1} | items: ${count}`);
+
+    if (count === prevCount) break;
+    prevCount = count;
   }
 
-  console.log(`\n[*] Scroll selesai (${attempts}x)`);
+  console.log("[*] Scroll done");
 }
 
-// ──────────────────────────────────────────────
-// 2. Ambil daftar semua monster dari halaman /monsters
-// ──────────────────────────────────────────────
-
+// ─── GET LINKS ─────────────────────────────────────────────
 async function getMonsterLinks(page) {
-  console.log(`[*] Membuka ${MONSTER_LIST_URL} ...`);
   await page.goto(MONSTER_LIST_URL, { waitUntil: "networkidle2" });
 
-  // Tunggu sampai link monster pertama muncul
-  await page.waitForSelector("a[href*='/monster/']", { timeout: 15000 });
-
-  // Scroll sampai bawah agar semua monster ter-load
+  await page.waitForSelector("a[href*='/monster/']");
   await scrollToBottom(page);
 
   const monsters = await page.evaluate((baseUrl) => {
     const seen = new Set();
     const results = [];
 
-    for (const a of document.querySelectorAll("a[href*='/monster/']")) {
+    document.querySelectorAll("a[href*='/monster/']").forEach((a) => {
       const href = a.getAttribute("href");
-      if (!href.startsWith("/monster/") || seen.has(href)) continue;
+      if (!href || seen.has(href)) return;
+
       seen.add(href);
 
-      const name =
-        a.innerText.trim() ||
-        decodeURIComponent(href.split("/").pop().replace(/_\d+$/, ""));
-
-      results.push({ name, url: baseUrl + href });
-    }
+      results.push({
+        url: baseUrl + href,
+      });
+    });
 
     return results;
   }, BASE_URL);
 
-  console.log(`[*] Total monster ditemukan: ${monsters.length}`);
+  console.log(`[*] Total: ${monsters.length}`);
   return monsters;
 }
 
-// ──────────────────────────────────────────────
-// 3. Parse satu halaman monster
-// ──────────────────────────────────────────────
+// ─── PARSE ────────────────────────────────────────────────
+async function parseMonster(page, url) {
+  await page.goto(url, { waitUntil: "networkidle2", timeout: 20000 });
 
-async function parseMonsterPage(page, url) {
-  const data = await page.evaluate(() => {
-    // ── Nama & lokasi dari <title>
-    // Contoh: "Iruna Leedle Colon【Lv 18, Rokoko Plains】 | Iruna Wiki"
+  await page.waitForSelector(".stat-box", { timeout: 10000 });
+
+  return await page.evaluate((url) => {
     const titleMatch = document.title.match(/Iruna (.+?)【.+?,\s*(.+?)】/);
-    const name     = titleMatch?.[1].trim() ?? "";
-    const location = titleMatch?.[2].trim() ?? "";
 
-    // ── Stats dari stat-box
     const stats = {};
-    for (const box of document.querySelectorAll(".stat-box")) {
+    document.querySelectorAll(".stat-box").forEach((box) => {
       const t = box.querySelector(".stat-title");
       const v = box.querySelector(".stat-value");
       if (t && v) stats[t.innerText.trim()] = v.innerText.trim();
-    }
+    });
 
-    // ── Drop items
     const drops = [...document.querySelectorAll(".drop-container")]
       .map((d) => d.innerText.trim())
       .filter(Boolean);
 
-    return { name, location, stats, drops };
-  });
-
-  return {
-    Name:             data.name,
-    Location:         data.location,
-    URL:              url,
-    Lv:               data.stats["Lv"]              ?? "",
-    MaxHP:            data.stats["MaxHP"]            ?? "",
-    EXP:              data.stats["EXP"]              ?? "",
-    ATK:              data.stats["ATK"]              ?? "",
-    MATK:             data.stats["MATK"]             ?? "",
-    DEF:              data.stats["DEF"]              ?? "",
-    MDEF:             data.stats["MDEF"]             ?? "",
-    STR:              data.stats["STR"]              ?? "",
-    AGI:              data.stats["AGI"]              ?? "",
-    VIT:              data.stats["VIT"]              ?? "",
-    INT:              data.stats["INT"]              ?? "",
-    DEX:              data.stats["DEX"]              ?? "",
-    CRT:              data.stats["CRT"]              ?? "",
-    HIT:              data.stats["HIT"]              ?? "",
-    EVA:              data.stats["EVA"]              ?? "",
-    "Movement Speed": data.stats["Movement Speed"]   ?? "",
-    "Poison R%":      data.stats["Poison R%"]        ?? "",
-    "Paralyze R%":    data.stats["Paralyze R%"]      ?? "",
-    "Blind R%":       data.stats["Blind R%"]         ?? "",
-    "Stun R%":        data.stats["Stun R%"]          ?? "",
-    "Burn R%":        data.stats["Burn R%"]          ?? "",
-    "Freeze R%":      data.stats["Freeze R%"]        ?? "",
-    "Lethargy R%":    data.stats["Lethargy R%"]      ?? "",
-    "Dizzy R%":       data.stats["Dizzy R%"]         ?? "",
-    "Bleed R%":       data.stats["Bleed R%"]         ?? "",
-    "Fear R%":        data.stats["Fear R%"]          ?? "",
-    "Melee R%":       data.stats["Melee R%"]         ?? "",
-    "Magic R%":       data.stats["Magic R%"]         ?? "",
-    Drops:            data.drops.join(" | "),
-  };
+    return {
+      Name: titleMatch?.[1] || "",
+      Location: titleMatch?.[2] || "",
+      URL: url,
+      Lv: stats["Lv"] || "",
+      MaxHP: stats["MaxHP"] || "",
+      EXP: stats["EXP"] || "",
+      ATK: stats["ATK"] || "",
+      MATK: stats["MATK"] || "",
+      DEF: stats["DEF"] || "",
+      MDEF: stats["MDEF"] || "",
+      STR: stats["STR"] || "",
+      AGI: stats["AGI"] || "",
+      VIT: stats["VIT"] || "",
+      INT: stats["INT"] || "",
+      DEX: stats["DEX"] || "",
+      Drops: drops.join(" | "),
+    };
+  }, url);
 }
 
-// ──────────────────────────────────────────────
-// 4. Simpan ke CSV
-// ──────────────────────────────────────────────
-
-function saveToCsv(data, filename = "iruna_monsters.csv") {
-  if (!data.length) {
-    console.log("[!] Tidak ada data untuk disimpan.");
-    return;
+// ─── RETRY WRAPPER ─────────────────────────────────────────
+async function safeParse(page, url, retry = 2) {
+  try {
+    return await parseMonster(page, url);
+  } catch (err) {
+    if (retry <= 0) {
+      console.log("  [X] Skip:", url);
+      return null;
+    }
+    console.log("  [!] Retry:", url);
+    return safeParse(page, url, retry - 1);
   }
+}
 
+// ─── CSV ───────────────────────────────────────────────────
+function saveToCsv(data) {
   const headers = Object.keys(data[0]);
-  const escape  = (val) => {
-    const s = String(val ?? "");
-    return s.includes(",") || s.includes("\n") || s.includes('"')
-      ? `"${s.replace(/"/g, '""')}"`
-      : s;
-  };
 
   const csv = [
     headers.join(","),
-    ...data.map((row) => headers.map((h) => escape(row[h])).join(",")),
+    ...data.map((row) =>
+      headers.map((h) => `"${String(row[h] || "").replace(/"/g, '""')}"`).join(",")
+    ),
   ].join("\n");
 
-  writeFileSync(filename, csv, "utf-8");
-  console.log(`\n[✓] Tersimpan: ${filename} (${data.length} monster)`);
+  writeFileSync("monsters.csv", csv);
+  console.log("Saved monsters.csv");
 }
 
-// ──────────────────────────────────────────────
-// 5. Main
-// ──────────────────────────────────────────────
-
+// ─── MAIN ──────────────────────────────────────────────────
 const browser = await puppeteer.launch({
   headless: "new",
-  args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  args: ["--no-sandbox"],
 });
 
 const page = await browser.newPage();
-await page.setUserAgent(
-  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) " +
-  "AppleWebKit/537.36 (KHTML, like Gecko) " +
-  "Chrome/120.0.0.0 Safari/537.36"
-);
+
+const links = await getMonsterLinks(page);
 
 const results = [];
 
-try {
-  const links = await getMonsterLinks(page);
+// 🔥 concurrency (3 tab)
+const CONCURRENCY = 3;
 
-  for (let i = 0; i < links.length; i++) {
-    const { url } = links[i];
-    console.log(`[${i + 1}/${links.length}] Scraping: ${url}`);
+for (let i = 0; i < links.length; i += CONCURRENCY) {
+  const chunk = links.slice(i, i + CONCURRENCY);
 
-    try {
-      await page.goto(url, { waitUntil: "networkidle2", timeout: 20000 });
-      await page.waitForSelector(".stat-box", { timeout: 10000 });
+  const pages = await Promise.all(
+    chunk.map(() => browser.newPage())
+  );
 
-      const data = await parseMonsterPage(page, url);
-      results.push(data);
-      console.log(`  -> ${data.Name} Lv${data.Lv} @ ${data.Location}`);
+  const data = await Promise.all(
+    pages.map((p, idx) => safeParse(p, chunk[idx].url))
+  );
 
-      // Jeda kecil agar tidak kena rate-limit
-      await new Promise((r) => setTimeout(r, 500));
-    } catch (err) {
-      console.log(`  [!] Gagal: ${err.message}`);
-    }
-  }
-} finally {
-  await browser.close();
+  data.forEach((d) => d && results.push(d));
+
+  await Promise.all(pages.map((p) => p.close()));
+
+  console.log(`[*] Progress: ${results.length}/${links.length}`);
 }
 
-saveToCsv(results, "iruna_monsters.csv");
+await browser.close();
+
+saveToCsv(results);
