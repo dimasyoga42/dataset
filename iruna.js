@@ -4,7 +4,8 @@
  * irunawiki.com adalah website Next.js (React) yang merender data via JavaScript.
  * Karena itu, fetch biasa TIDAK BISA mengambil data monster.
  *
- * Solusi: gunakan Puppeteer (headless Chrome) untuk merender halaman.
+ * Solusi: gunakan Puppeteer (headless Chrome) untuk merender halaman,
+ * scroll hingga bawah untuk load semua monster, lalu parse datanya.
  *
  * Install dependencies:
  *     npm install puppeteer
@@ -24,13 +25,51 @@ const BASE_URL = "https://irunawiki.com";
 const MONSTER_LIST_URL = `${BASE_URL}/monsters`;
 
 // ──────────────────────────────────────────────
-// 1. Ambil daftar semua monster dari halaman /monsters
+// 1. Scroll halaman /monsters sampai bawah
+//    untuk memastikan semua monster ter-load
+// ──────────────────────────────────────────────
+
+async function scrollToBottom(page) {
+  console.log("[*] Scroll ke bawah untuk load semua monster ...");
+
+  let prevHeight = 0;
+  let attempts = 0;
+  const MAX_ATTEMPTS = 30; // batas scroll agar tidak infinite
+
+  while (attempts < MAX_ATTEMPTS) {
+    const currHeight = await page.evaluate(() => document.body.scrollHeight);
+
+    // Kalau tinggi halaman tidak bertambah lagi, berarti semua sudah ter-load
+    if (currHeight === prevHeight) break;
+
+    prevHeight = currHeight;
+    attempts++;
+
+    // Scroll ke paling bawah
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+
+    // Tunggu konten baru muncul
+    await new Promise((r) => setTimeout(r, 1500));
+
+    process.stdout.write(`\r  Scroll ke-${attempts}, tinggi halaman: ${currHeight}px`);
+  }
+
+  console.log(`\n[*] Scroll selesai (${attempts}x)`);
+}
+
+// ──────────────────────────────────────────────
+// 2. Ambil daftar semua monster dari halaman /monsters
 // ──────────────────────────────────────────────
 
 async function getMonsterLinks(page) {
   console.log(`[*] Membuka ${MONSTER_LIST_URL} ...`);
   await page.goto(MONSTER_LIST_URL, { waitUntil: "networkidle2" });
+
+  // Tunggu sampai link monster pertama muncul
   await page.waitForSelector("a[href*='/monster/']", { timeout: 15000 });
+
+  // Scroll sampai bawah agar semua monster ter-load
+  await scrollToBottom(page);
 
   const monsters = await page.evaluate((baseUrl) => {
     const seen = new Set();
@@ -51,12 +90,12 @@ async function getMonsterLinks(page) {
     return results;
   }, BASE_URL);
 
-  console.log(`[*] Ditemukan ${monsters.length} monster`);
+  console.log(`[*] Total monster ditemukan: ${monsters.length}`);
   return monsters;
 }
 
 // ──────────────────────────────────────────────
-// 2. Parse satu halaman monster
+// 3. Parse satu halaman monster
 // ──────────────────────────────────────────────
 
 async function parseMonsterPage(page, url) {
@@ -120,7 +159,7 @@ async function parseMonsterPage(page, url) {
 }
 
 // ──────────────────────────────────────────────
-// 3. Simpan ke CSV
+// 4. Simpan ke CSV
 // ──────────────────────────────────────────────
 
 function saveToCsv(data, filename = "iruna_monsters.csv") {
@@ -147,10 +186,8 @@ function saveToCsv(data, filename = "iruna_monsters.csv") {
 }
 
 // ──────────────────────────────────────────────
-// 4. Main
+// 5. Main
 // ──────────────────────────────────────────────
-
-const MAX_MONSTERS = 0; // 0 = ambil semua monster
 
 const browser = await puppeteer.launch({
   headless: "new",
@@ -167,8 +204,7 @@ await page.setUserAgent(
 const results = [];
 
 try {
-  let links = await getMonsterLinks(page);
-  if (MAX_MONSTERS > 0) links = links.slice(0, MAX_MONSTERS);
+  const links = await getMonsterLinks(page);
 
   for (let i = 0; i < links.length; i++) {
     const { url } = links[i];
