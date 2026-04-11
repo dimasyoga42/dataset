@@ -150,7 +150,7 @@ function saveToCsv(data, filename = "iruna_monsters.csv") {
 // 4. Main
 // ──────────────────────────────────────────────
 
-const MAX_MONSTERS = 10; // Set 0 untuk ambil semua monster
+const MAX_MONSTERS = 0; // 0 = ambil semua monster
 
 const browser = await puppeteer.launch({
   headless: "new",
