@@ -1,5 +1,19 @@
 [
   {
+    "name": "Ghostfire Oni",
+    "type": "Enhancer Crysta (Yellow)",
+    "stats": {
+      "MaxHP %": "-10",
+      "MaxMP": "-100",
+      "Accuracy": "100",
+      "Short Range Damage %": "10",
+      "Upgrade for": "Solopy",
+      "Heavy Armor only:Motion Speed %": "Motion Speed %\n                                                            1"
+    },
+    "upgrade_route": "",
+    "max_upgrade_route": "Golden Skeleton -> Solopy -> Shark Potum"
+  },
+  {
     "name": "AGI+9",
     "type": "Normal Crysta",
     "stats": {
