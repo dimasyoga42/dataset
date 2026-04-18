@@ -799,8 +799,14 @@
   },
   {
     "boss": "Rondine\n                        (Lv.\n                        315\n                        )",
-    "dye": "Unknown",
-    "color_id": null,
-    "hex": null
+    "dye": "C5",
+    "color_id": 5,
+    "hex": "#000000"
+  },
+  {
+    "boss": "ハウドヴィス\n                        (Lv.\n                        321\n                        )",
+    "dye": "C45",
+    "color_id": 45,
+    "hex": "#00e0a8"
   }
 ]
