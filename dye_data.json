@@ -1,56 +1,770 @@
 [
   {
-    "boss": "Humida\n                        (Lv.\n                        291\n                        )",
-    "dye": "Unknown",
+    "boss": "Boss colon\n                        (Lv.\n                        30\n                        )",
+    "dye": "A13",
+    "color_id": 13,
+    "hex": "#9cd0b0"
+  },
+  {
+    "boss": "Excavated golem\n                        (Lv.\n                        34\n                        )",
+    "dye": "Hidden",
     "color_id": null,
     "hex": null
+  },
+  {
+    "boss": "Gespenst\n                        (Lv.\n                        40\n                        )",
+    "dye": "A67",
+    "color_id": 67,
+    "hex": "#6b22b8"
+  },
+  {
+    "boss": "Eerie crystal\n                        (Lv.\n                        44\n                        )",
+    "dye": "A48",
+    "color_id": 48,
+    "hex": "#2f78d9"
+  },
+  {
+    "boss": "Forest wolf\n                        (Lv.\n                        50\n                        )",
+    "dye": "B23",
+    "color_id": 23,
+    "hex": "#f1a87f"
+  },
+  {
+    "boss": "Minotaur\n                        (Lv.\n                        52\n                        )",
+    "dye": "B21",
+    "color_id": 21,
+    "hex": "#e7b7d2"
+  },
+  {
+    "boss": "Boss goblin\n                        (Lv.\n                        60\n                        )",
+    "dye": "B62",
+    "color_id": 62,
+    "hex": "#4ea6ad"
+  },
+  {
+    "boss": "Brutal dragon decel\n                        (Lv.\n                        60\n                        )",
+    "dye": "A83",
+    "color_id": 83,
+    "hex": "#3c006b"
+  },
+  {
+    "boss": "Mochelo\n                        (Lv.\n                        63\n                        )",
+    "dye": "B30",
+    "color_id": 30,
+    "hex": "#79cbd1"
+  },
+  {
+    "boss": "Flare volg\n                        (Lv.\n                        70\n                        )",
+    "dye": "A37",
+    "color_id": 37,
+    "hex": "#e768b3"
+  },
+  {
+    "boss": "Ruin golem\n                        (Lv.\n                        65\n                        )",
+    "dye": "A47",
+    "color_id": 47,
+    "hex": "#2fa6d9"
+  },
+  {
+    "boss": "Forestia\n                        (Lv.\n                        69\n                        )",
+    "dye": "C38",
+    "color_id": 38,
+    "hex": "#ff2a00"
+  },
+  {
+    "boss": "Astol\n                        (Lv.\n                        70\n                        )",
+    "dye": "C1",
+    "color_id": 1,
+    "hex": "#ffffff"
+  },
+  {
+    "boss": "Ooze\n                        (Lv.\n                        72\n                        )",
+    "dye": "A23",
+    "color_id": 23,
+    "hex": "#f1a87f"
+  },
+  {
+    "boss": "Warmongger\n                        (Lv.\n                        80\n                        )",
+    "dye": "A42",
+    "color_id": 42,
+    "hex": "#e8f055"
+  },
+  {
+    "boss": "Mauez\n                        (Lv.\n                        75\n                        )",
+    "dye": "B54",
+    "color_id": 54,
+    "hex": "#c60000"
+  },
+  {
+    "boss": "Ganglef\n                        (Lv.\n                        78\n                        )",
+    "dye": "C23",
+    "color_id": 23,
+    "hex": "#f1a87f"
+  },
+  {
+    "boss": "Demon's gate\n                        (Lv.\n                        80\n                        )",
+    "dye": "C39",
+    "color_id": 39,
+    "hex": "#ff6500"
+  },
+  {
+    "boss": "Boss roga\n                        (Lv.\n                        82\n                        )",
+    "dye": "C81",
+    "color_id": 81,
+    "hex": "#0b2a63"
+  },
+  {
+    "boss": "B.B.goblin\n                        (Lv.\n                        90\n                        )",
+    "dye": "A35",
+    "color_id": 35,
+    "hex": "#b47ed7"
+  },
+  {
+    "boss": "Ancient empress\n                        (Lv.\n                        84\n                        )",
+    "dye": "B55",
+    "color_id": 55,
+    "hex": "#b34700"
+  },
+  {
+    "boss": "Masked warrior\n                        (Lv.\n                        87\n                        )",
+    "dye": "B74",
+    "color_id": 74,
+    "hex": "#5c6b00"
+  },
+  {
+    "boss": "Pillar golem\n                        (Lv.\n                        90\n                        )",
+    "dye": "C63",
+    "color_id": 63,
+    "hex": "#357cad"
+  },
+  {
+    "boss": "Glass dragon yelb\n                        (Lv.\n                        93\n                        )",
+    "dye": "B21",
+    "color_id": 21,
+    "hex": "#e7b7d2"
+  },
+  {
+    "boss": "Nurethoth\n                        (Lv.\n                        96\n                        )",
+    "dye": "C78",
+    "color_id": 78,
+    "hex": "#2f5c63"
+  },
+  {
+    "boss": "Jade bird\n                        (Lv.\n                        99\n                        )",
+    "dye": "B75",
+    "color_id": 75,
+    "hex": "#335c00"
+  },
+  {
+    "boss": "Goovua\n                        (Lv.\n                        102\n                        )",
+    "dye": "C22",
+    "color_id": 22,
+    "hex": "#f08a8a"
+  },
+  {
+    "boss": "Scrader\n                        (Lv.\n                        105\n                        )",
+    "dye": "A30",
+    "color_id": 30,
+    "hex": "#79cbd1"
+  },
+  {
+    "boss": "Black Knight of delusion\n                        (Lv.\n                        108\n                        )",
+    "dye": "A8",
+    "color_id": 8,
+    "hex": "#e7d7c7"
+  },
+  {
+    "boss": "Evil crystal beaat\n                        (Lv.\n                        111\n                        )",
+    "dye": "Hidden",
+    "color_id": null,
+    "hex": null
+  },
+  {
+    "boss": "Inzanio of dark knight\n                        (Lv.\n                        114\n                        )",
+    "dye": "C1",
+    "color_id": 1,
+    "hex": "#ffffff"
+  },
+  {
+    "boss": "Twilight dragon\n                        (Lv.\n                        120\n                        )",
+    "dye": "B8",
+    "color_id": 8,
+    "hex": "#e7d7c7"
+  },
+  {
+    "boss": "Cerberus\n                        (Lv.\n                        117\n                        )",
+    "dye": "A9",
+    "color_id": 9,
+    "hex": "#e9e0c2"
+  },
+  {
+    "boss": "Zolban\n                        (Lv.\n                        118\n                        )",
+    "dye": "A5",
+    "color_id": 5,
+    "hex": "#000000"
+  },
+  {
+    "boss": "Aranea\n                        (Lv.\n                        120\n                        )",
+    "dye": "C51",
+    "color_id": 51,
+    "hex": "#7b2cff"
+  },
+  {
+    "boss": "Bexiz\n                        (Lv.\n                        123\n                        )",
+    "dye": "B36",
+    "color_id": 36,
+    "hex": "#d67ad7"
+  },
+  {
+    "boss": "Imitator\n                        (Lv.\n                        126\n                        )",
+    "dye": "C44",
+    "color_id": 44,
+    "hex": "#29ff00"
+  },
+  {
+    "boss": "Imitacia\n                        (Lv.\n                        129\n                        )",
+    "dye": "C79",
+    "color_id": 79,
+    "hex": "#1f4b7a"
+  },
+  {
+    "boss": "Memecoleolus\n                        (Lv.\n                        120\n                        )",
+    "dye": "A29",
+    "color_id": 29,
+    "hex": "#7dd6b8"
+  },
+  {
+    "boss": "Iconos\n                        (Lv.\n                        128\n                        )",
+    "dye": "C14",
+    "color_id": 14,
+    "hex": "#a8cfd7"
+  },
+  {
+    "boss": "Tapir\n                        (Lv.\n                        140\n                        )",
+    "dye": "A7",
+    "color_id": 7,
+    "hex": "#e4c6c3"
+  },
+  {
+    "boss": "Ifrid\n                        (Lv.\n                        132\n                        )",
+    "dye": "B37",
+    "color_id": 37,
+    "hex": "#e768b3"
+  },
+  {
+    "boss": "Prot leon\n                        (Lv.\n                        135\n                        )",
+    "dye": "B7",
+    "color_id": 7,
+    "hex": "#e4c6c3"
+  },
+  {
+    "boss": "York\n                        (Lv.\n                        138\n                        )",
+    "dye": "A31",
+    "color_id": 31,
+    "hex": "#7ec0d7"
+  },
+  {
+    "boss": "Tyrant machina\n                        (Lv.\n                        141\n                        )",
+    "dye": "A23",
+    "color_id": 23,
+    "hex": "#f1a87f"
+  },
+  {
+    "boss": "Mozto machina\n                        (Lv.\n                        144\n                        )",
+    "dye": "B8",
+    "color_id": 8,
+    "hex": "#e7d7c7"
+  },
+  {
+    "boss": "Lalvada\n                        (Lv.\n                        147\n                        )",
+    "dye": "C39",
+    "color_id": 39,
+    "hex": "#ff6500"
+  },
+  {
+    "boss": "Zahhak machina\n                        (Lv.\n                        150\n                        )",
+    "dye": "C17",
+    "color_id": 17,
+    "hex": "#b4bde7"
+  },
+  {
+    "boss": "Guignol\n                        (Lv.\n                        153\n                        )",
+    "dye": "Hidden",
+    "color_id": null,
+    "hex": null
+  },
+  {
+    "boss": "Gwaimol\n                        (Lv.\n                        156\n                        )",
+    "dye": "A53",
+    "color_id": 53,
+    "hex": "#f02fb5"
+  },
+  {
+    "boss": "Ultimate machina\n                        (Lv.\n                        159\n                        )",
+    "dye": "A52",
+    "color_id": 52,
+    "hex": "#e020e0"
+  },
+  {
+    "boss": "Ornlarf\n                        (Lv.\n                        162\n                        )",
+    "dye": "B30",
+    "color_id": 30,
+    "hex": "#79cbd1"
+  },
+  {
+    "boss": "Maton sword\n                        (Lv.\n                        163\n                        )",
+    "dye": "C23",
+    "color_id": 23,
+    "hex": "#f1a87f"
+  },
+  {
+    "boss": "Shampy\n                        (Lv.\n                        165\n                        )",
+    "dye": "B65",
+    "color_id": 65,
+    "hex": "#1f3da0"
+  },
+  {
+    "boss": "Venena coenubia\n                        (Lv.\n                        170\n                        )",
+    "dye": "C53",
+    "color_id": 53,
+    "hex": "#f02fb5"
+  },
+  {
+    "boss": "Crystal titan\n                        (Lv.\n                        168\n                        )",
+    "dye": "A54",
+    "color_id": 54,
+    "hex": "#c60000"
+  },
+  {
+    "boss": "Mom fluck\n                        (Lv.\n                        171\n                        )",
+    "dye": "C31",
+    "color_id": 31,
+    "hex": "#7ec0d7"
+  },
+  {
+    "boss": "Zelbuse\n                        (Lv.\n                        174\n                        )",
+    "dye": "B54",
+    "color_id": 54,
+    "hex": "#c60000"
+  },
+  {
+    "boss": "Mardula\n                        (Lv.\n                        177\n                        )",
+    "dye": "C36",
+    "color_id": 36,
+    "hex": "#d67ad7"
+  },
+  {
+    "boss": "Selle zauga\n                        (Lv.\n                        180\n                        )",
+    "dye": "A48",
+    "color_id": 48,
+    "hex": "#2f78d9"
+  },
+  {
+    "boss": "King piton\n                        (Lv.\n                        183\n                        )",
+    "dye": "B29",
+    "color_id": 29,
+    "hex": "#7dd6b8"
+  },
+  {
+    "boss": "Finstern the dark dragon\n                        (Lv.\n                        186\n                        )",
+    "dye": "A18",
+    "color_id": 18,
+    "hex": "#c7b7e7"
+  },
+  {
+    "boss": "Tuscog\n                        (Lv.\n                        189\n                        )",
+    "dye": "A49",
+    "color_id": 49,
+    "hex": "#2450e8"
+  },
+  {
+    "boss": "Eroded pilz\n                        (Lv.\n                        192\n                        )",
+    "dye": "C11",
+    "color_id": 11,
+    "hex": "#c1d9c3"
+  },
+  {
+    "boss": "Pyxtica\n                        (Lv.\n                        195\n                        )",
+    "dye": "A19",
+    "color_id": 19,
+    "hex": "#e0b7e7"
+  },
+  {
+    "boss": "Kuzto\n                        (Lv.\n                        198\n                        )",
+    "dye": "B1",
+    "color_id": 1,
+    "hex": "#ffffff"
+  },
+  {
+    "boss": "Sapphire roga\n                        (Lv.\n                        201\n                        )",
+    "dye": "B20",
+    "color_id": 20,
+    "hex": "#d8b0d7"
+  },
+  {
+    "boss": "Gravicep\n                        (Lv.\n                        204\n                        )",
+    "dye": "C5",
+    "color_id": 5,
+    "hex": "#000000"
+  },
+  {
+    "boss": "Demonic quasar\n                        (Lv.\n                        205\n                        )",
+    "dye": "C24",
+    "color_id": 24,
+    "hex": "#f2c686"
+  },
+  {
+    "boss": "Repthon\n                        (Lv.\n                        207\n                        )",
+    "dye": "C55",
+    "color_id": 55,
+    "hex": "#b34700"
+  },
+  {
+    "boss": "Vulture\n                        (Lv.\n                        210\n                        )",
+    "dye": "B40",
+    "color_id": 40,
+    "hex": "#ff9a00"
+  },
+  {
+    "boss": "Venena metacoenubia\n                        (Lv.\n                        215\n                        )",
+    "dye": "A56",
+    "color_id": 56,
+    "hex": "#9a5b2b"
+  },
+  {
+    "boss": "Pisteus\n                        (Lv.\n                        213\n                        )",
+    "dye": "A72",
+    "color_id": 72,
+    "hex": "#5a3c00"
+  },
+  {
+    "boss": "Arachnidemon\n                        (Lv.\n                        216\n                        )",
+    "dye": "C23",
+    "color_id": 23,
+    "hex": "#f1a87f"
+  },
+  {
+    "boss": "Black shadow\n                        (Lv.\n                        219\n                        )",
+    "dye": "A66",
+    "color_id": 66,
+    "hex": "#1010a0"
+  },
+  {
+    "boss": "Hexter\n                        (Lv.\n                        222\n                        )",
+    "dye": "B78",
+    "color_id": 78,
+    "hex": "#2f5c63"
+  },
+  {
+    "boss": "Irestida\n                        (Lv.\n                        225\n                        )",
+    "dye": "Hidden",
+    "color_id": null,
+    "hex": null
+  },
+  {
+    "boss": "Reliza\n                        (Lv.\n                        230\n                        )",
+    "dye": "A6",
+    "color_id": 6,
+    "hex": "#e6b8bd"
+  },
+  {
+    "boss": "Gemma\n                        (Lv.\n                        228\n                        )",
+    "dye": "B40",
+    "color_id": 40,
+    "hex": "#ff9a00"
+  },
+  {
+    "boss": "Ferzen the rock dragon\n                        (Lv.\n                        231\n                        )",
+    "dye": "C26",
+    "color_id": 26,
+    "hex": "#e5ea85"
+  },
+  {
+    "boss": "Junior dragon zyvio\n                        (Lv.\n                        234\n                        )",
+    "dye": "A56",
+    "color_id": 56,
+    "hex": "#9a5b2b"
+  },
+  {
+    "boss": "War dragon turba\n                        (Lv.\n                        237\n                        )",
+    "dye": "A53",
+    "color_id": 53,
+    "hex": "#f02fb5"
+  },
+  {
+    "boss": "Vlam the frame dragon\n                        (Lv.\n                        240\n                        )",
+    "dye": "B77",
+    "color_id": 77,
+    "hex": "#0b5c36"
+  },
+  {
+    "boss": "Velum\n                        (Lv.\n                        243\n                        )",
+    "dye": "B8",
+    "color_id": 8,
+    "hex": "#e7d7c7"
+  },
+  {
+    "boss": "Oculasignio\n                        (Lv.\n                        246\n                        )",
+    "dye": "C20",
+    "color_id": 20,
+    "hex": "#d8b0d7"
+  },
+  {
+    "boss": "Gordel\n                        (Lv.\n                        249\n                        )",
+    "dye": "A63",
+    "color_id": 63,
+    "hex": "#357cad"
+  },
+  {
+    "boss": "Guard golem\n                        (Lv.\n                        252\n                        )",
+    "dye": "Hidden",
+    "color_id": null,
+    "hex": null
+  },
+  {
+    "boss": "Barning dragon igneus\n                        (Lv.\n                        255\n                        )",
+    "dye": "B64",
+    "color_id": 64,
+    "hex": "#2f5fa0"
+  },
+  {
+    "boss": "Trickster dragon mimyugon\n                        (Lv.\n                        258\n                        )",
+    "dye": "A83",
+    "color_id": 83,
+    "hex": "#3c006b"
+  },
+  {
+    "boss": "Filrocas\n                        (Lv.\n                        261\n                        )",
+    "dye": "B11",
+    "color_id": 11,
+    "hex": "#c1d9c3"
+  },
+  {
+    "boss": "Wicked dragon fazzino\n                        (Lv.\n                        264\n                        )",
+    "dye": "C38",
+    "color_id": 38,
+    "hex": "#ff2a00"
+  },
+  {
+    "boss": "Walican\n                        (Lv.\n                        267\n                        )",
+    "dye": "A62",
+    "color_id": 62,
+    "hex": "#4ea6ad"
+  },
+  {
+    "boss": "Brass dragon reguita\n                        (Lv.\n                        270\n                        )",
+    "dye": "B54",
+    "color_id": 54,
+    "hex": "#c60000"
+  },
+  {
+    "boss": "Dominaredor\n                        (Lv.\n                        273\n                        )",
+    "dye": "A28",
+    "color_id": 28,
+    "hex": "#8fe08c"
+  },
+  {
+    "boss": "Zapo\n                        (Lv.\n                        276\n                        )",
+    "dye": "C13",
+    "color_id": 13,
+    "hex": "#9cd0b0"
+  },
+  {
+    "boss": "RedAshDragonRudis\n                        (Lv.\n                        279\n                        )",
+    "dye": "C63",
+    "color_id": 63,
+    "hex": "#357cad"
+  },
+  {
+    "boss": "DonProfundo\n                        (Lv.\n                        282\n                        )",
+    "dye": "B60",
+    "color_id": 60,
+    "hex": "#00a000"
+  },
+  {
+    "boss": "Vatudo\n                        (Lv.\n                        285\n                        )",
+    "dye": "C3",
+    "color_id": 3,
+    "hex": "#bfbfbf"
+  },
+  {
+    "boss": "RagingDragonBovinari\n                        (Lv.\n                        288\n                        )",
+    "dye": "C65",
+    "color_id": 65,
+    "hex": "#1f3da0"
+  },
+  {
+    "boss": "Humida\n                        (Lv.\n                        291\n                        )",
+    "dye": "C16",
+    "color_id": 16,
+    "hex": "#b4c6e7"
+  },
+  {
+    "boss": "Torexesa\n                        (Lv.\n                        289\n                        )",
+    "dye": "B23",
+    "color_id": 23,
+    "hex": "#f1a87f"
+  },
+  {
+    "boss": "Mugloon\n                        (Lv.\n                        294\n                        )",
+    "dye": "C8",
+    "color_id": 8,
+    "hex": "#e7d7c7"
   },
   {
     "boss": "Deformis\n                        (Lv.\n                        297\n                        )",
-    "dye": "Unknown",
-    "color_id": null,
-    "hex": null
+    "dye": "B81",
+    "color_id": 81,
+    "hex": "#0b2a63"
   },
   {
     "boss": "Menti\n                        (Lv.\n                        300\n                        )",
-    "dye": "Unknown",
-    "color_id": null,
-    "hex": null
+    "dye": "A70",
+    "color_id": 70,
+    "hex": "#800000"
   },
   {
     "boss": "Byskiva\n                        (Lv.\n                        303\n                        )",
-    "dye": "Unknown",
-    "color_id": null,
-    "hex": null
+    "dye": "A67",
+    "color_id": 67,
+    "hex": "#6b22b8"
   },
   {
     "boss": "Piscruva\n                        (Lv.\n                        306\n                        )",
-    "dye": "Unknown",
-    "color_id": null,
-    "hex": null
+    "dye": "B26",
+    "color_id": 26,
+    "hex": "#e5ea85"
   },
   {
     "boss": "Supreme Evil Crystal Beast\n                        (Lv.\n                        309\n                        )",
-    "dye": "Unknown",
-    "color_id": null,
-    "hex": null
+    "dye": "A68",
+    "color_id": 68,
+    "hex": "#8a1fa6"
   },
   {
     "boss": "Bakuzan\n                        (Lv.\n                        312\n                        )",
-    "dye": "Unknown",
-    "color_id": null,
-    "hex": null
+    "dye": "C26",
+    "color_id": 26,
+    "hex": "#e5ea85"
   },
   {
     "boss": "Rondine\n                        (Lv.\n                        315\n                        )",
-    "dye": "Unknown",
-    "color_id": null,
-    "hex": null
+    "dye": "B50",
+    "color_id": 50,
+    "hex": "#1a24ff"
   },
   {
     "boss": "Gula\n                        (Lv.\n                        318\n                        )",
     "dye": "Unknown",
     "color_id": null,
     "hex": null
+  },
+  {
+    "boss": "ハウドヴィス\n                        (Lv.\n                        321\n                        )",
+    "dye": "A17",
+    "color_id": 17,
+    "hex": "#b4bde7"
+  },
+  {
+    "boss": "Marchitar\n                        (Lv.\n                        60\n                        )",
+    "dye": "C2",
+    "color_id": 2,
+    "hex": "#d9d9d9"
+  },
+  {
+    "boss": "Cerabes\n                        (Lv.\n                        60\n                        )",
+    "dye": "A59",
+    "color_id": 59,
+    "hex": "#4ea000"
+  },
+  {
+    "boss": "Super dark mushroom\n                        (Lv.\n                        60\n                        )",
+    "dye": "B9",
+    "color_id": 9,
+    "hex": "#e9e0c2"
+  },
+  {
+    "boss": "Deniala\n                        (Lv.\n                        110\n                        )",
+    "dye": "C67",
+    "color_id": 67,
+    "hex": "#6b22b8"
+  },
+  {
+    "boss": "Mimesia\n                        (Lv.\n                        180\n                        )",
+    "dye": "A21",
+    "color_id": 21,
+    "hex": "#e7b7d2"
+  },
+  {
+    "boss": "Amalgam\n                        (Lv.\n                        200\n                        )",
+    "dye": "B74",
+    "color_id": 74,
+    "hex": "#5c6b00"
+  },
+  {
+    "boss": "Dreamy scarlet sakura\n                        (Lv.\n                        220\n                        )",
+    "dye": "A36",
+    "color_id": 36,
+    "hex": "#d67ad7"
+  },
+  {
+    "boss": "Crysmort\n                        (Lv.\n                        240\n                        )",
+    "dye": "C78",
+    "color_id": 78,
+    "hex": "#2f5c63"
+  },
+  {
+    "boss": "バウガイ\n                        (Lv.\n                        260\n                        )",
+    "dye": "C43",
+    "color_id": 43,
+    "hex": "#8cff00"
+  },
+  {
+    "boss": "Breeta\n                        (Lv.\n                        270\n                        )",
+    "dye": "A46",
+    "color_id": 46,
+    "hex": "#4ecbd3"
+  },
+  {
+    "boss": "Squirinja\n                        (Lv.\n                        280\n                        )",
+    "dye": "B72",
+    "color_id": 72,
+    "hex": "#5a3c00"
+  },
+  {
+    "boss": "不知火童子\n                        (Lv.\n                        300\n                        )",
+    "dye": "B11",
+    "color_id": 11,
+    "hex": "#c1d9c3"
+  },
+  {
+    "boss": "Golden iconos\n                        (Lv.\n                        95\n                        )",
+    "dye": "B33",
+    "color_id": 33,
+    "hex": "#7d8ed7"
+  },
+  {
+    "boss": "Felicitoad\n                        (Lv.\n                        170\n                        )",
+    "dye": "A13",
+    "color_id": 13,
+    "hex": "#9cd0b0"
+  },
+  {
+    "boss": "Goldigem\n                        (Lv.\n                        245\n                        )",
+    "dye": "A1",
+    "color_id": 1,
+    "hex": "#ffffff"
+  },
+  {
+    "boss": "Goldoon\n                        (Lv.\n                        140\n                        )",
+    "dye": "A68",
+    "color_id": 68,
+    "hex": "#8a1fa6"
+  },
+  {
+    "boss": "Evil Magic Soldier [Goldoon]\n                        (Lv.\n                        140\n                        )",
+    "dye": "C38",
+    "color_id": 38,
+    "hex": "#ff2a00"
   }
 ]
