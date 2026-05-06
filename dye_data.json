@@ -655,9 +655,9 @@
   },
   {
     "boss": "Gula\n                        (Lv.\n                        318\n                        )",
-    "dye": "Unknown",
-    "color_id": null,
-    "hex": null
+    "dye": "A16",
+    "color_id": 16,
+    "hex": "#b4c6e7"
   },
   {
     "boss": "ハウドヴィス\n                        (Lv.\n                        321\n                        )",
