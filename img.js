@@ -1,5 +1,6 @@
 import { createCanvas, loadImage } from "@napi-rs/canvas";
 import fetch from "node-fetch";
+import { writeFileSync } from "fs";
 
 export async function buildAvaGrid(apiUrl) {
   const res = await fetch(apiUrl);
@@ -7,7 +8,7 @@ export async function buildAvaGrid(apiUrl) {
   const items = json.result.data;
 
   const images = await Promise.all(
-    items.map((item) => loadImage(item.image).catch(() => null)),
+    items.map((item) => loadImage(item.image).catch(() => null))
   );
 
   const IMG_W = 600;
@@ -55,6 +56,11 @@ export async function buildAvaGrid(apiUrl) {
     if (name !== item.name) name += "...";
     ctx.fillText(name, x + 8, y + IMG_H + 36);
   }
-buildAvaGrid("https://neurapi.mochinime.cyou/api/toram/ava")
+
   return canvas.toBuffer("image/png");
 }
+
+// Entry point untuk GitHub Actions
+const buffer = await buildAvaGrid("https://neurapi.mochinime.cyou/api/toram/ava");
+writeFileSync("ava_grid.png", buffer);
+console.log("Selesai: ava_grid.png");
