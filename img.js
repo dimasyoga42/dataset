@@ -11,14 +11,16 @@ export async function buildAvaGrid(apiUrl) {
     items.map((item) => loadImage(item.image).catch(() => null))
   );
 
-  const IMG_W = 600;
-  const IMG_H = 300;
-  const PADDING = 20;
-  const LABEL_H = 50;
+  const COLS = 2;          // 2 kolom biar compact
+  const IMG_W = 360;       // lebih kecil per item
+  const IMG_H = 200;
+  const PADDING = 10;
+  const LABEL_H = 40;
 
-  const canvasW = IMG_W + PADDING * 2;
-  const canvasH =
-    items.length * (IMG_H + LABEL_H) + (items.length + 1) * PADDING;
+  const ROWS = Math.ceil(items.length / COLS);
+  const canvasW = COLS * IMG_W + (COLS + 1) * PADDING;
+  const canvasH = ROWS * (IMG_H + LABEL_H) + (ROWS + 1) * PADDING;
+  // Total lebar: ~750px, tinggi: ~520px — pas untuk WA preview
 
   const canvas = createCanvas(canvasW, canvasH);
   const ctx = canvas.getContext("2d");
@@ -29,38 +31,50 @@ export async function buildAvaGrid(apiUrl) {
   for (let i = 0; i < items.length; i++) {
     const item = items[i];
     const img = images[i];
-    const x = PADDING;
-    const y = PADDING + i * (IMG_H + LABEL_H + PADDING);
+    const col = i % COLS;
+    const row = Math.floor(i / COLS);
+
+    const x = PADDING + col * (IMG_W + PADDING);
+    const y = PADDING + row * (IMG_H + LABEL_H + PADDING);
 
     if (img) {
-      ctx.drawImage(img, x, y, IMG_W, IMG_H);
+      // Cover fit — crop tengah supaya tidak gepeng
+      const scale = Math.max(IMG_W / img.width, IMG_H / img.height);
+      const srcW = IMG_W / scale;
+      const srcH = IMG_H / scale;
+      const srcX = (img.width - srcW) / 2;
+      const srcY = (img.height - srcH) / 2;
+      ctx.drawImage(img, srcX, srcY, srcW, srcH, x, y, IMG_W, IMG_H);
     } else {
       ctx.fillStyle = "#2a2a4e";
       ctx.fillRect(x, y, IMG_W, IMG_H);
     }
 
+    // Label
     ctx.fillStyle = "#0f0f1e";
     ctx.fillRect(x, y + IMG_H, IMG_W, LABEL_H);
 
+    // Tanggal
     const date = item.date.replace(/［|］/g, "").trim();
     ctx.fillStyle = "#aaaaaa";
-    ctx.font = "12px sans-serif";
+    ctx.font = "10px sans-serif";
     ctx.textAlign = "right";
-    ctx.fillText(date, x + IMG_W - 8, y + IMG_H + 18);
+    ctx.fillText(date, x + IMG_W - 6, y + IMG_H + 14);
 
+    // Nama
     ctx.fillStyle = "#ffffff";
-    ctx.font = "bold 16px sans-serif";
+    ctx.font = "bold 12px sans-serif";
     ctx.textAlign = "left";
     let name = item.name;
-    while (ctx.measureText(name).width > IMG_W - 16) name = name.slice(0, -1);
+    while (ctx.measureText(name).width > IMG_W - 12) name = name.slice(0, -1);
     if (name !== item.name) name += "...";
-    ctx.fillText(name, x + 8, y + IMG_H + 36);
+    ctx.fillText(name, x + 6, y + IMG_H + 30);
   }
 
   return canvas.toBuffer("image/png");
 }
 
-// Entry point untuk GitHub Actions
+// Entry point GitHub Actions
 const buffer = await buildAvaGrid("https://neurapi.mochinime.cyou/api/toram/ava");
 writeFileSync("ava_grid.png", buffer);
 console.log("Selesai: ava_grid.png");
