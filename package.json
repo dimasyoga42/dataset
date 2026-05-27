@@ -1,11 +1,13 @@
 {
   "type": "module",
   "dependencies": {
+    "@napi-rs/canvas": "^1.0.0",
     "axios": "^1.16.1",
     "canvas": "^3.2.3",
     "cheerio": "^1.2.0",
     "groq-sdk": "^1.2.0",
     "json2csv": "^6.0.0-alpha.2",
+    "node-fetch": "^3.3.2",
     "puppeteer": "^24.43.1"
   }
 }
