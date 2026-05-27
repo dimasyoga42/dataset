@@ -30,11 +30,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - name: Install dependencies
-        run: npm install cheerio axios puppeteer canvas groq-sdk json2csv
+        run: npm install cheerio axios puppeteer canvas groq-sdk json2csv @napi-rs/canvas
       - name: Install Chrome
         run: npx puppeteer browsers install chrome
-      - name: Run Iruna
-        run: node iruna.js
+      - name: Run Img
+        run: node img.js
       - name: Run screenshot
         run: node run.js
       - name: Run dye json
