@@ -42,8 +42,7 @@ jobs:
       - name: Run xtal json
         run: node colors.js
       - name: Install Python deps
-        run: pip install pillow
-
+        run: pip install requests pillow
       - name: Run generate image
         run: python3 canvas.py
       - name: Run Skill
