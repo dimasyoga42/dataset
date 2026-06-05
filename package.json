@@ -8,6 +8,8 @@
     "groq-sdk": "^1.2.1",
     "json2csv": "^6.0.0-alpha.2",
     "node-fetch": "^3.3.2",
-    "puppeteer": "^24.43.1"
+    "puppeteer": "^24.43.1",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
   }
 }
