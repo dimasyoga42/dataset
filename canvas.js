@@ -15,15 +15,30 @@ const PADDING = 16;
 async function fetchData() {
   const browser = await puppeteer.launch({
     headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
   });
 
   try {
     const page = await browser.newPage();
+
     await page.setUserAgent(
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
     );
-    await page.goto(URL, { waitUntil: "networkidle2", timeout: 60000 });
+
+    await page.setExtraHTTPHeaders({
+      "Accept-Language": "en-US,en;q=0.9",
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+    });
+
+    await page.goto(URL, { waitUntil: "networkidle0", timeout: 60000 });
+
+    try {
+      await page.waitForSelector("table.color-wep-table tbody tr", { timeout: 15000 });
+    } catch {
+      console.error("Selector not found after wait, dumping page excerpt...");
+      const bodyText = await page.evaluate(() => document.body?.innerText?.slice(0, 500) ?? "");
+      console.error("Page text:", bodyText);
+    }
 
     const result = await page.evaluate(() => {
       const tables = document.querySelectorAll("table.color-wep-table");
@@ -75,6 +90,14 @@ async function fetchData() {
       return { data, monthLabel };
     });
 
+    if (!result.data.length) {
+      const html = await page.content();
+      const tableCount = (html.match(/color-wep-table/g) || []).length;
+      console.error(`Tables with class 'color-wep-table' found in HTML: ${tableCount}`);
+      const excerpt = html.slice(0, 2000);
+      console.error("HTML excerpt:", excerpt);
+    }
+
     return result;
   } finally {
     await browser.close();
@@ -83,15 +106,9 @@ async function fetchData() {
 
 function hexToRgb(hex) {
   hex = hex.replace("#", "");
-  if (hex.length === 3) {
-    hex = hex.split("").map((c) => c + c).join("");
-  }
+  if (hex.length === 3) hex = hex.split("").map((c) => c + c).join("");
   const num = parseInt(hex, 16);
-  return {
-    r: (num >> 16) & 255,
-    g: (num >> 8) & 255,
-    b: num & 255,
-  };
+  return { r: (num >> 16) & 255, g: (num >> 8) & 255, b: num & 255 };
 }
 
 function brightness({ r, g, b }) {
@@ -123,7 +140,7 @@ function drawTable(data, monthLabel, outputPath) {
     }
 
     ctx.fillStyle = "#333";
-    ctx.font = "bold 18px DejaVu Sans";
+    ctx.font = "bold 18px sans-serif";
     ctx.textAlign = "left";
     ctx.fillText(`Boss Name (${monthLabel})`, startX, HEADER_HEIGHT / 2);
     ctx.fillText("Color", startX + COLUMN_WIDTH - 90, HEADER_HEIGHT / 2);
@@ -146,7 +163,7 @@ function drawTable(data, monthLabel, outputPath) {
       }
 
       ctx.fillStyle = "#333";
-      ctx.font = "17px DejaVu Sans";
+      ctx.font = "17px sans-serif";
       ctx.textAlign = "left";
       ctx.fillText(item.boss ?? "-", startX, yCenter);
 
@@ -162,11 +179,10 @@ function drawTable(data, monthLabel, outputPath) {
       ctx.lineWidth = 1;
       ctx.strokeRect(boxX, boxY, boxW, boxH);
 
-      const dye = item.dye ?? "-";
       ctx.fillStyle = brightness(rgb) > 140 ? "#000000" : "#ffffff";
-      ctx.font = "17px DejaVu Sans";
+      ctx.font = "17px sans-serif";
       ctx.textAlign = "center";
-      ctx.fillText(dye, boxX + boxW / 2, yCenter);
+      ctx.fillText(item.dye ?? "-", boxX + boxW / 2, yCenter);
     });
   }
 
