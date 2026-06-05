@@ -1,24 +1,36 @@
 import re
 import json
 import sys
+import time
 from pathlib import Path
 from html.parser import HTMLParser
+from datetime import datetime
+
+import requests
 from PIL import Image, ImageDraw, ImageFont
 
-HTML_FILE = "/mnt/user-data/uploads/Colored_Weapons_Future_Forecast_-_Lazy_Tanaka_s_Colored_Weapons_Future_Forecast.html"
-JSON_OUTPUT = "/home/claude/dye_data.json"
-PNG_OUTPUT = "/mnt/user-data/outputs/dye_table.png"
+URL = "https://tanaka0.work/AIO/en/DyePredictor/ColorWeapon"
+JSON_OUTPUT = "dye_data.json"
+PNG_OUTPUT = "dye_table.png"
 
 FONT_REGULAR = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 FONT_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-
-MONTH_LABEL = "202606"
 
 ITEMS_PER_COLUMN = 30
 COLUMN_WIDTH = 400
 ROW_HEIGHT = 40
 HEADER_HEIGHT = 55
 PADDING = 16
+
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/124.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.5",
+}
 
 
 class DyeTableParser(HTMLParser):
@@ -31,9 +43,11 @@ class DyeTableParser(HTMLParser):
         self.current_boss = ""
         self.current_hex = ""
         self.current_dye = ""
-        self.collecting_text = False
         self.results = []
         self._td_text_parts = []
+        self.month_label = ""
+        self._in_month_th = False
+        self._th_parts = []
 
     def handle_starttag(self, tag, attrs):
         attrs_dict = dict(attrs)
@@ -42,6 +56,9 @@ class DyeTableParser(HTMLParser):
             self.td_index = 0
         if not self.in_target_table:
             return
+        if tag == "th":
+            self._in_month_th = True
+            self._th_parts = []
         if tag == "tr":
             self.in_tr = True
             self.td_index = 0
@@ -58,6 +75,12 @@ class DyeTableParser(HTMLParser):
                 self.current_hex = match.group(1)
 
     def handle_endtag(self, tag):
+        if tag == "th" and self._in_month_th:
+            raw = " ".join(self._th_parts).strip()
+            match = re.search(r"(\d{6})", raw)
+            if match and not self.month_label:
+                self.month_label = match.group(1)
+            self._in_month_th = False
         if not self.in_target_table:
             return
         if tag == "table":
@@ -84,15 +107,31 @@ class DyeTableParser(HTMLParser):
             self.in_tr = False
 
     def handle_data(self, data):
+        if self._in_month_th:
+            stripped = data.strip()
+            if stripped:
+                self._th_parts.append(stripped)
         if self.in_td:
             stripped = data.strip()
             if stripped:
                 self._td_text_parts.append(stripped)
 
 
-def parse_html(html_path: str) -> list[dict]:
-    with open(html_path, "r", encoding="utf-8") as f:
-        content = f.read()
+def fetch_html(url: str, retries: int = 3) -> str:
+    for attempt in range(1, retries + 1):
+        try:
+            response = requests.get(url, headers=HEADERS, timeout=30)
+            response.raise_for_status()
+            return response.text
+        except requests.RequestException as e:
+            print(f"Attempt {attempt} failed: {e}", file=sys.stderr)
+            if attempt < retries:
+                time.sleep(5 * attempt)
+    print(f"Error: failed to fetch {url} after {retries} attempts", file=sys.stderr)
+    sys.exit(1)
+
+
+def parse_html(content: str) -> tuple[list[dict], str]:
     parser = DyeTableParser()
     parser.feed(content)
     seen = set()
@@ -102,7 +141,8 @@ def parse_html(html_path: str) -> list[dict]:
         if key not in seen:
             seen.add(key)
             unique.append(item)
-    return unique
+    month_label = parser.month_label or datetime.now().strftime("%Y%m")
+    return unique, month_label
 
 
 def hex_to_rgb(hex_color: str) -> tuple[int, int, int]:
@@ -122,7 +162,7 @@ def brightness(rgb: tuple[int, int, int]) -> float:
     return (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000
 
 
-def draw_table(data: list[dict], output_path: str) -> None:
+def draw_table(data: list[dict], month_label: str, output_path: str) -> None:
     columns = max(1, -(-len(data) // ITEMS_PER_COLUMN))
     width = columns * COLUMN_WIDTH + PADDING * 2
     height = HEADER_HEIGHT + ITEMS_PER_COLUMN * ROW_HEIGHT + PADDING * 2
@@ -146,7 +186,7 @@ def draw_table(data: list[dict], output_path: str) -> None:
 
         draw.text(
             (start_x, HEADER_HEIGHT // 2 - 9),
-            f"Boss Name ({MONTH_LABEL})",
+            f"Boss Name ({month_label})",
             fill=(51, 51, 51),
             font=font_bold,
         )
@@ -158,15 +198,27 @@ def draw_table(data: list[dict], output_path: str) -> None:
         )
 
         sep_y = HEADER_HEIGHT - 4
-        draw.line([(start_x, sep_y), (start_x + COLUMN_WIDTH - PADDING, sep_y)], fill=(180, 180, 180), width=1)
+        draw.line(
+            [(start_x, sep_y), (start_x + COLUMN_WIDTH - PADDING, sep_y)],
+            fill=(180, 180, 180),
+            width=1,
+        )
 
-        rows = data[col * ITEMS_PER_COLUMN: (col + 1) * ITEMS_PER_COLUMN]
+        rows = data[col * ITEMS_PER_COLUMN : (col + 1) * ITEMS_PER_COLUMN]
         for row_idx, item in enumerate(rows):
             y_top = HEADER_HEIGHT + row_idx * ROW_HEIGHT
             y_center = y_top + ROW_HEIGHT // 2
 
             if row_idx % 2 == 0:
-                draw.rectangle([start_x - 4, y_top, start_x + COLUMN_WIDTH - PADDING - 4, y_top + ROW_HEIGHT], fill=(235, 235, 235))
+                draw.rectangle(
+                    [
+                        start_x - 4,
+                        y_top,
+                        start_x + COLUMN_WIDTH - PADDING - 4,
+                        y_top + ROW_HEIGHT,
+                    ],
+                    fill=(235, 235, 235),
+                )
 
             boss = item.get("boss") or "-"
             draw.text(
@@ -183,7 +235,12 @@ def draw_table(data: list[dict], output_path: str) -> None:
 
             hex_color = item.get("hex") or "#cccccc"
             rgb = hex_to_rgb(hex_color)
-            draw.rectangle([box_x, box_y, box_x + box_w, box_y + box_h], fill=rgb, outline=(150, 150, 150), width=1)
+            draw.rectangle(
+                [box_x, box_y, box_x + box_w, box_y + box_h],
+                fill=rgb,
+                outline=(150, 150, 150),
+                width=1,
+            )
 
             dye = item.get("dye") or "-"
             text_color = (0, 0, 0) if brightness(rgb) > 140 else (255, 255, 255)
@@ -202,8 +259,12 @@ def draw_table(data: list[dict], output_path: str) -> None:
 
 
 def main() -> None:
+    print(f"Fetching {URL} ...")
+    html = fetch_html(URL)
+
     print("Parsing HTML...")
-    data = parse_html(HTML_FILE)
+    data, month_label = parse_html(html)
+    print(f"Month: {month_label}")
     print(f"Total entries found: {len(data)}")
 
     if not data:
@@ -214,7 +275,7 @@ def main() -> None:
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"JSON saved: {JSON_OUTPUT}")
 
-    draw_table(data, PNG_OUTPUT)
+    draw_table(data, month_label, PNG_OUTPUT)
 
 
 if __name__ == "__main__":
