@@ -1,6 +1,11 @@
+import { addExtra } from "puppeteer-extra";
+import StealthPlugin from "puppeteer-extra-plugin-stealth";
 import puppeteer from "puppeteer";
 import fs from "fs";
 import { createCanvas } from "@napi-rs/canvas";
+
+const pup = addExtra(puppeteer);
+pup.use(StealthPlugin());
 
 const URL = "https://tanaka0.work/AIO/en/DyePredictor/ColorWeapon";
 const JSON_OUTPUT = "dye_data.json";
@@ -13,31 +18,33 @@ const HEADER_HEIGHT = 55;
 const PADDING = 16;
 
 async function fetchData() {
-  const browser = await puppeteer.launch({
+  const browser = await pup.launch({
     headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage",
+      "--disable-blink-features=AutomationControlled",
+    ],
   });
 
   try {
     const page = await browser.newPage();
 
+    await page.setViewport({ width: 1280, height: 800 });
     await page.setUserAgent(
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
     );
 
-    await page.setExtraHTTPHeaders({
-      "Accept-Language": "en-US,en;q=0.9",
-      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-    });
-
     await page.goto(URL, { waitUntil: "networkidle0", timeout: 60000 });
 
+    await new Promise((r) => setTimeout(r, 8000));
+
     try {
-      await page.waitForSelector("table.color-wep-table tbody tr", { timeout: 15000 });
+      await page.waitForSelector("table.color-wep-table tbody tr", { timeout: 20000 });
     } catch {
-      console.error("Selector not found after wait, dumping page excerpt...");
-      const bodyText = await page.evaluate(() => document.body?.innerText?.slice(0, 500) ?? "");
-      console.error("Page text:", bodyText);
+      const bodyText = await page.evaluate(() => document.body?.innerText?.slice(0, 300) ?? "");
+      console.error("Table not found. Page text:", bodyText);
     }
 
     const result = await page.evaluate(() => {
@@ -89,14 +96,6 @@ async function fetchData() {
 
       return { data, monthLabel };
     });
-
-    if (!result.data.length) {
-      const html = await page.content();
-      const tableCount = (html.match(/color-wep-table/g) || []).length;
-      console.error(`Tables with class 'color-wep-table' found in HTML: ${tableCount}`);
-      const excerpt = html.slice(0, 2000);
-      console.error("HTML excerpt:", excerpt);
-    }
 
     return result;
   } finally {
