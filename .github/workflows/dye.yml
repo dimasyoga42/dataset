@@ -41,8 +41,11 @@ jobs:
         run: node dye.js
       - name: Run xtal json
         run: node colors.js
+      - name: Install Python deps
+        run: pip install pillow
+
       - name: Run generate image
-        run: node canvas.js
+        run: python3 canvas.py
       - name: Run Skill
         run: node skill.js
       - name: Commit and push
