@@ -29,8 +29,8 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - name: Install dependencies
-        run: npm install cheerio axios puppeteer canvas groq-sdk json2csv @napi-rs/canvas node-fetch
+    - name: Install dependencies
+        run: npm install cheerio axios puppeteer puppeteer-extra puppeteer-extra-plugin-stealth @napi-rs/canvas groq-sdk json2csv node-fetch
       - name: Install Chrome
         run: npx puppeteer browsers install chrome
       - name: Run Img
