@@ -6,58 +6,165 @@ const output = "dye_table.png";
 
 const data = JSON.parse(fs.readFileSync(input, "utf8"));
 
-const rowHeight = 42;
-const padding = 30;
-const width = 900;
-const height = data.length * rowHeight + 100;
+const ITEMS_PER_COLUMN = 30;
+const COLUMN_WIDTH = 380;
+const ROW_HEIGHT = 40;
+const HEADER_HEIGHT = 50;
+const PADDING = 10;
+
+const columns = Math.ceil(data.length / ITEMS_PER_COLUMN);
+
+const width = columns * COLUMN_WIDTH + PADDING * 2;
+const height =
+  HEADER_HEIGHT +
+  ITEMS_PER_COLUMN * ROW_HEIGHT +
+  PADDING * 2;
 
 const canvas = createCanvas(width, height);
 const ctx = canvas.getContext("2d");
 
 /* background */
-ctx.fillStyle = "#0f172a";
+ctx.fillStyle = "#f2f2f2";
 ctx.fillRect(0, 0, width, height);
 
-/* title */
-ctx.fillStyle = "#ffffff";
-ctx.font = "bold 30px Sans-serif";
-ctx.fillText("Toram Weapon Dye List", padding, 45);
+ctx.textBaseline = "middle";
 
-/* start table */
-const startY = 80;
+for (let col = 0; col < columns; col++) {
+  const startX = PADDING + col * COLUMN_WIDTH;
 
-ctx.font = "20px Sans-serif";
-
-data.forEach((item, index) => {
-
-  const y = startY + index * rowHeight;
-
-  /* row background */
-  ctx.fillStyle = index % 2 === 0 ? "#111827" : "#1e293b";
-  ctx.fillRect(padding - 10, y - 25, width - padding * 2 + 20, rowHeight);
-
-  /* color box gunakan HEX dari json */
-  const color = item.hex || "#ffffff";
-
-  ctx.fillStyle = color;
-  ctx.fillRect(padding, y - 17, 24, 24);
-
-  ctx.strokeStyle = "#000000";
-  ctx.strokeRect(padding, y - 17, 24, 24);
-
-  /* boss name */
-  ctx.fillStyle = "#ffffff";
+  /* header */
+  ctx.fillStyle = "#333";
+  ctx.font = "bold 20px Arial";
   ctx.textAlign = "left";
-  ctx.fillText(item.boss, padding + 45, y);
 
-  /* dye code */
-  ctx.fillStyle = "#94a3b8";
-  ctx.textAlign = "right";
-  ctx.fillText(item.dye, width - padding, y);
+  ctx.fillText(
+    "Boss Name ( 202606 )",
+    startX,
+    HEADER_HEIGHT / 2
+  );
 
-});
+  ctx.fillText(
+    "Color",
+    startX + COLUMN_WIDTH - 90,
+    HEADER_HEIGHT / 2
+  );
 
-const buffer = canvas.toBuffer("image/png");
-fs.writeFileSync(output, buffer);
+  /* vertical separator */
+  if (col > 0) {
+    ctx.strokeStyle = "#d0d0d0";
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(startX - 15, 0);
+    ctx.lineTo(startX - 15, height);
+    ctx.stroke();
+  }
 
-console.log("image saved:", output);
+  const rows = data.slice(
+    col * ITEMS_PER_COLUMN,
+    (col + 1) * ITEMS_PER_COLUMN
+  );
+
+  rows.forEach((item, row) => {
+    const y =
+      HEADER_HEIGHT +
+      row * ROW_HEIGHT +
+      ROW_HEIGHT / 2;
+
+    /* boss name */
+    ctx.fillStyle = "#333";
+    ctx.font = "18px Arial";
+    ctx.textAlign = "left";
+
+    const boss =
+      item.boss ||
+      item.name ||
+      item.monster ||
+      "-";
+
+    ctx.fillText(
+      boss,
+      startX,
+      y
+    );
+
+    /* color box */
+    const boxWidth = 70;
+    const boxHeight = 34;
+
+    const boxX =
+      startX + COLUMN_WIDTH - boxWidth - 20;
+    const boxY = y - boxHeight / 2;
+
+    const color = item.hex || "#ffffff";
+
+    ctx.fillStyle = color;
+    ctx.fillRect(
+      boxX,
+      boxY,
+      boxWidth,
+      boxHeight
+    );
+
+    ctx.strokeStyle = "#999";
+    ctx.strokeRect(
+      boxX,
+      boxY,
+      boxWidth,
+      boxHeight
+    );
+
+    /* dye text */
+    const dye =
+      item.dye ||
+      item.code ||
+      "-";
+
+    const rgb = hexToRgb(color);
+
+    const brightness =
+      (rgb.r * 299 +
+        rgb.g * 587 +
+        rgb.b * 114) /
+      1000;
+
+    ctx.fillStyle =
+      brightness > 140
+        ? "#000000"
+        : "#ffffff";
+
+    ctx.textAlign = "center";
+    ctx.font = "18px Arial";
+
+    ctx.fillText(
+      dye,
+      boxX + boxWidth / 2,
+      y
+    );
+  });
+}
+
+fs.writeFileSync(
+  output,
+  canvas.toBuffer("image/png")
+);
+
+console.log(`Image saved: ${output}`);
+
+function hexToRgb(hex) {
+  hex = hex.replace("#", "");
+
+  if (hex.length === 3) {
+    hex = hex
+      .split("")
+      .map((c) => c + c)
+      .join("");
+  }
+
+  const num = parseInt(hex, 16);
+
+  return {
+    r: (num >> 16) & 255,
+    g: (num >> 8) & 255,
+    b: num & 255,
+  };
+}
