@@ -2,7 +2,7 @@
   "type": "module",
   "dependencies": {
     "@napi-rs/canvas": "^1.0.0",
-    "axios": "^1.17.0",
+    "axios": "^1.18.0",
     "canvas": "^3.2.3",
     "cheerio": "^1.2.0",
     "groq-sdk": "^1.2.1",
