@@ -1,7 +1,7 @@
 {
   "type": "module",
   "dependencies": {
-    "@napi-rs/canvas": "^1.0.0",
+    "@napi-rs/canvas": "^1.0.1",
     "axios": "^1.18.1",
     "canvas": "^3.2.3",
     "cheerio": "^1.2.0",
