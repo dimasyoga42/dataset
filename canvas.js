@@ -1,5 +1,5 @@
-const puppeteer = require("puppeteer");
-const fs = require("fs/promises");
+import puppeteer from "puppeteer";
+import fs from "fs/promises";
 
 const TARGET_URL = "https://tanaka0.work/AIO/en/DyePredictor/ColorWeapon";
 
