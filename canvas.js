@@ -9,7 +9,13 @@ const TARGET_URL = "https://tanaka0.work/AIO/en/DyePredictor/ColorWeapon";
 // saat class-nya berubah lagi, kita fallback ke "table" generik yang
 // difilter berdasarkan ISI baris (kolom ke-2 berupa kode warna seperti
 // "A1", "B23", "C9", "Hidden", atau "Unknown").
-const TABLE_SELECTOR = "table.color-wep-table, table";
+const TABLE_SELECTOR = [
+  "table.color-wep-table",
+  "table",
+  ".color-wep-table",
+  ".table-responsive table",
+  ".row table",
+].join(",");
 
 // Predikat ini dikirim ke dalam browser context lewat $$eval, jadi harus
 // berupa fungsi murni (tidak boleh memakai variabel dari luar).
