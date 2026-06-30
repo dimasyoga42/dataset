@@ -61,6 +61,38 @@ async function screenshotTablesContainer(page) {
   }
 }
 
+async function dismissConsentIfPresent(page) {
+  try {
+    await page.waitForSelector(
+      '[aria-label="Agree"], [aria-label="Consent"], .fc-cta-consent, .fc-button-label, #onetrust-accept-btn-handler',
+      { timeout: 5000 }
+    );
+
+    const clicked = await page.evaluate(() => {
+      const selectors = [
+        '[aria-label="Agree"]',
+        '[aria-label="Consent"]',
+        ".fc-cta-consent",
+        "#onetrust-accept-btn-handler",
+      ];
+      for (const sel of selectors) {
+        const el = document.querySelector(sel);
+        if (el) {
+          el.click();
+          return true;
+        }
+      }
+      return false;
+    });
+
+    if (clicked) {
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+    }
+  } catch {
+    // Tidak ada dialog consent yang muncul, lanjutkan tanpa error.
+  }
+}
+
 async function main() {
   let browser;
   try {
@@ -71,9 +103,24 @@ async function main() {
 
     const page = await browser.newPage();
     await page.setViewport({ width: 1600, height: 1200, deviceScaleFactor: 2 });
+    await page.setUserAgent(
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    );
 
-    await page.goto(TARGET_URL, { waitUntil: "networkidle2", timeout: 60000 });
-    await page.waitForSelector(TABLE_SELECTOR, { timeout: 30000 });
+    await page.goto(TARGET_URL, { waitUntil: "load", timeout: 90000 });
+
+    await dismissConsentIfPresent(page);
+
+    try {
+      await page.waitForSelector(TABLE_SELECTOR, { timeout: 60000 });
+    } catch (err) {
+      await page.screenshot({ path: "debug_failed_state.png", fullPage: true });
+      const html = await page.content();
+      await fs.writeFile("debug_failed_state.html", html, "utf-8");
+      throw new Error(
+        "Selector tabel tidak ditemukan dalam 60 detik. Cek debug_failed_state.png dan debug_failed_state.html untuk lihat tampilan halaman saat gagal."
+      );
+    }
 
     const tableData = await scrapeTableData(page);
     await fs.writeFile("colorweapon_data.json", JSON.stringify(tableData, null, 2), "utf-8");
